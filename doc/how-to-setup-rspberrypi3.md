@@ -53,21 +53,26 @@ SD_CardFormatter0500SetupEN.exe 프로그램으로 micro SDcard를 포맷해야 
 라즈비안 OS의 경우에는 WiFI SSID를 정상적으로 scanning하기 위하여 WiFi Country에서 반드시 US (United State)를 선택해야 한다.
 * 기본설정 - Raspberry Configuration - Localisation - WiFi Country - US (United State) 선택
 
-edit
-4. SSH 서버 설치하기 
+
+# SSH 서버 설치하기 
+```bash
   sudo apt -y install openssh-server openssh-client
   sudo systemctl restart ssh
   sudo systemctl enable ssh  
   ifconfig
+```  
 이제 windows7 PC에서 mobaxterm 프로그램을 실행한후에 RaspBerry Pi 3보드의 SSH 서버에 접속하면 된다.
-edit
-5. Raspberry Pi 화면 180도 회전 시키기 
 
+
+# Raspberry Pi 화면 180도 회전 시키기 
+
+```bash
 sudo vi /boot/config.txt 
 display_rotate=2 
 (0:0도, 1:90도, 2:180도, 3: 270도) 
-edit
-6. 터치스크린 보정을 위해 xinput_calibrator 설치 
+```
+
+# 터치스크린 보정을 위해 xinput_calibrator 설치 
 
 필요한 프로그램 설치
 sudo apt-get install libx11-dev libxext-dev libxi-dev x11proto-input-dev 
