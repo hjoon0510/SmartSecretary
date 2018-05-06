@@ -1,5 +1,5 @@
 # Smart Secretary
-This program tells users the weather and schedule.
+This program tells users the weather and schedule in front of door.
 
 # Motivation
 Because of busy daily life, I do not take umbrella with me on rainy day.
