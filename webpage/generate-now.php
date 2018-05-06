@@ -1,9 +1,16 @@
-<?php
+<html lang="ko">
+<title>Smart Secretary</title>
+<head>
+<meta charset="UTF-8">
+</head>
 
+<body bgcolor=white>
+
+<?php
 // Author: Hyunjoon Lim
 // Title: Weather Crawler from openweathermap.org
 // Date: May-06-2018
-
+// Description: This webpage is to display weather and user schedule
 
 // My configuration
 $city_name="Seoul";
@@ -35,3 +42,15 @@ echo "<br>";
 echo "<img src='http://openweathermap.org/img/w/" . $weather_icon ."'/ >";
 
 ?>
+
+<h2>
+<a href="https://hjoon0510.github.io/user1/" target="myframe">user1</a>
+<a href="https://hjoon0510.github.io/user2/" target="myframe">user2</a>
+<a href="https://hjoon0510.github.io/user3/" target="myframe">user3</a>
+</h2>
+<br>
+
+<iframe name="myframe" style="width:50%; height: 330px ; background: #FFFFFF;"></iframe>
+
+</body>
+</html>
