@@ -169,7 +169,7 @@ $ bash weather.sh  suwon
 
 ## PHP 개발환경 설치
 
-'''bash
+```bash
 $ sudo apt-get -y install php php-cgi libapache2-mod-php php-common php-pear php-mbstring
 $ sudo a2enconf php7.0-cgi 
 $ sudo systemctl restart apache2 
