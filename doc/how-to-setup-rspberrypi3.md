@@ -114,8 +114,9 @@ EndSection
 # mv 99-calibration.conf 99-calibration.conf.disable
 ```
 edit
-7. 웹서버 설치하기 
+#7. 웹서버 설치하기 
 라즈베리 파이 보드를 이용하여 자신만의 웹서버를 운영할 수 있다.
+```bash
 sudo apt install apache2
 sudo systemctl restart apache2 
 sudo systemctl enable apache2
@@ -133,7 +134,7 @@ User1 &nbsp; &nbsp; &nbsp; User2 &nbsp; &nbsp; &nbsp; User3
 오늘 수학숙제를 내는 날 입니다.<br>
 오늘은 고양이를 병원에 데려가는 날입니다.<br>
 5시에 수학학원을 가야 합니다.<br>
-
+```
 # 날씨 정보 습득 프로그램 설치 (google keywords: Weather from terminal) 
 
 예제)
