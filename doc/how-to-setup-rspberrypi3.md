@@ -167,6 +167,25 @@ $ bash weather.sh  suwon
 ```
 
 
+## PHP 개발환경 설치
+
+'''bash
+$ sudo apt-get -y install php php-cgi libapache2-mod-php php-common php-pear php-mbstring
+$ sudo a2enconf php7.0-cgi 
+$ sudo systemctl restart apache2 
+$ sudo cd /var/www/html
+$ sudo vi /var/www/html/index.php
+
+<html>
+<body>
+<?php
+  print Date("Y/m/d");
+?>
+</body>
+</html 
+```
+ 
+ 
 # 기타 - VNC Server Setup on Raspberry Pi 3 
 
 Install VNC Server
@@ -292,3 +311,5 @@ arecord -D copy -d 10 foo.wav
 
 Play recorded audio file
  aplay foo.w
+
+
