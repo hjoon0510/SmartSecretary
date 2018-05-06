@@ -98,6 +98,7 @@ xinput_calibrator
 ```
 터치 4번 손으로 직접 조정하면 보정됨.
 터치스크린 보정한 것을 부팅할때마다 자동으로 항상 불러오기
+```bash
 # mkdir /etc/X11/xorg.conf.d
 # vi /etc/X11/xorg.conf.d/99-calibration.conf
  
@@ -106,11 +107,12 @@ Section "InputClass"
   MatchProduct "FT5406 memory based driver"   
   Option "Calibration" "801 14 463 -12"
 EndSection
-
+```
 재부팅시에 그래픽 화면이 나오지 않고 콘솔 화면으로 나온다면, 이 경우 대부분 99-calibration.conf 파일의 내용에 오타가 있었다.
+```bash
 # cd /etc/X11/xorg.conf.d/
 # mv 99-calibration.conf 99-calibration.conf.disable
-
+```
 edit
 7. 웹서버 설치하기 
 라즈베리 파이 보드를 이용하여 자신만의 웹서버를 운영할 수 있다.
