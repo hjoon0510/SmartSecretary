@@ -76,22 +76,26 @@ display_rotate=2
 # 터치스크린 보정을 위해 xinput_calibrator 설치 
 
 필요한 프로그램 설치
+```bash
 sudo apt-get install libx11-dev libxext-dev libxi-dev x11proto-input-dev 
-
+```
 xinput_calibrator 다운로드
+```bash
 wget http://github.com/downloads/tias/xinput_calibrator/xinput_calibrator-0.7.5.tar.gz 
 ls 
-
+```
 설치...(압축 풀고 해당 폴더에서...)
+```bash
 tar xvzf xinput_calibrator-0.7.5.tar.gz
 cd xinput_calibrator-0.7.5
 ./configure 
 make 
 sudo make install 
-
+```
 실행 (Rasp Berry Pi3 보드에서 실행해야함.)
+```bash
 xinput_calibrator 
-
+```
 터치 4번 손으로 직접 조정하면 보정됨.
 터치스크린 보정한 것을 부팅할때마다 자동으로 항상 불러오기
 # mkdir /etc/X11/xorg.conf.d
