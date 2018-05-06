@@ -196,7 +196,7 @@ $ sudo vi /var/www/html/index.php
 # 기타 - VNC Server Setup on Raspberry Pi 3 
 
 Install VNC Server
- 
+```bash
 sudo apt install tightvncserver   (OR sudo apt install vnc4server)
 vi ~/vnc.sh
 ---------- vnc server:start ---------------
@@ -217,18 +217,20 @@ export XKL_XMODMAP_DISABLE=1
 ---------- end ----------------
 
 vncserver -kill :1
+```
 
-
+```bash
 Run VNC client
 firefox https://www.realvnc.com/en/connect/download/viewer/에서 프로그램을 다운로드한다.
 접속할때 아래의 IP 및 암호를 입력하면 된다. 
  * IP 192.168.219.104:5901
  * password: ***
-edit
-10. gstreamer - 라즈베리 카메라 모듈 V2 탑재 및 실시간 카메라 Streamming 서비스 실행하기 
-http://www.icbanq.com/P007122889 (라즈베리파이 카메라 모듈 V2 8MegaPixel) 
+```
+# gstreamer - 라즈베리 카메라 모듈 V2 탑재 및 실시간 카메라 Streamming 서비스 실행하기 
+* http://www.icbanq.com/P007122889 (라즈베리파이 카메라 모듈 V2 8MegaPixel) 
 
 Install gstreamer
+```bash
 sudo apt update
 sudo apt upgrade
 
@@ -255,8 +257,9 @@ The following NEW packages will be installed:
   libsys-hostname-long-perl libva-wayland1 libvo-aacenc0 libvo-amrwbenc0 libwildmidi-config
   libwildmidi1 libzbar0 po-debconf zlib1g-dev
 ----gstreamer installation: end ------------
-
+```
 Run shell script to stream captured image files
+```bash
 gst-launch-1.0 --version
 vi camera_test.sh
 #---------- script code: start -------------------
@@ -269,21 +272,18 @@ raspivid -t 0 -h 720 -w 1280 -fps 25 -hf -b 2000000 -o - | gst-launch-1.0 \
 
 chmod +x camera_test.sh
 ./camera_test.sh
-
+```
 라즈베리파이 보드에 연결된 터치스크린/모니터에 카메라의 촬영 창이 실행되는 것을 볼수 있다.
 
 안드로이드 모바일 폰은 구글스토어에서 "RaspberryPi Camera viewer"라는 애플리케이션을 검색/설치하면 된다. 그리고나서 해당 모바일 앱을 실행한후에 "+" 아이콘을 클릭하여 메뉴버턴을 생성한다. 생성된 메뉴버턴을 클릭한후 아래의 정보를 입력한다.
-Name: 192.168.219.104
-IP Address: 192.168.219.104
-Port: 5000
-Description: New Raspberry Pi device
-Aspect ratio: 1.6 
+* Name: 192.168.219.104
+* IP Address: 192.168.219.104
+* Port: 5000
+* Description: New Raspberry Pi device
+* Aspect ratio: 1.6 
 
-
-
-edit
-11. VLC: How to live stream video from webcam on Linux 
-
+# VLC: How to live stream video from webcam on Linux 
+```bash
 # Verify Webcam Device on VLC
 $ ls /dev/video*
 $ vlc v4l2:///dev/video0
@@ -297,10 +297,11 @@ $ vlc http://<ip_address_of_webcam_host>:8080/stream.wmv
 $ mplayer http://<ip_address_of_webcam_host>:8080/stream.wmv
 
 
-edit
-12. OSS/ASLA: How to Record your Voice from the Microphone of USB Webcam ¶
+```
+# OSS/ASLA: How to Record your Voice from the Microphone of USB Webcam ¶
 
-Record a voice
+* Record a voice
+```bash
  # make sure your microphone is connected to device
 alsamixer
 # capture microphone input with arecord
@@ -315,8 +316,9 @@ pcm.copy { type plug slave { pcm "hw:2,0" } } ctl.!default { type hw card 2 }
 
 
 arecord -D copy -d 10 foo.wav
-
+```
 Play recorded audio file
- aplay foo.w
-
+```bash
+aplay foo.w
+```
 
