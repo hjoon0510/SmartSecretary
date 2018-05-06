@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>Javascript Audio Player (중급용) :: CrossXP.tistory.com</title>
+<script type="text/javascript">
+<!--
+
+ var playlists = new Array();
+ var pointer = 0;
+ playlists.push("exam");
+ playlists.push("exam2");
+
+ function getItem(){
+  var returnVal = playlists[pointer];
+  pointer++;
+  if(pointer>playlists.length-1){
+   pointer = 0;
+  }
+  return returnVal;
+ }
+
+ function load_proc(){
+  var player = document.getElementById('player');
+  var source = document.getElementById('source');
+
+  if(player.canPlayType("audio/mpeg")!=""){
+    source.src = getItem() + ".mp3";
+    source.type = "audio/mpeg";
+  } else {
+    source.src = getItem() + ".ogg";
+    source.type = "audio/ogg";
+  }
+  player.load();
+  player.play();
+
+  if(player.attachEvent != null){
+    player.attachEvent("onended",load_proc);
+  } else {
+    player.addEventListener("ended",load_proc,false);
+  }
+ }
+
+ if(window.attachEvent != null){
+   window.attachEvent("onload",load_proc);
+ } else {
+   window.addEventListener("load",load_proc,false);
+ }
+
+//-->
+</script>
+</head>
+<body>
+  <audio id="player" controls="controls" preload="auto">
+    <source id="source" src="" type="" />
+    <p>죄송합니다. 지금 사용하고 계신 브라우저가 audio 태그를 지원하지 않습니다.</p>
+  </audio>
+</body>
+</html>
