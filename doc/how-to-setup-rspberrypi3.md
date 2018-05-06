@@ -218,9 +218,8 @@ export XKL_XMODMAP_DISABLE=1
 
 vncserver -kill :1
 ```
-
-```bash
 Run VNC client
+```bash
 firefox https://www.realvnc.com/en/connect/download/viewer/에서 프로그램을 다운로드한다.
 접속할때 아래의 IP 및 암호를 입력하면 된다. 
  * IP 192.168.219.104:5901
