@@ -48,7 +48,7 @@ OS 이미지를 다운로드하기 위하여 https://www.raspberrypi.org/downloa
 
 # WiFi 설정 방법 ( 라즈비안 OS의 경우임.) 
 
-라즈베리파이3는 WiFi 와 블루투스가 자체 내장되어있습니다.
+라즈베리파이3는 WiFi 와 블루투스가 자체 내장되어있다.
 
 라즈비안 OS의 경우에는 WiFI SSID를 정상적으로 scanning하기 위하여 WiFi Country에서 반드시 US (United State)를 선택해야 한다.
 ```bash
