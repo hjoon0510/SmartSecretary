@@ -53,7 +53,16 @@ echo "<td align=right>";
 // https://github.com/erikflowers/weather-icons
 //echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 if ($weather_text == "Haze")
-    echo "<img src='./svg/wi-day-haze.svg'/ >";
+    echo "<img src='./svg/wi-day-haze.svg'/>";
+
+else if($weather_text =="Rain")
+    echo "<img src='./svg/wi-rain.svg'/>";
+
+else if($weather_text == "Light rain")
+    echo "<img src='./svg/wi-day-rain.svg'/>";
+
+else if($weather_text == "Wind")
+    echo "<img src='./svg/wi-day-windy.svg'/>";
 else
     echo "<img src='http://openweathermap.org/img/w/" . $weather_icon ."'/ >";
 
