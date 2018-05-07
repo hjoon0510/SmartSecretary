@@ -1,3 +1,12 @@
+<?php
+// this doesn't make PHP to show parse errors.
+// In case of PHP7/Ubuntu 16.04, the only way to show those errors
+// is to modify /etc/php/7.0/apache2/php.ini file with "display_errors = On"
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
+?>
+
 <html lang="ko">
 <title>Smart Secretary</title>
 <head>
@@ -82,16 +91,15 @@ $weather_icon=$climate->weather[0]->icon.".png";
 //how get today date time PHP :P
 $today = date("F j, Y, g:i a");
 $cityname = $climate->name;
-
-echo "<b> <center> <font color=blue> Smart Secretary </font></center></b>";
-echo "<table border=0>";
-echo "<tr width=100%>";
-// 1st column table
 ?>
 
+<b> <center> <font color=blue> Smart Secretary </font></center></b>
+<table border=0>
+<tr width=100%>
+<!-- 1st column table //-->
 <td width=300>
 
-<table>
+<table border=0>
 <tr>
 <td>
 <div class=container>
@@ -124,40 +132,39 @@ echo "<tr width=100%>";
 <?php
 // 2nd column table
 echo "<td width=200>";
-echo "City: " . $cityname . "<br>";
-echo "Time: " .$today . "<br>";
-echo "Temp Max: " . $temp_max ."&deg;C<br>";
-echo "Temp Min: " . $temp_min ."&deg;C<br>";
-echo "</td>";
-
-// 3rd column table
-echo "<td align=right>";
-
-// display more good icons instead of icons of openweathermap.org
+//display more good icons instead of icons of openweathermap.org
 // https://github.com/erikflowers/weather-icons
 if ($weather_text == "Haze")
     echo "<img width=150 height=100 src='./svg/wi-day-haze.svg'/>";
 else if($weather_text =="Rain" || $weather_text == "Light rain")
     echo "<img width=150 height=100 src='./image/umbrella.gif'/>";
+
 else if($weather_text == "Wind")
     echo "<img width=150 height=100 src='./svg/wi-day-windy.svg'/>";
 else
     echo "<img width=150 height=100 src='http://openweathermap.org/img/w/" . $weather_icon ."'/ >";
 
-echo "<br>";
-
 if($weather_text =="Rain" || $weather_text == "Light rain")
-    echo "Current: <b><font color=red>" . $weather_text . "</font></b><br>";
+    echo "<center>Current: <b><font color=red>" . $weather_text . "</font></b></center><br>";
 else
-    echo "Current: <b><font color=black>" . $weather_text . "</font></b><br>";
+    echo "<center>Current: <b><font color=black>" . $weather_text . "</font></b></center><br>";
+
 echo "</td>";
 
+//3rd column table
+
+echo "<td align = left>";
+echo "City: " . $cityname . "<br>";
+echo "Time: " .$today . "<br>";
+echo "Temp Max: " . $temp_max ."&deg;C<br>";
+echo "Temp Min: " . $temp_min ."&deg;C<br>";
+echo "</td>";
 echo "</tr>";
 echo "</table>";
-
+echo "</td>";
 ?>
 
-<iframe name="myframe" src="./schedule.php"  style="width:95%; height: 50% ; background: #FFFFFF;"></iframe>
+<iframe name="myframe" src="./schedule.php"  style="width:95%; height: 60% ; background: #FFFFFF;"></iframe>
 
 </body>
 </html>
