@@ -37,20 +37,21 @@ $weather_icon=$climate->weather[0]->icon.".png";
 $today = date("F j, Y, g:i a");
 $cityname = $climate->name;
 
-echo "<b> Smart Secretary </b>";
-echo "<table>";
-echo "<tr>";
+echo "<b> <center> Smart Secretary </center></b>";
+echo "<table border=0>";
+echo "<tr width=100%>";
 
-echo "<td width=400>";
-echo "City Name: " . $cityname . "<br>";
+echo "<td width=640>";
+echo "City: " . $cityname . "<br>";
 echo "Time: " .$today . "<br>";
 echo "Temp Max: " . $temp_max ."&deg;C<br>";
 echo "Temp Min: " . $temp_min ."&deg;C<br>";
 echo "</td>";
-echo "<td>";
+echo "<td align=right>";
 
 // display more good icons instead of icons of openweathermap.org
 // https://github.com/erikflowers/weather-icons
+//echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 if ($weather_text == "Haze")
     echo "<img src='./svg/wi-day-haze.svg'/ >";
 else
@@ -69,7 +70,7 @@ echo "</table>";
 <a href="https://calendar.google.com/calendar/embed?src=ls0vdmel6gu1olrkrv3mlbpgh0%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">user1</a>
 <a href="https://calendar.google.com/calendar/embed?src=f78l3l60epju4ocul483fkp4nc%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">user2</a>
 <a href="https://calendar.google.com/calendar/embed?src=t89qfg8kbbbj6vrofhggd5df1s%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">user3</a>
-<iframe name="myframe" style="width:95%; height: 70% ; background: #FFFFFF;"></iframe>
+<iframe name="myframe" style="width:95%; height: 60% ; background: #FFFFFF;"></iframe>
 
 </body>
 </html>
