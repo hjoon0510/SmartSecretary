@@ -79,7 +79,7 @@ echo "</table>";
 <a href="https://calendar.google.com/calendar/embed?src=ls0vdmel6gu1olrkrv3mlbpgh0%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">user1</a>
 <a href="https://calendar.google.com/calendar/embed?src=f78l3l60epju4ocul483fkp4nc%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">user2</a>
 <a href="https://calendar.google.com/calendar/embed?src=t89qfg8kbbbj6vrofhggd5df1s%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">user3</a>
-<iframe name="myframe" style="width:95%; height: 60% ; background: #FFFFFF;"></iframe>
+<iframe name="myframe" src="./schedule.php"  style="width:95%; height: 60% ; background: #FFFFFF;"></iframe>
 
 </body>
 </html>
