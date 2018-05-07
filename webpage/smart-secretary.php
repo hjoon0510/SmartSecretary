@@ -3,6 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="refresh" content="60">
+
+<style>
+/* Container holding the image and the text */
+.container {
+    position: relative;
+    text-align: center;
+    color: blue;
+}
+
+/* Bottom left text */
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+/* Top left text */
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+/* Top right text */
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+</style>
+
 </head>
 
 <body bgcolor=white>
@@ -74,12 +120,35 @@ echo "</tr>";
 echo "</table>";
 
 ?>
+<table>
+<tr>
+<td>
+<div class=container>
+<a href="https://calendar.google.com/calendar/embed?src=ls0vdmel6gu1olrkrv3mlbpgh0%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">
+<img src=./image/people.png width=60 height=60 alt=user1 /></a>
+<div class=bottom-left>&nbsp;&nbsp;&nbsp;<b>1</b></div>
+</div>
+</td>
 
+<td>
+<div class=container>
+<a href="https://calendar.google.com/calendar/embed?src=f78l3l60epju4ocul483fkp4nc%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">
+<img src=./image/people.png width=60 height=60 alt=user2 /></a>
+<div class=bottom-left>&nbsp;&nbsp;&nbsp;<b>2</b></div>
+</div>
+</td>
 
-<a href="https://calendar.google.com/calendar/embed?src=ls0vdmel6gu1olrkrv3mlbpgh0%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">user1</a>
-<a href="https://calendar.google.com/calendar/embed?src=f78l3l60epju4ocul483fkp4nc%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">user2</a>
-<a href="https://calendar.google.com/calendar/embed?src=t89qfg8kbbbj6vrofhggd5df1s%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">user3</a>
-<iframe name="myframe" src="./schedule.php"  style="width:95%; height: 60% ; background: #FFFFFF;"></iframe>
+<td>
+<div class=container>
+<a href="https://calendar.google.com/calendar/embed?src=t89qfg8kbbbj6vrofhggd5df1s%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">
+<img src=./image/people.png width=60 height=60 alt=user3 /></a>
+<div class=bottom-left>&nbsp;&nbsp;&nbsp;<b>3</b></div>
+</div>
+</td>
+</tr>
+</table>
+
+<iframe name="myframe" src="./schedule.php"  style="width:95%; height: 50% ; background: #FFFFFF;"></iframe>
 
 </body>
 </html>
