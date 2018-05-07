@@ -83,7 +83,7 @@ $weather_icon=$climate->weather[0]->icon.".png";
 $today = date("F j, Y, g:i a");
 $cityname = $climate->name;
 
-echo "<b> <center> Smart Secretary </center></b>";
+echo "<b> <center> <font color=blue> Smart Secretary </font></center></b>";
 echo "<table border=0>";
 echo "<tr width=100%>";
 // 1st column table
@@ -123,7 +123,7 @@ echo "<tr width=100%>";
 
 <?php
 // 2nd column table
-echo "<td width=340>";
+echo "<td width=200>";
 echo "City: " . $cityname . "<br>";
 echo "Time: " .$today . "<br>";
 echo "Temp Max: " . $temp_max ."&deg;C<br>";
@@ -135,23 +135,21 @@ echo "<td align=right>";
 
 // display more good icons instead of icons of openweathermap.org
 // https://github.com/erikflowers/weather-icons
-//echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 if ($weather_text == "Haze")
-    echo "<img src='./svg/wi-day-haze.svg'/>";
-
-else if($weather_text =="Rain")
-    echo "<img src='./svg/wi-rain.svg'/>";
-
-else if($weather_text == "Light rain")
-    echo "<img src='./svg/wi-day-rain.svg'/>";
-
+    echo "<img width=150 height=100 src='./svg/wi-day-haze.svg'/>";
+else if($weather_text =="Rain" || $weather_text == "Light rain")
+    echo "<img width=150 height=100 src='./image/umbrella.gif'/>";
 else if($weather_text == "Wind")
-    echo "<img src='./svg/wi-day-windy.svg'/>";
+    echo "<img width=150 height=100 src='./svg/wi-day-windy.svg'/>";
 else
-    echo "<img src='http://openweathermap.org/img/w/" . $weather_icon ."'/ >";
+    echo "<img width=150 height=100 src='http://openweathermap.org/img/w/" . $weather_icon ."'/ >";
 
 echo "<br>";
-echo "Current: <b><font color=red>" . $weather_text . "</font></b><br>";
+
+if($weather_text =="Rain" || $weather_text == "Light rain")
+    echo "Current: <b><font color=red>" . $weather_text . "</font></b><br>";
+else
+    echo "Current: <b><font color=black>" . $weather_text . "</font></b><br>";
 echo "</td>";
 
 echo "</tr>";
