@@ -3,9 +3,10 @@ This program tells users the weather and schedule in front of door.
 
 # Motivation
 Because of busy daily life, I do not take umbrella with me on rainy day.
+It is difficult for users to cope with the changing weather.
 
 # Overall Flow
- Please append design file (with picture)
+* Please append design file (with picture)
  
 # Demo
 * http://192.168.219.104 (http://smartsecretary.mooo.com thanks to https://freedns.afraid.org/)
