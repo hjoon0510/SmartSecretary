@@ -1,12 +1,16 @@
 <?php
-// this doesn't make PHP to show parse errors.
-// In case of PHP7/Ubuntu 16.04, the only way to show those errors
-// is to modify /etc/php/7.0/apache2/php.ini file with "display_errors = On"
+// Author: Hyunjoon Lim
+// Title: Weather Crawler from openweathermap.org
+// Date: May-06-2018
+//
+// Description: This webpage is to display weather and user schedule
+// The below statements do not make a PHP debug message to show parse errors.
+// In case of PHP7/Ubuntu 16.04, the only way to show those errors is to
+// modify "/etc/php/7.0/apache2/php.ini" file with "display_errors = On"
 error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
 ?>
-
 <html lang="ko">
 <title>Smart Secretary</title>
 <head>
@@ -57,20 +61,15 @@ ini_set('display_startup_errors', TRUE);
     transform: translate(-50%, -50%);
 }
 </style>
-
 </head>
 
 <body bgcolor=white>
 
 <?php
-// Author: Hyunjoon Lim
-// Title: Weather Crawler from openweathermap.org
-// Date: May-06-2018
-// Description: This webpage is to display weather and user schedule
 
-// My configuration
+// ---------- Configuration-----------------------------------------------------------
 $city_name="Seoul";
-$app_id_key="ef6c6db0a20159abbbfe878e24dd8541";
+$app_id_key="f53e9bb210db8d3957b2dba44dd7f55c";
 
 
 // ---------- Do not modify from now on ----------------------------------------------
