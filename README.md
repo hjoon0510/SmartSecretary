@@ -8,6 +8,7 @@ Because of busy daily life, I do not take umbrella with me on rainy day.
  Please append desing file (with picture)
  
 # Demo
+* http://192.168.219.104 (http://smartsecretary.mooo.com thanks to https://freedns.afraid.org/)
 <img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo2.png border=0 width=350 height=250> </img>
 
 
