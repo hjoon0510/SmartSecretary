@@ -86,40 +86,11 @@ $cityname = $climate->name;
 echo "<b> <center> Smart Secretary </center></b>";
 echo "<table border=0>";
 echo "<tr width=100%>";
-
-echo "<td width=640>";
-echo "City: " . $cityname . "<br>";
-echo "Time: " .$today . "<br>";
-echo "Temp Max: " . $temp_max ."&deg;C<br>";
-echo "Temp Min: " . $temp_min ."&deg;C<br>";
-echo "</td>";
-echo "<td align=right>";
-
-// display more good icons instead of icons of openweathermap.org
-// https://github.com/erikflowers/weather-icons
-//echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-if ($weather_text == "Haze")
-    echo "<img src='./svg/wi-day-haze.svg'/>";
-
-else if($weather_text =="Rain")
-    echo "<img src='./svg/wi-rain.svg'/>";
-
-else if($weather_text == "Light rain")
-    echo "<img src='./svg/wi-day-rain.svg'/>";
-
-else if($weather_text == "Wind")
-    echo "<img src='./svg/wi-day-windy.svg'/>";
-else
-    echo "<img src='http://openweathermap.org/img/w/" . $weather_icon ."'/ >";
-
-echo "<br>";
-echo "Current: <b><font color=red>" . $weather_text . "</font></b><br>";
-echo "</td>";
-
-echo "</tr>";
-echo "</table>";
-
+// 1st column table
 ?>
+
+<td width=300>
+
 <table>
 <tr>
 <td>
@@ -147,6 +118,46 @@ echo "</table>";
 </td>
 </tr>
 </table>
+
+</td>
+
+<?php
+// 2nd column table
+echo "<td width=340>";
+echo "City: " . $cityname . "<br>";
+echo "Time: " .$today . "<br>";
+echo "Temp Max: " . $temp_max ."&deg;C<br>";
+echo "Temp Min: " . $temp_min ."&deg;C<br>";
+echo "</td>";
+
+// 3rd column table
+echo "<td align=right>";
+
+// display more good icons instead of icons of openweathermap.org
+// https://github.com/erikflowers/weather-icons
+//echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+if ($weather_text == "Haze")
+    echo "<img src='./svg/wi-day-haze.svg'/>";
+
+else if($weather_text =="Rain")
+    echo "<img src='./svg/wi-rain.svg'/>";
+
+else if($weather_text == "Light rain")
+    echo "<img src='./svg/wi-day-rain.svg'/>";
+
+else if($weather_text == "Wind")
+    echo "<img src='./svg/wi-day-windy.svg'/>";
+else
+    echo "<img src='http://openweathermap.org/img/w/" . $weather_icon ."'/ >";
+
+echo "<br>";
+echo "Current: <b><font color=red>" . $weather_text . "</font></b><br>";
+echo "</td>";
+
+echo "</tr>";
+echo "</table>";
+
+?>
 
 <iframe name="myframe" src="./schedule.php"  style="width:95%; height: 50% ; background: #FFFFFF;"></iframe>
 
