@@ -15,43 +15,54 @@
 
 // My configuration
 $city_name="Seoul";
-$app_id="ef6c6db0a20159abbbfe878e24dd8541";
+$app_id_key="ef6c6db0a20159abbbfe878e24dd8541";
 
 
 // ---------- Do not modify from now on ----------------------------------------------
-$url = "http://api.openweathermap.org/data/2.5/weather?q=$city_name&APPID=$app_id";
+$url = "http://api.openweathermap.org/data/2.5/weather?q=$city_name&APPID=$app_id_key";
 
 // Use json format to get the weather information
 $contents = file_get_contents($url);
 $climate=json_decode($contents);
 
 // Get Temperature, Weather, and city name
-$temp_max=$climate->main->temp_max;
-$temp_min=$climate->main->temp_min;
+$balance = 273.15;
+// Not that we have to subtrace 273.15
+// because temperature is kelvin by default.
+$temp_max=$climate->main->temp_max - $balance;
+$temp_min=$climate->main->temp_min - $balance;
 $weather_text=$climate->weather[0]->main;
 $weather_icon=$climate->weather[0]->icon.".png";
 //how get today date time PHP :P
 $today = date("F j, Y, g:i a");
 $cityname = $climate->name;
 
+echo "<b> Smart Secretary </b>";
+echo "<table>";
+echo "<tr>";
+
+echo "<td width=400>";
 echo "City Name: " . $cityname . "<br>";
 echo "Time: " .$today . "<br>";
 echo "Temp Max: " . $temp_max ."&deg;C<br>";
 echo "Temp Min: " . $temp_min ."&deg;C<br>";
-echo "Current: " . $weather_text . "<br>";
-echo "<br>";
+echo "</td>";
+echo "<td>";
 echo "<img src='http://openweathermap.org/img/w/" . $weather_icon ."'/ >";
+echo "<br>";
+echo "Current: <b><font color=red>" . $weather_text . "</font></b><br>";
+echo "</td>";
+
+  
+echo "</tr>";
+echo "</table>";
 
 ?>
 
-<h2>
-<a href="https://hjoon0510.github.io/user1/" target="myframe">user1</a>
-<a href="https://hjoon0510.github.io/user2/" target="myframe">user2</a>
-<a href="https://hjoon0510.github.io/user3/" target="myframe">user3</a>
-</h2>
-<br>
-
-<iframe name="myframe" style="width:50%; height: 330px ; background: #FFFFFF;"></iframe>
+<a href="https://calendar.google.com/calendar/embed?src=ls0vdmel6gu1olrkrv3mlbpgh0%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">user1</a>
+<a href="https://calendar.google.com/calendar/embed?src=f78l3l60epju4ocul483fkp4nc%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">user2</a>
+<a href="https://calendar.google.com/calendar/embed?src=t89qfg8kbbbj6vrofhggd5df1s%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">user3</a>
+<iframe name="myframe" style="width:95%; height: 70% ; background: #FFFFFF;"></iframe>
 
 </body>
 </html>
