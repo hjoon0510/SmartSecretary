@@ -9,7 +9,8 @@ It is difficult for users to cope with the changing weather.
 * Please append design file (with picture)
  
 # Demo
-* http://192.168.219.104 (http://smartsecretary.mooo.com thanks to https://freedns.afraid.org/)
+* http://192.168.219.104 
+* http://smartsecretary.mooo.com (This web address is created via https://freedns.afraid.org/.)
 <img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo4.jpg border=0 width=500 height=350> </img>
 
 
