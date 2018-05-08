@@ -10,7 +10,7 @@ It is difficult for users to cope with the changing weather.
  
 # Demo
 * http://192.168.219.104 (http://smartsecretary.mooo.com thanks to https://freedns.afraid.org/)
-<img src=file:///C:/Users/Public/Pictures/Sample%20Pictures/github.jpg border=0 width=450 height=350> </img>
+<img src=/var/www/html/pic/demo3.jpg border=0 width=450 height=350> </img>
 
 
 # Reference
