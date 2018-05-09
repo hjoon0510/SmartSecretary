@@ -137,7 +137,8 @@ if ($weather_text == "Haze")
     echo "<img width=150 height=100 src='./svg/wi-day-haze.svg'/>";
 else if($weather_text =="Rain" || $weather_text == "Light rain")
     echo "<img width=150 height=100 src='./image/umbrella.gif'/>";
-
+else if($weather_text == "Clear")
+    echo "<img width=150 height=100 src='./svg/wi-night-clear.svg'/>";
 else if($weather_text == "Wind")
     echo "<img width=150 height=100 src='./svg/wi-day-windy.svg'/>";
 else
