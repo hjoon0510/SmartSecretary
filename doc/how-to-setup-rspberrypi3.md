@@ -318,6 +318,6 @@ arecord -D copy -d 10 foo.wav
 ```
 Play recorded audio file
 ```bash
-aplay foo.w
+aplay foo.wav
 ```
 
