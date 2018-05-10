@@ -15,6 +15,6 @@ while True:
 	pir.wait_for_motion()
         count += 1
 	print ("Motion Detected! " + str(count))
-	time.sleep(1)
+	time.sleep(0.1)
 print "GPIO.cleanup()"
 GPIO.cleanup()

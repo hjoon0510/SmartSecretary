@@ -135,8 +135,14 @@ echo "<td width=200>";
 // https://github.com/erikflowers/weather-icons
 if ($weather_text == "Haze")
     echo "<img width=150 height=100 src='./svg/wi-day-haze.svg'/>";
-else if($weather_text =="Rain" || $weather_text == "Light rain")
+else if($weather_text =="Rain" || $weather_text == "Light rain"){
     echo "<img width=150 height=100 src='./image/umbrella.gif'/>";
+    system("echo 'Rain' > ./current.txt");
+}
+else if($weather_text == "Mist"){
+    echo "<img width=150 height=100 src='./svg/wi-night-fog.svg'/>";
+    system("echo 'Mist' > ./current.txt");
+}
 else if($weather_text == "Clear")
     echo "<img width=150 height=100 src='./svg/wi-night-clear.svg'/>";
 else if($weather_text == "Wind")
