@@ -321,3 +321,9 @@ Play recorded audio file
 aplay foo.wav
 ```
 
+# Play *.wma with cvlc command
+```bash
+Please make *.wma file by running recording software on winodws7.
+# cvlc ./sound/weather-rain.wma
+#
+```
