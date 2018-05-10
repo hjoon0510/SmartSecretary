@@ -30,11 +30,11 @@ while True:
         # if current weather is rainy day, let's play sound.
         if ( current == condition):
             print ("[DEBUG] Current weather is %s" % current)
-            cmd = "mplayer  ../sound/sound-rain-english.wma"
+            cmd = "mplayer  ../sound/wma/sound-rain-english.wma"
             os.system(cmd)
         else:
             print ("[DEBUG] Current weather is %s" % current)
-            cmd = "mplayer  ../sound/dingdong.wav"
+            cmd = "mplayer  ../sound/wav/dingdong.wav"
             os.system(cmd)
 	time.sleep(0.1)
 print "GPIO.cleanup()"
