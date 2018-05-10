@@ -15,7 +15,7 @@ import os
 #----------- Configuration area -------------------------------
 GPIO_PIN = 4
 count = 0
-condition = "Mist\n"
+condition = "Rain\n"
 
 #----------- Do not modify below statements -------------------
 print "[DEBUG] Starting motion sensor..."
@@ -30,12 +30,12 @@ while True:
         # if current weather is rainy day, let's play sound.
         if ( current == condition):
             print ("[DEBUG] Current weather is %s" % current)
-            # VLC is not supposed to be run as root.
-            # cmd = "gksu -u hjoon0510 cvlc ../sound/sound-rain.wma"
             cmd = "mplayer  ../sound/sound-rain-english.wma"
             os.system(cmd)
         else:
             print ("[DEBUG] Current weather is %s" % current)
+            cmd = "mplayer  ../sound/dingdong.wav"
+            os.system(cmd)
 	time.sleep(0.1)
 print "GPIO.cleanup()"
 GPIO.cleanup()
