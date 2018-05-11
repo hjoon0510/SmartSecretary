@@ -327,3 +327,189 @@ Please make *.wma file by running recording software on winodws7.
 # gksu -u hjoon0510 cvlc ../sound/sound-rain.wma
 # mplayer  ./sound/weather-rain.wma
 ```
+
+
+
+# Raspberry Pi ssmtp, mpack 설정하기 (이메일 및 첨부파일 전송)
+
+```bash
+
+[ssmtp install]
+
+ $
+sudo apt-get install ssmtp
+
+ 
+
+$ sudo apt-get install mpack (첨부파일 발송)
+
+$ cd /etc/ssmtp
+
+$ sudo cp ssmtp.conf ssmtp.conf.bak
+
+ 
+
+[/etc/ssmtp/ssmtp.conf 파일 설정 변경]
+
+root=your_id@gmail.com&lt
+
+Viewer
+
+;
+
+ #mailhub=smtp.gmail.com:587
+
+ mailhub=smtp.gmail.com:465  --> 465 or 587 중에
+1개 됨. 포트 바꾸어 보면서 시험하여 찾으면 됨   
+
+rewriteDomain=
+
+hostname=your_id@gmail.com
+
+Viewer
+
+ 
+
+ UseSTARTTLS=YES
+
+ AuthUser=your_id@gmail.com
+
+ AuthPass=your_password
+
+ FromLineOverride=YES
+
+ 
+
+ 
+
+[mta 변경:
+sendmail.ssmtp 설정]
+
+alternatives --config mta
+
+ 
+
+ 
+
+[PHP /etc/php5/apache2/php.ini 파일 설정
+변경]
+
+수정 전:
+
+ ;sendmail_path = /usr/sbin/sendmail -t -i
+
+수정 후
+
+sendmail_path = /usr/sbin/ssmtp -t
+
+ 
+
+ 
+
+[Httpd restart]
+
+ #
+/etc/init.d/apache2 restart
+
+ 
+
+ 
+
+ 
+
+[구글 계정에서 설정변경
+--> 보안 수준을 낮추어 주어야 ssmtp 접근 가능,메일 전송가능]
+
+ 
+
+내 계정 - 로그인 및 보안 - 연결된
+앱 및 사이트 -  [v]보안 수준이
+낮은 앱 허용 
+
+ 
+
+ 
+
+ 
+
+테스트 
+
+ 
+
+$ echo "test" | ssmtp 이메일주소
+
+$ ssmtp 이메일주소 <
+test.txt
+
+$ mpack -s "제목"
+./파일명 이메일주소일
+
+ 
+
+ 
+
+ 
+
+ 
+
+[php언어로 이메일 발송 예제]
+
+ 
+
+<?php
+
+ $uname = "PyeongAn_Security";  //받는 사람에게 보여줄 이름을 적는다
+
+   
+$uemail = "MyMail@gmail.com
+
+Viewer
+
+";  
+//gmail smtp 서버에 등록한 계정의 이메일주소
+
+   
+$from =
+"=?UTF-8?B?".base64_encode($uname)."?=<$uemail>\r\n";
+
+    
+$headers  = 'MIME-Version: 1.0' .
+"\r\n";
+
+    
+$headers.='Content-type: text/html; charset=UTF-8' . "\r\n";
+
+    
+$headers.='From:  '.$from.
+"\r\n";
+
+    
+$createday = date("Y-m-d");
+
+    
+$to='Receiver@naver.com'
+
+Viewer
+
+; // 받을 사람 이메일 주소
+
+   
+$subject='Raspberrypi test mail'; 
+// 제목
+
+   
+$subject = "=?UTF-8?B?".base64_encode($subject)."?=";
+
+    
+$msg="ktman의 자유공간<br>\n"; // 서명 
+
+
+    
+mail($to,$subject,$msg,$headers);
+ ?>
+```
+
+
+
+
+```
