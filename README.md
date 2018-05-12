@@ -11,10 +11,13 @@ So, I planned to developer IoT device to help them.
 ## Hardware
 Smart Secretary (SS) provides an intelligent facility to help busy modern people. It is developed with popular
 embedded device Raspberry Pi3 board. I have used PIR motion sensor to probe movement of a hunman being.
+* https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
 
 ## Software
 Thanks to Linux kernel, We can easily set-up free operating systems (OS) that is called Ubuntu OS, Raspbian OS
 to Raspberry Pi3 board.
+* Raspbian OS: https://www.raspberrypi.org/downloads/raspbian/
+* Ubuntu Mate OS: https://ubuntu-mate.org/raspberry-pi/
 
 # How to use
 Fir of all, I recommend that you read documents that I uploaded in 'doc' folder.
