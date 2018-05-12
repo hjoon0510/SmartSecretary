@@ -49,4 +49,5 @@ The following figure shows the operation sequence of the program. First of all, 
 * http://gpiozero.readthedocs.io/en/stable/installing.html
 
 # Contact
-I am a student in [Maetan mid-school](http://maetan.ms.kr/). My homepage is http://hjoon0510.github.com. If you have any questions, Please contact me hjoon0510@gmail.com. I make an effort to write english statement by utilizing https://translate.google.com to talk about my project with foreigners all over the world.
+I am a student in [Maetan mid-school](http://maetan.ms.kr/). My homepage is http://hjoon0510.github.io. If you have any questions, Please contact me hjoon0510@gmail.com.
+I make an effort to write english statement by utilizing https://translate.google.com to talk about my project with foreigners all over the world.
