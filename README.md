@@ -34,7 +34,7 @@ $ chromium-browser http://localhost
 # Demonstration
 * http://192.168.219.104 
 * http://smartsecretary.mooo.com (This web address is created via https://freedns.afraid.org/.)
-<img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo4.jpg border=0 width=500 height=350> </img>
+<img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo5.jpg border=0 width=500 height=350> </img>
 
 
 # Reference
