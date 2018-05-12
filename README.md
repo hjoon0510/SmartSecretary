@@ -17,28 +17,28 @@ embedded device Raspberry Pi3 board. I have used PIR motion sensor to probe move
 Thanks to Linux kernel, We can easily set-up free operating systems (OS) that is called Ubuntu OS, Raspbian OS
 to Raspberry Pi3 board.
 * Raspbian OS: https://www.raspberrypi.org/downloads/raspbian/
-* Ubuntu Mate OS: https://ubuntu-mate.org/raspberry-pi/
+* Ubuntu OS: https://ubuntu-mate.org/raspberry-pi/
 
 # How to use
-First of all, I recommend that you read documents that I uploaded in 'doc' folder.
+First of all, I recommend that you read documents that I uploaded in 'doc' folder in order to install software in Raspberry Pi3 device.
 ```bash
 $ cd /var/www/
 $ mv html htmld.old
 $ git clone https://github.com/hjoon0510/SmartSecretary.git
-$ ln -s ./SmartSecretary html
+$ ln -s ./SmartSecretary ./html
 $ cd /var/www/html/motion
-$ sudo  ./pir-final.py
+$ sudo ./pir-final.py
 $ chromium-browser http://localhost
+Enjoy my software.
 ```
 
 # Demonstration
-* http://192.168.219.104 
-* http://smartsecretary.mooo.com (This web address is created via https://freedns.afraid.org/.)
+* IP address - http://192.168.219.104 
+* Website - http://smartsecretary.mooo.com (This web address is created via https://freedns.afraid.org/.)
 <img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo5.jpg border=0 width=500 height=350> </img>
 
 
 # Reference
-* https://github.com/hjoon0510/hjoon0510.github.io (= http://hjoon0510.github.com)
 * https://openweathermap.org/
    * https://github.com/erikflowers/weather-icons/tree/master/svg
 * https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
@@ -46,5 +46,4 @@ $ chromium-browser http://localhost
 * http://gpiozero.readthedocs.io/en/stable/installing.html
 
 # Contact
-I am a student in Maetan mid-school. If you have any questions, Please contact me hjoon0510@gmail.com.
-I make an effort to write english statement by utilizing https://translate.google.com.
+I am a student in Maetan mid-school. My homepage is http://hjoon0510.github.com. If you have any questions, Please contact me hjoon0510@gmail.com. I make an effort to write english statement by utilizing https://translate.google.com to talk about my project with foreigners all over the world.
