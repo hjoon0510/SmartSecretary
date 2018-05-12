@@ -3,11 +3,17 @@
 # Author: Hyunjun Lim
 # Date: May-07-2018
 # Title: motion prober software
+# License: Apache
+# Prequisites: sudo apt install mplayer, sudo pip install gpiozero
+#
 # Caution:
 # 1. Check location of  +DC voltage and GND line
 # 2. Change sensor and pulse button (orange color) appropriately
-# Prequisites: mplayer
-
+#
+# Reference:
+# 1. http://gpiozero.readthedocs.io/en/stable/recipes.html
+# 2. http://raspi.tv/2015/gpio-zero-test-drive-making-light-of-security
+#
 from gpiozero import MotionSensor
 import time
 import os
@@ -18,12 +24,13 @@ count = 0
 condition = "Rain\n"
 
 #----------- Do not modify below statements -------------------
-print "[DEBUG] Starting motion sensor..."
-pir = MotionSensor(GPIO_PIN)
-while True:
-	pir.wait_for_motion()
+try:
+    print "[DEBUG] Starting motion sensor..."
+    pir = MotionSensor(GPIO_PIN)
+    while True:
+        pir.wait_for_motion()
         count += 1
-	print ("[DEBUG] Motion Detected! " + str(count))
+        print ("[DEBUG] Motion Detected! " + str(count))
         # check if current weather is "Rain"
         file = open("../webpage/current.txt")
         current = file.read()
@@ -36,6 +43,7 @@ while True:
             print ("[DEBUG] Current weather is %s" % current)
             cmd = "mplayer  ../sound/wav/dingdong.wav"
             os.system(cmd)
-	time.sleep(0.1)
-print "GPIO.cleanup()"
-GPIO.cleanup()
+        time.sleep(0.1)
+except KeyboardInterrupt:
+    print "Quit"
+    GPIO.cleanup()
