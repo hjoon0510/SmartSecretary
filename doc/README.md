@@ -4,7 +4,7 @@
 - [응용 예제](#응용-예제)
 - [운영체제 설치하기](#운영체제-설치하기)
 - [와이파이 설정하기](#와이파이-설정하기)
-- [SSH서버 설치하기](#SSH서버-설치하기)
+- [SSH서버](#SSH서버)
 
 # 응용 예제 
 
@@ -60,7 +60,7 @@ OS 이미지를 다운로드하기 위하여 https://www.raspberrypi.org/downloa
 * 기본설정 - Raspberry Configuration - Localisation - WiFi Country - US (United State) 선택
 ```
 
-# SSH서버 설치하기
+# SSH서버
 ```bash
   sudo apt -y install openssh-server openssh-client
   sudo systemctl restart ssh
