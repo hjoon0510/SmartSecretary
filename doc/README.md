@@ -13,7 +13,7 @@
 - [VNC Server Setup on Raspberry Pi 3](#vnc-server-setup-on-raspberry-pi-3)
 - [How to do realtime streamming service with camera and gstreamer software](#how-to-do-realtime-streamming-service-with-camera-and-gstreamer-software)
 - [How to make live stream video using vlc from webcam on Linux](#how-to-make-live-stream-video-using-vlc-from-webcam-on-linux)
-- [How to record your voice from microphone of USB webcam using ALSA](#how-to-record-your-voice-from-microphone-of-usb-webcam-using alsa)
+- [How to record your voice from microphone of USB webcam using](#how-to-record-your-voice-from-microphone-of-usb-webcam-using)
 - [Play wma file with cvlc and mplayer command](#play-wma-file-with-cvlc-and-mplayer-command)
 - [이메일로 파일첨부하기위해 ssmtp와 mpack 설정하기](#이메일로-파일첨부하기위해-ssmtp와-mpack-설정하기)
 
@@ -314,7 +314,7 @@ $ mplayer http://<ip_address_of_webcam_host>:8080/stream.wmv
 
 
 ```
-# How to record your voice from microphone of USB webcam using ALSA
+# How to record your voice from microphone of USB webcam using
 
 * Record a voice
 ```bash
