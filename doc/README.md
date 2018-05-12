@@ -8,7 +8,7 @@
 - [Raspberry Pi 화면 180도 회전시키기](#raspberry-pi-화면-180도-회전시키기)
 - [터치스크린 보정을 위해 xinput_calibrator 설치](#터치스크린-보정을-위해-xinput_calibrator-설치)
 - [웹서버 설치하기](#웹서버-설치하기)
-
+- [날씨정보 습득프로그램 wttr.in 설치](#날씨정보-습득프로그램-wttr.in-설치}
 
 
 # 응용 예제 
@@ -144,7 +144,7 @@ User1 &nbsp; &nbsp; &nbsp; User2 &nbsp; &nbsp; &nbsp; User3
 오늘은 고양이를 병원에 데려가는 날입니다.<br>
 5시에 수학학원을 가야 합니다.<br>
 ```
-# 날씨 정보 습득 프로그램 설치 (google keywords: Weather from terminal) 
+# 날씨정보 습득프로그램 wttr.in 설치 
 
 예제)
 ```bash
