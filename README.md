@@ -35,6 +35,7 @@ Enjoy my software.
 ```
 # Design
 The following figure shows the operation sequence of the program. First of all, this program gets the necessary information from the weather server. The program then uses the motion sensor to detect human motion. When a person comes around the hardware, it not only prints important information on the screen, but also speaks by voice. Users can also check the schedule information before leaving home. In the event of rain, users can check the weather information in real time using e-mail.
+* TODO: append desgin picture.!!!!
 
 # Demonstration
 * IP address - http://192.168.219.104 
