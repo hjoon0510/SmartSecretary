@@ -314,7 +314,7 @@ $ mplayer http://<ip_address_of_webcam_host>:8080/stream.wmv
 
 
 ```
-# OSS/ASLA: How to Record your Voice from the Microphone of USB Webcam
+# How to record your voice from microphone of USB webcam using ALSA
 
 * Record a voice
 ```bash
@@ -347,7 +347,7 @@ Please make *.wma file by running recording software on winodws7.
 
 
 
-# Raspberry Pi ssmtp, mpack 설정하기 (이메일 및 첨부파일 전송)
+# 이메일로 파일첨부하기위해 ssmtp와 mpack 설정하기
 
 ```bash
 [ssmtp install]
