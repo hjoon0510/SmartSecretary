@@ -13,9 +13,9 @@
 - [기타 - VNC Server Setup on Raspberry Pi 3 ](#기타-vnc-server-setup-on-raspberry-pi-3)
 - [gstreamer - 라즈베리 카메라 모듈 V2 탑재 및 실시간 카메라 Streamming 서비스 실행하기 ](*gstreamer - 라즈베리 카메라 모듈 V2 탑재 및 실시간 카메라 streamming 서비스 실행하기 )
 - [VLC: How to live stream video from webcam on Linux](*vlc: how to live stream video from webcam on linux)
-- [# OSS/ASLA: How to Record your Voice from the Microphone of USB Webcam](* oss/asla: how to record your voice from the microphone of usb webcam)
-- [# Play *.wma with cvlc and mplayer command](* play *.wma with cvlc and mplayer command)
-- [# Raspberry Pi ssmtp, mpack 설정하기 (이메일 및 첨부파일 전송)](* raspberry pi ssmtp, mpack 설정하기 (이메일 및 첨부파일 전송))
+- [OSS/ASLA: How to Record your Voice from the Microphone of USB Webcam](* oss/asla: how to record your voice from the microphone of usb webcam)
+- [Play *.wma with cvlc and mplayer command](* play *.wma with cvlc and mplayer command)
+- [Raspberry Pi ssmtp, mpack 설정하기 (이메일 및 첨부파일 전송)](* raspberry pi ssmtp, mpack 설정하기 (이메일 및 첨부파일 전송))
 
 
 # 응용 예제 
