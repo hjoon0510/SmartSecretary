@@ -46,5 +46,5 @@ $ chromium-browser http://localhost
 * http://gpiozero.readthedocs.io/en/stable/installing.html
 
 # Contact
-I am a student in Maheon mid-school. If you have any questions, Please contact me hjoon0510@gmail.com.
+I am a student in Maetan mid-school. If you have any questions, Please contact me hjoon0510@gmail.com.
 I make an effort to write english statement by utilizing https://translate.google.com.
