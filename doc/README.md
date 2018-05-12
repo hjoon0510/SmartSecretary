@@ -7,7 +7,7 @@
 - [SSH Server](#ssh-server)
 - [Raspberry Pi 화면 180도 회전시키기](#raspberry-pi-화면-180도-회전시키기)
 - [터치스크린 보정을 위해 xinput_calibrator 설치](#터치스크린-보정을-위해-xinput_calibrator-설치)
-- [웹서버 설치하기](#웹서버 설치하기)
+- [웹서버 설치하기](#웹서버-설치하기)
 
 
 
