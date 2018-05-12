@@ -3,12 +3,32 @@ This program tells users the weather and schedule in front of door. It is develo
 
 # Motivation
 Because of busy daily life, I do not take umbrella with me on rainy day.
-It is difficult for users to cope with the changing weather.
+It is difficult for users to cope with the changing weather frequently.
+So, I planned to developer IoT device to help them.
 
-# Overall Flow
-* Please append design file (with picture)
- 
-# Demo
+# Pre-quisites
+
+## Hardware
+Smart Secretary (SS) provides an intelligent facility to help busy modern people. It is developed with popular
+embedded device Raspberry Pi3 board. I have used PIR motion sensor to probe movement of a hunman being.
+
+## Software
+Thanks to Linux kernel, We can easily set-up free operating systems (OS) that is called Ubuntu OS, Raspbian OS
+to Raspberry Pi3 board.
+
+# How to use
+Fir of all, I recommend that you read documents that I uploaded in 'doc' folder.
+```bash
+$ cd /var/www/
+$ mv html htmld.old
+$ git clone https://github.com/hjoon0510/SmartSecretary.git
+$ ln -s ./SmartSecretary html
+$ cd /var/www/html/motion
+$ sudo  ./pir-final.py
+$ chromium-browser http://localhost
+```
+
+# Demonstration
 * http://192.168.219.104 
 * http://smartsecretary.mooo.com (This web address is created via https://freedns.afraid.org/.)
 <img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo4.jpg border=0 width=500 height=350> </img>
@@ -20,3 +40,7 @@ It is difficult for users to cope with the changing weather.
    * https://github.com/erikflowers/weather-icons/tree/master/svg
 * https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
 * https://gist.github.com/ihoneymon/652be052a0727ad59601
+
+# Contact
+I am a student in Maheon mid-school. If you have any questions, Please contact me hjoon0510@gmail.com.
+I make an effort to write english statement by utilizing https://translate.google.com.
