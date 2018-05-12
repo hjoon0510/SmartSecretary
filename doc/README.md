@@ -5,6 +5,7 @@
 - [운영체제 설치하기](#운영체제-설치하기)
 - [와이파이 설정하기](#와이파이-설정하기)
 - [SSH Server](#ssh-server)
+- [Raspberry Pi 화면 180도 회전시키기](#raspberry-pi-화면-180도-회전시키기)
 
 # 응용 예제 
 
@@ -70,7 +71,7 @@ OS 이미지를 다운로드하기 위하여 https://www.raspberrypi.org/downloa
 이제 windows7 PC에서 mobaxterm 프로그램을 실행한후에 RaspBerry Pi 3보드의 SSH 서버에 접속하면 된다.
 
 
-# Raspberry Pi 화면 180도 회전 시키기 
+# Raspberry Pi 화면 180도 회전시키기 
 
 ```bash
 sudo vi /boot/config.txt 
