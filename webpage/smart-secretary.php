@@ -90,7 +90,7 @@ $weather_icon=$climate->weather[0]->icon.".png";
 $cityname = $climate->name;
 // set the default timezone to use. Available since PHP 5.1
 // how get currentdate time
-// date_default_timezone_set('Asia/Seoul');
+date_default_timezone_set('Asia/Seoul');
 $today = date("F-j-Y g:i A");
 ?>
 
