@@ -6,7 +6,7 @@ Because of busy daily life, I do not take umbrella with me on rainy day.
 It is difficult for users to cope with the changing weather frequently.
 So, I planned to developer IoT device to help them.
 
-# Pre-quisites
+# Requirement
 
 ## Hardware
 Smart Secretary (SS) provides an intelligent facility to help busy modern people. It is developed with popular
