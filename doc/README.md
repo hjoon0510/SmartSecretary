@@ -6,6 +6,9 @@
 - [와이파이 설정하기](#와이파이-설정하기)
 - [SSH Server](#ssh-server)
 - [Raspberry Pi 화면 180도 회전시키기](#raspberry-pi-화면-180도-회전시키기)
+- [터치스크린 보정을 위해 xinput_calibrator 설치](#터치스크린-보정을-위해-xinput_calibrator-설치)
+
+
 
 # 응용 예제 
 
