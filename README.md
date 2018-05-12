@@ -43,6 +43,7 @@ $ chromium-browser http://localhost
    * https://github.com/erikflowers/weather-icons/tree/master/svg
 * https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
 * https://gist.github.com/ihoneymon/652be052a0727ad59601
+* http://gpiozero.readthedocs.io/en/stable/installing.html
 
 # Contact
 I am a student in Maheon mid-school. If you have any questions, Please contact me hjoon0510@gmail.com.
