@@ -3,8 +3,8 @@
 **Table Of Contents**
 - [응용 예제](#응용-예제)
 - [운영체제 설치하기](#운영체제-설치하기)
-- [와이파이 설정하기](#와이파이-)
-- [SSH Server Setting](#SSH-Server-Setting)
+- [와이파이 설정하기](#와이파이-설정하기)
+- [SSH서버 설치하기](#SSH서버-설치하기)
 
 # 응용 예제 
 
@@ -51,7 +51,7 @@ OS 이미지를 다운로드하기 위하여 https://www.raspberrypi.org/downloa
 다운로드 주소: https://sourceforge.net/projects/win32diskimager/files/Archive/ 
 
 
-# 와이파이 
+# 와이파이 설정하기
 
 라즈베리파이3는 WiFi 와 블루투스가 자체 내장되어있다.
 
