@@ -9,7 +9,7 @@
 - [터치스크린 보정을 위해 xinput_calibrator 설치](#터치스크린-보정을-위해-xinput_calibrator-설치)
 - [웹서버 설치하기](#웹서버-설치하기)
 - [날씨정보 습득프로그램 wttr설치](#날씨정보-습득프로그램-wttr설치)
-- [PHP 개발환경 설치](#PHP 개발환경 설치)
+- [PHP 개발환경 설치](#php-개발환경-설치)
 
 
 # 응용 예제 
@@ -185,7 +185,7 @@ $ bash weather.sh  suwon
 ```
 
 
-## PHP 개발환경 설치
+# PHP 개발환경 설치
 
 ```bash
 $ sudo apt-get -y install php php-cgi libapache2-mod-php php-common php-pear php-mbstring
@@ -406,7 +406,3 @@ mail($to,$subject,$msg,$headers);
 ?>
 ```
 
-
-
-
-```
