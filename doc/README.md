@@ -10,9 +10,9 @@
 - [웹서버 설치하기](#웹서버-설치하기)
 - [날씨정보 습득프로그램 wttr설치](#날씨정보-습득프로그램-wttr설치)
 - [PHP 개발환경 설치](#php-개발환경-설치)
-- [기타 - VNC Server Setup on Raspberry Pi 3 ](#기타-vnc-server-setup-on-raspberry-pi-3)
-- [gstreamer - 라즈베리 카메라 모듈 V2 탑재 및 실시간 카메라 Streamming 서비스 실행하기 ](*gstreamer-라즈베리-카메라-모듈-V2-탑재-및-실시간-카메라-streamming-서비스-실행하기 )
-- [VLC: How to live stream video from webcam on Linux](#vlc:-how-to-live-stream-video-from-webcam-on-linux)
+- [VNC Server Setup on Raspberry Pi 3](#vnc-server-setup-on-raspberry-pi-3)
+- [gstreamer - 라즈베리 카메라 모듈 V2 탑재 및 실시간 카메라 Streamming 서비스 실행하기](*gstreamer-라즈베리-카메라-모듈-V2-탑재-및-실시간-카메라-streamming-서비스-실행하기)
+- [How to make live stream video using vlc from webcam on Linux](#How to make live stream video using vlc from webcam on Linux)
 - [OSS/ASLA: How to Record your Voice from the Microphone of USB Webcam](#oss/asla:-how-to-record-your-voice-from-the-microphone-of-usbwebcam)
 - [Play *.wma with cvlc and mplayer command](#play-*.wma-with-cvlc-and-mplayer-command)
 - [Raspberry Pi ssmtp, mpack 설정하기 (이메일 및 첨부파일 전송)](#raspberry-pi-ssmtp,-mpack-설정하기-(이메일-및-첨부파일-전송))
@@ -210,7 +210,7 @@ $ sudo vi /var/www/html/index.php
 ```
  
  
-# 기타 - VNC Server Setup on Raspberry Pi 3 
+# VNC Server Setup on Raspberry Pi 3
 
 Install VNC Server
 ```bash
@@ -242,7 +242,7 @@ firefox https://www.realvnc.com/en/connect/download/viewer/에서 프로그램�
  * IP 192.168.219.104:5901
  * password: ***
 ```
-# gstreamer - 라즈베리 카메라 모듈 V2 탑재 및 실시간 카메라 Streamming 서비스 실행하기 
+# gstreamer - 라즈베리 카메라 모듈 V2 탑재 및 실시간 카메라 Streamming 서비스 실행하기
 * http://www.icbanq.com/P007122889 (라즈베리파이 카메라 모듈 V2 8MegaPixel) 
 
 Install gstreamer
@@ -298,7 +298,7 @@ chmod +x camera_test.sh
 * Description: New Raspberry Pi device
 * Aspect ratio: 1.6 
 
-# VLC: How to live stream video from webcam on Linux
+# How to make live stream video using vlc from webcam on Linux
 ```bash
 # Verify Webcam Device on VLC
 $ ls /dev/video*
