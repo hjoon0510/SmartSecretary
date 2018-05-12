@@ -298,7 +298,7 @@ chmod +x camera_test.sh
 * Description: New Raspberry Pi device
 * Aspect ratio: 1.6 
 
-# VLC: How to live stream video from webcam on Linux 
+# VLC: How to live stream video from webcam on Linux
 ```bash
 # Verify Webcam Device on VLC
 $ ls /dev/video*
