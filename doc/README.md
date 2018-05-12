@@ -338,7 +338,7 @@ Play recorded audio file
 aplay foo.wav
 ```
 
-# Play *.wma with cvlc and mplayer command
+# Play wma file with cvlc and mplayer command
 ```bash
 Please make *.wma file by running recording software on winodws7.
 # gksu -u hjoon0510 cvlc ../sound/sound-rain.wma
