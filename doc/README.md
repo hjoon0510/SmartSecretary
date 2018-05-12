@@ -11,7 +11,7 @@
 - [날씨정보 습득프로그램 wttr설치](#날씨정보-습득프로그램-wttr설치)
 - [PHP 개발환경 설치](#php-개발환경-설치)
 - [VNC Server Setup on Raspberry Pi 3](#vnc-server-setup-on-raspberry-pi-3)
-- [gstreamer - 라즈베리 카메라 모듈 V2 탑재 및 실시간 카메라 Streamming 서비스 실행하기](*gstreamer-라즈베리-카메라-모듈-V2-탑재-및-실시간-카메라-streamming-서비스-실행하기)
+- [How to do realtime streamming service with camera and gstreamer software](#how-to-do-realtime-streamming-service-with-camera-and-gstreamer-software)
 - [How to make live stream video using vlc from webcam on Linux](#how-to-make-live-stream-video-using-vlc-from-webcam-on-linux)
 - [OSS/ASLA: How to Record your Voice from the Microphone of USB Webcam](#oss/asla:-how-to-record-your-voice-from-the-microphone-of-usbwebcam)
 - [Play *.wma with cvlc and mplayer command](#play-*.wma-with-cvlc-and-mplayer-command)
@@ -242,7 +242,7 @@ firefox https://www.realvnc.com/en/connect/download/viewer/에서 프로그램�
  * IP 192.168.219.104:5901
  * password: ***
 ```
-# gstreamer - 라즈베리 카메라 모듈 V2 탑재 및 실시간 카메라 Streamming 서비스 실행하기
+# How to do realtime streamming service with camera and gstreamer software
 * http://www.icbanq.com/P007122889 (라즈베리파이 카메라 모듈 V2 8MegaPixel) 
 
 Install gstreamer
