@@ -3,8 +3,8 @@
 **Table Of Contents**
 - [응용 예제](#응용-예제)
 - [운영체제 설치하기](#운영체제-설치하기)
-- [RaspbianOS의 WiFi Setting](#RaspbianOS의-WiFi-Setting)
-- [SSH서버 설치하기](#SSH서버-설치하기)
+- [WiFi Setting of RaspbianOS](#WiFi-Setting-of-RaspbianOS)
+- [SSH Server Setting](#SSH-Server-Setting)
 
 # 응용 예제 
 
@@ -53,7 +53,7 @@ OS 이미지를 다운로드하기 위하여 https://www.raspberrypi.org/downloa
 
 
 
-# RaspbianOS의 WiFi Setting
+# WiFi Setting of RaspbianOS
 
 라즈베리파이3는 WiFi 와 블루투스가 자체 내장되어있다.
 
@@ -62,7 +62,7 @@ OS 이미지를 다운로드하기 위하여 https://www.raspberrypi.org/downloa
 * 기본설정 - Raspberry Configuration - Localisation - WiFi Country - US (United State) 선택
 ```
 
-# SSH서버 설치하기 
+# SSH서버 설치하기
 ```bash
   sudo apt -y install openssh-server openssh-client
   sudo systemctl restart ssh
