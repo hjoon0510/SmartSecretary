@@ -1,14 +1,14 @@
  
  
 **Table Of Contents**
-- [응용 예제](#응용예제)
-- [운영체제(OS) 다운로드 및 설치하기](#운영체제(OS)다운로드및설치하기)
-- [WiFi 설정 방법 - Raspbian OS](# WiFi 설정 방법-RaspbianOS)
-- [SSH 서버 설치하기 ](#SSH서버설치하기)
+- [응용 예제](#응용-예제)
+- [운영체제 설치하기](#운영체제-설치하기)
+- [WiFi 설정 방법: Raspbian OS](#WiFi 설정 방법:-RaspbianOS)
+- [SSH 서버 설치하기 ](#SSH-서버-설치하기)
 
 # 응용 예제 
 
-* 디지털 weather 만들기 (***)
+* Digital weather 만들기
 * Raspberry Pi AP mode 설정(라즈베리파이를 무선 공유기 처럼 사용하기)
 * CCTV 개발하기
 * 디지털 앨범 개발하기
@@ -34,7 +34,7 @@
 
 
 
-# 운영체제(OS) 다운로드 및 설치하기 
+# 운영체제 설치하기
 
 * 인기 있는 OS 종류: 1) 라즈비안, 2) 우분투(마테버젼)*
 OS 이미지를 다운로드하기 위하여 https://www.raspberrypi.org/downloads/ 에 접속후 2) 우분투(마테버젼)을 다운로드 한다.
@@ -53,7 +53,7 @@ OS 이미지를 다운로드하기 위하여 https://www.raspberrypi.org/downloa
 
 
 
-# WiFi 설정 방법 - Raspbian OS
+# WiFi 설정 방법: Raspbian OS
 
 라즈베리파이3는 WiFi 와 블루투스가 자체 내장되어있다.
 
