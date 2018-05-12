@@ -20,7 +20,7 @@ to Raspberry Pi3 board.
 * Ubuntu Mate OS: https://ubuntu-mate.org/raspberry-pi/
 
 # How to use
-Fir of all, I recommend that you read documents that I uploaded in 'doc' folder.
+First of all, I recommend that you read documents that I uploaded in 'doc' folder.
 ```bash
 $ cd /var/www/
 $ mv html htmld.old
