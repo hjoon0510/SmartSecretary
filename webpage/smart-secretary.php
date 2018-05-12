@@ -87,9 +87,11 @@ $temp_max=$climate->main->temp_max - $balance;
 $temp_min=$climate->main->temp_min - $balance;
 $weather_text=$climate->weather[0]->main;
 $weather_icon=$climate->weather[0]->icon.".png";
-//how get today date time PHP :P
-$today = date("F j, Y, g:i a");
 $cityname = $climate->name;
+// set the default timezone to use. Available since PHP 5.1
+// how get currentdate time
+// date_default_timezone_set('Asia/Seoul');
+$today = date("F-j-Y g:i A");
 ?>
 
 <b> <center> <font color=blue> Smart Secretary </font></center></b>
