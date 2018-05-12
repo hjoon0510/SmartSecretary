@@ -7,11 +7,13 @@ It is difficult for users to cope with the changing weather frequently.
 So, I planned to developer IoT device to help them.
 
 # Requirement
+You have to prepare hardware and software as follows.
 
 ## Hardware
 Smart Secretary (SS) provides an intelligent facility to help busy modern people. It is developed with popular
 embedded device Raspberry Pi3 board. I have used PIR motion sensor to probe movement of a hunman being.
-* https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
+* Raspberry Pi3 board: https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
+* PIR Motion Sensor: http://m.eleparts.co.kr/goods/view?no=3227278
 
 ## Software
 Thanks to Linux kernel, We can easily set-up free operating systems (OS) that is called Ubuntu OS, Raspbian OS
@@ -37,7 +39,7 @@ The following figure shows the operation sequence of the program. First of all, 
 # Demonstration
 * IP address - http://192.168.219.104 
 * Website - http://smartsecretary.mooo.com (This web address is created via https://freedns.afraid.org/.)
-<img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo5.jpg border=0 width=500 height=350> </img>
+<img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo6.jpg border=0 width=500 height=350> </img>
 
 
 # Reference
