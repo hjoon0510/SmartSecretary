@@ -51,8 +51,8 @@ That is all. Enjoy my Smart Secrectary software!!! 
 ```
 # Design
 The following figure shows the operation sequence of the program. First of all, this program gets the necessary information from the weather server. The program then uses the motion sensor to detect human motion. When a person comes around the hardware, it not only prints important information on the screen, but also speaks by voice. Users can also check the schedule(you can showschedule from google calendar)information before leaving home. In the event of rain, users can check the weather information in real time using e-mail.
-
-<img src=ss-diagram.jpg border=0 width=500 height=350> </img>
+here is my 
+<img src=ss-diagram.jpg border=0 width=800 height=350> </img>
 
 # Demonstration
 * IP address - http://192.168.219.104 
