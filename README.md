@@ -3,9 +3,8 @@
 This program tells users the weather and users's scheduls
 
 # Motivation
-Because of busy daily life, I do not take umbrella with me on rainy day.
-It is difficult for users to cope with the changing weather frequently.
-I developed an iot device to prepare for this situation.
+Modern people can not keep their umbrellas on a rainy day because of busy daily life, and often leave the house. So when the weather you know is often going out, it often changes. People are very busy in the morning.
+So I often do not remember things or schedules I need to pack. I need a personal assistant to solve these problems. I named this device __smart secretary__.
 
 # Requirement
 You have to prepare hardware and software as follows.
@@ -30,7 +29,7 @@ It is developed by Python, PHP, and HTML language.
 * HTML - https://www.w3schools.com/html/
 
 # How to use
-First of all, I recommend that you read documents that I uploaded in 'doc' folder in order to install software in Raspberry Pi3 device.
+First of all, I recommend that you read documents that I uploaded in __doc__ folder in order to install software in Raspberry Pi3 device.
 ```bash
 $ cd /var/www/
 $ mv html htmld.old
