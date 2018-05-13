@@ -104,7 +104,7 @@ $today = date("F-j-Y g:i A");
 <tr>
 <td>
 <div class=container>
-<a href="https://calendar.google.com/calendar/embed?src=ls0vdmel6gu1olrkrv3mlbpgh0%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">
+<a href="https://calendar.google.com/calendar/embed?mode=AGENDA&amp;height=600&amp;wkst=2&amp;hl=ko&amp;bgcolor=%23FFFFFF&amp;src=ls0vdmel6gu1olrkrv3mlbpgh0%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=Asia%2FSeoul" target="myframe">
 <img src=./image/people.png width=60 height=60 alt=user1 /></a>
 <div class=bottom-left>&nbsp;&nbsp;&nbsp;<b>1</b></div>
 </div>
@@ -112,7 +112,7 @@ $today = date("F-j-Y g:i A");
 
 <td>
 <div class=container>
-<a href="https://calendar.google.com/calendar/embed?src=f78l3l60epju4ocul483fkp4nc%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">
+<a href="https://calendar.google.com/calendar/embed?mode=AGENDA&amp;height=600&amp;wkst=2&amp;hl=ko&amp;bgcolor=%23FFFFFF&amp;src=f78l3l60epju4ocul483fkp4nc%40group.calendar.google.com&amp;color=%23AB8B00&amp;ctz=Asia%2FSeoul"target="myframe">
 <img src=./image/people.png width=60 height=60 alt=user2 /></a>
 <div class=bottom-left>&nbsp;&nbsp;&nbsp;<b>2</b></div>
 </div>
@@ -120,7 +120,7 @@ $today = date("F-j-Y g:i A");
 
 <td>
 <div class=container>
-<a href="https://calendar.google.com/calendar/embed?src=t89qfg8kbbbj6vrofhggd5df1s%40group.calendar.google.com&ctz=Asia%2FSeoul" target="myframe">
+<a href="https://calendar.google.com/calendar/embed?mode=AGENDA&amp;height=600&amp;wkst=2&amp;hl=ko&amp;bgcolor=%23FFFFFF&amp;src=t89qfg8kbbbj6vrofhggd5df1s%40group.calendar.google.com&amp;color=%23B1440E&amp;ctz=Asia%2FSeoul" target="myframe">
 <img src=./image/people.png width=60 height=60 alt=user3 /></a>
 <div class=bottom-left>&nbsp;&nbsp;&nbsp;<b>3</b></div>
 </div>
