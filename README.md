@@ -29,7 +29,7 @@ It is developed by Python, PHP, and HTML language.
 * HTML - https://www.w3schools.com/html/
 
 # How to use
-First of all, I recommend that you read documents that I uploaded in __doc__ folder in order to install software in Raspberry Pi3 device.
+First of all, I recommend that you read documents that I uploaded in [doc](doc/README.md) folder in order to install software in Raspberry Pi3 device.
 ```bash
 $ cd /var/www/
 $ mv html htmld.old
