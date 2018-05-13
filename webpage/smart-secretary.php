@@ -154,9 +154,10 @@ else
 
 if($weather_text =="Rain" || $weather_text == "Light rain")
     echo "<center>Current: <b><font color=red>" . $weather_text . "</font></b></center><br>";
-else
+else{
     echo "<center>Current: <b><font color=black>" . $weather_text . "</font></b></center><br>";
-
+    system("echo 'Unknown' > ./current.txt");
+}
 echo "</td>";
 
 //3rd column table
