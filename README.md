@@ -1,5 +1,12 @@
 # Smart Secretary
-This program tells users the weather and schedule in front of door. It is developed by Python, PHP, and HTML.
+This program tells users the weather and schedule in front of door. 
+
+
+# Languages
+It is developed by Python, PHP, and HTML language.
+* Python - https://www.python.org/
+* PHP - http://php.net/
+* HTML - https://www.w3schools.com/html/
 
 # Motivation
 Because of busy daily life, I do not take umbrella with me on rainy day.
