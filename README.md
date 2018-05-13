@@ -54,4 +54,4 @@ The following figure shows the operation sequence of the program. First of all, 
 
 # Contact
 I am a student in [Maetan mid-school](http://maetan.ms.kr/). My homepage is http://hjoon0510.github.io. If you have any questions, Please contact me hjoon0510@gmail.com.
-I make an effort to write english statement by utilizing https://translate.google.com to talk about my project with foreigners all over the world.
+I make an effort to write english statement by utilizing https://translate.google.com to talk about my project with foreigners all over the world. If you are not student that can not speak in english, you can use https://translate.google.co.kr/?hl=ko#en/ja/https%3A%2F%2Fgithub.com%2Fhjoon0510%2FSmartSecretary for your convenience.
