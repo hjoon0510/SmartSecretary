@@ -4,11 +4,21 @@
 # Date: May-07-2018
 # Title: motion prober software
 # License: Apache
+#
 # Prequisites: sudo apt install mplayer, sudo pip install gpiozero
 #
 # Caution:
 # 1. Check location of  +DC voltage and GND line
 # 2. Change sensor and pulse button (orange color) appropriately
+#
+# How to run:
+# $ sudo visudo 
+#
+#  # User privilege specification
+#  root    ALL=(ALL:ALL) ALL
+#  hjoon0510       ALL=NOPASSWD: ALL
+#
+# sudo ./pir-final.py
 #
 # Reference:
 # 1. http://gpiozero.readthedocs.io/en/stable/recipes.html
@@ -37,11 +47,11 @@ try:
         # if current weather is rainy day, let's play sound.
         if ( current == condition):
             print ("[DEBUG] Current weather is %s" % current)
-            cmd = "mplayer  ../sound/wma/sound-rain-english.wma"
+            cmd = "mplayer ../sound/wma/sound-rain-english.wma"
             os.system(cmd)
         else:
             print ("[DEBUG] Current weather is %s" % current)
-            cmd = "mplayer  ../sound/wav/dingdong.wav"
+            cmd = "mplayer ../sound/wav/dingdong.wav"
             os.system(cmd)
         time.sleep(0.1)
 except KeyboardInterrupt:
