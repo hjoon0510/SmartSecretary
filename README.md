@@ -2,12 +2,6 @@
 This program tells users the weather and schedule in front of door. 
 
 
-# Languages
-It is developed by Python, PHP, and HTML language.
-* Python - https://www.python.org/
-* PHP - http://php.net/
-* HTML - https://www.w3schools.com/html/
-
 # Motivation
 Because of busy daily life, I do not take umbrella with me on rainy day.
 It is difficult for users to cope with the changing weather frequently.
@@ -27,6 +21,13 @@ Thanks to Linux kernel, We can easily set-up free operating systems (OS) that is
 to Raspberry Pi3 board.
 * Raspbian OS: https://www.raspberrypi.org/downloads/raspbian/
 * Ubuntu OS: https://ubuntu-mate.org/raspberry-pi/
+
+
+## Programming languages
+It is developed by Python, PHP, and HTML language.
+* Python - https://www.python.org/
+* PHP - http://php.net/
+* HTML - https://www.w3schools.com/html/
 
 # How to use
 First of all, I recommend that you read documents that I uploaded in 'doc' folder in order to install software in Raspberry Pi3 device.
