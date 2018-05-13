@@ -1,11 +1,11 @@
 # Smart Secretary
-This program tells users the weather and schedule in front of door. 
 
+This program tells users the weather and users's scheduls
 
 # Motivation
 Because of busy daily life, I do not take umbrella with me on rainy day.
 It is difficult for users to cope with the changing weather frequently.
-So, I planned to developer IoT device to help them.
+I developed an iot device to prepare for this situation.
 
 # Requirement
 You have to prepare hardware and software as follows.
@@ -39,23 +39,23 @@ $ ln -s ./SmartSecretary ./html
 $ cd /var/www/html/motion
 $ sudo ./pir-final.py
 $ chromium-browser http://localhost
-Enjoy my software.
+Enjoy my software.  
 ```
 # Design
-The following figure shows the operation sequence of the program. First of all, this program gets the necessary information from the weather server. The program then uses the motion sensor to detect human motion. When a person comes around the hardware, it not only prints important information on the screen, but also speaks by voice. Users can also check the schedule information before leaving home. In the event of rain, users can check the weather information in real time using e-mail.
-* TODO: append desgin picture.!!!!
+The following figure shows the operation sequence of the program. First of all, this program gets the necessary information from the weather server. The program then uses the motion sensor to detect human motion. When a person comes around the hardware, it not only prints important information on the screen, but also speaks by voice. Users can also check the schedule(you can showschedule from google calendar)information before leaving home. In the event of rain, users can check the weather information in real time using e-mail.
+* TODO: append desgin picture.
 
 # Demonstration
-* IP address - http://192.168.219.104 
+* IP address - http://192.168.219.104 
 * Website - http://smartsecretary.mooo.com (This web address is created via https://freedns.afraid.org/.)
 <img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo6.jpg border=0 width=500 height=350> </img>
 
 
 # Reference
 * https://guides.github.com/features/mastering-markdown/
-   * https://gist.github.com/ihoneymon/652be052a0727ad59601
+   * https://gist.github.com/ihoneymon/652be052a0727ad59601
 * https://openweathermap.org/
-   * https://github.com/erikflowers/weather-icons/tree/master/svg
+   * https://github.com/erikflowers/weather-icons/tree/master/svg
 * https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
 * http://gpiozero.readthedocs.io/en/stable/installing.html
 * https://github.com/PHPMailer/PHPMailer
