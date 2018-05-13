@@ -20,7 +20,7 @@ Thanks to Linux kernel, We can easily set-up free operating systems (OS) that is
 to Raspberry Pi3 board.
 * Raspbian OS: https://www.raspberrypi.org/downloads/raspbian/
 * Ubuntu OS: https://ubuntu-mate.org/raspberry-pi/
-
+* Mobaxterm: https://mobaxterm.mobatek.net/download.html
 
 ### Programming languages
 It is developed by Python, PHP, and HTML language.
@@ -31,14 +31,22 @@ It is developed by Python, PHP, and HTML language.
 # How to use
 First of all, I recommend that you read documents that I uploaded in [doc](doc/README.md) folder in order to install software in Raspberry Pi3 device.
 ```bash
+Run ssh session with mobaxterm software on windows7 PC.
 $ cd /var/www/
 $ mv html htmld.old
 $ git clone https://github.com/hjoon0510/SmartSecretary.git
 $ ln -s ./SmartSecretary ./html
+$ sudo visudo
+--------------- /etc/sudoers: start ----------------
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+hjoon0510       ALL=NOPASSWD: ALL <---- Please append your id here.!!!!
+--------------- /etc/sudoers: ending ---------------
+$ sudo systemctl restart apache2
 $ cd /var/www/html/motion
-$ sudo ./pir-final.py
+$ ./pir-final.py
 $ chromium-browser http://localhost
-Enjoy my software.  
+That is all. Enjoy my Smart Secrectary software!!! 
 ```
 # Design
 The following figure shows the operation sequence of the program. First of all, this program gets the necessary information from the weather server. The program then uses the motion sensor to detect human motion. When a person comes around the hardware, it not only prints important information on the screen, but also speaks by voice. Users can also check the schedule(you can showschedule from google calendar)information before leaving home. In the event of rain, users can check the weather information in real time using e-mail.
