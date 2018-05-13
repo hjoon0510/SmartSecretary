@@ -40,7 +40,7 @@ $ sudo visudo
 --------------- /etc/sudoers: start ----------------
 # User privilege specification
 root    ALL=(ALL:ALL) ALL
-hjoon0510       ALL=NOPASSWD: ALL
+hjoon0510       ALL=NOPASSWD: ALL <---- Please append your id here.!!!!
 --------------- /etc/sudoers: ending ---------------
 $ sudo systemctl restart apache2
 $ cd /var/www/html/motion
