@@ -52,9 +52,9 @@ The following figure shows the operation sequence of the program. First of all, 
 
 # Reference
 * https://guides.github.com/features/mastering-markdown/
-   * https://gist.github.com/ihoneymon/652be052a0727ad59601
+* https://gist.github.com/ihoneymon/652be052a0727ad59601
 * https://openweathermap.org/
-   * https://github.com/erikflowers/weather-icons/tree/master/svg
+* https://github.com/erikflowers/weather-icons/tree/master/svg
 * https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
 * http://gpiozero.readthedocs.io/en/stable/installing.html
 * https://github.com/PHPMailer/PHPMailer
