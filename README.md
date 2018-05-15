@@ -66,6 +66,7 @@ here is my process diagram
 * https://gist.github.com/ihoneymon/652be052a0727ad59601
 * https://openweathermap.org/
 * https://github.com/erikflowers/weather-icons/tree/master/svg
+* http://www.iconarchive.com/
 * https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
 * http://gpiozero.readthedocs.io/en/stable/installing.html
 * https://github.com/PHPMailer/PHPMailer
