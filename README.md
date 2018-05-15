@@ -53,7 +53,7 @@ That is all. Enjoy my Smart Secrectary software!!! 
 The following figure shows the operation sequence of the program. First of all, this program gets the necessary information from the weather server. The program then uses the motion sensor to detect human motion. When a person comes around the hardware, it not only prints important information on the screen, but also speaks by voice. Users can also check the schedule(you can showschedule from google calendar)information before leaving home. In the event of rain, users can check the weather information in real time using e-mail.
 
 here is my process diagram
-<img src=ss-diagram.jpg border=0 width=800 height=350> </img>
+<img src=./pic/ss-diagram.jpg border=0 width=800 height=350> </img>
 
 # Demonstration
 * IP address - http://192.168.219.104 
@@ -66,10 +66,13 @@ here is my process diagram
 * https://gist.github.com/ihoneymon/652be052a0727ad59601
 * https://openweathermap.org/
 * https://github.com/erikflowers/weather-icons/tree/master/svg
+* http://www.iconarchive.com/
 * https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
 * http://gpiozero.readthedocs.io/en/stable/installing.html
 * https://github.com/PHPMailer/PHPMailer
 * https://www.data.go.kr/dataset/15000581/openapi.do
+* https://tutorials-raspberrypi.com/raspberry-pi-sensors-overview-50-important-components/
+* http://www.eleparts.co.kr/goods/view?no=3824794 (RPI NOIR CAMERA BOARD V2, 29000won)
 
 # Contact
 My name is Hyunjun Lim (임현준 in korean). I am a student in [Maetan mid-school](http://maetan.ms.kr/). My homepage is http://hjoon0510.github.io. If you have any questions, Please contact me hjoon0510@gmail.com.
