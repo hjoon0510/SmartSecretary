@@ -1,11 +1,9 @@
-# Smart Secretary
-
-This program tells users the weather and users's scheduls
+# What is Smart Secretary?
+This program informs users of weather and schedules.
 
 # Motivation
 Modern people can not keep their umbrellas on a rainy day because of busy daily life, and often leave the house. So when the weather you know is often going out, it often changes. People are very busy in the morning.
 So I often do not remember things or schedules I need to pack. I need a personal assistant to solve these problems. I named this device __smart secretary__.
-# Diagram
 
 # Requirement
 You have to prepare hardware and software as follows.
@@ -49,6 +47,8 @@ $ ./pir-final.py
 $ chromium-browser http://localhost
 That is all. Enjoy my Smart Secrectary software!!! 
 ```
+
+
 # Design
 The following figure shows the operation sequence of the program. First of all, this program gets the necessary information from the weather server. The program then uses the motion sensor to detect human motion. When a person comes around the hardware, it not only prints important information on the screen, but also speaks by voice. Users can also check the schedule(you can showschedule from google calendar)information before leaving home. In the event of rain, users can check the weather information in real time using e-mail.
 
