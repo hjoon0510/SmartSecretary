@@ -48,7 +48,7 @@ try:
         if (current == condition_rain):
             cmd = "mplayer ../sound/wma/sound-rain-english.wma"
             os.system(cmd)
-        else if(current == condition_snow):
+        elif(current == condition_snow):
             cmd = "mplayer ../sound/wma/sound-snow-english.wma"
             os.system(cmd)
         else:
