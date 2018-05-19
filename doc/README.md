@@ -347,7 +347,12 @@ Please make *.wma file by running recording software on winodws7.
 
 
 
-# 이메일로 파일첨부하기위해 ssmtp와 mpack 설정하기
+# 이메일 발송하기
+
+## PHPMailer 프로그램 이용하기
+* https://github.com/PHPMailer/PHPMailer
+
+## ssmtp와 mpack 프로그램 이용하기
 
 ```bash
 [ssmtp install]
