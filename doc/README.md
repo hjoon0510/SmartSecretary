@@ -415,4 +415,5 @@ mail($to,$subject,$msg,$headers);
 # How to convert sound file from wma to wav
 ```
 $ ffmpeg -i test.wma test.wav
+$ mpalyer test.wav
 ```
