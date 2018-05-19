@@ -439,7 +439,9 @@ AuthPass=your_password
 FromLineOverride=YES
  
 [디폴트 mta 변경하기: sendmail.ssmtp 설정]
-출력되는 목록들중에서 "sendmail.ssmtp"을 선택해야 한다. 만약 선택가능한 MTA가 오직 1개이라면 " error: no alternative for mta" 메세지가 나올수 있으며, 이것은 오류가 없는 정상적인 결과라고 이해하면 된다. 
+출력되는 목록들중에서 "sendmail.ssmtp"을 선택해야 한다. 
+만약 선택가능한 MTA가 오직 1개이라면 " error: no alternative for mta" 메세지가 나올수 있으며, 
+이것은 오류가 없는 정상적인 결과라고 이해하면 된다. 
 $ sudo update-alternatives --config mta
 
 [PHP /etc/php/7.0/apache2/php.ini 파일 설정변경]
@@ -450,15 +452,22 @@ $ sudo update-alternatives --config mta
 sudo /etc/init.d/apache2 restart
 
 [구글 계정에서 이메일 설정권한 변경하기]
-gmail smtp을 사용하여 정상적으로 이메일을 발송할수 있으려면, 보안 수준을 낮추어 주어야 ssmtp (Simple SMTP)접근 가능하고 이메일 전송이 가능하다.
+gmail smtp을 사용하여 정상적으로 이메일을 발송할수 있으려면, 
+보안 수준을 낮추어 주어야 ssmtp (Simple SMTP)접근 가능하고 이메일 전송이 가능하다.
+
 구글 계정 설정 -> 내 계정 -> 로그인 및 보안 -> 연결된 앱 및 사이트 -  [v]보안 수준이 낮은 앱 허용 
 * https://myaccount.google.com/security?utm_source=OGB&pli=1
 
 
 [테스트 예제]
 $ echo "test" | ssmtp 이메일주소
-$ ssmtp 이메일주소  < test.txt
+
+$ echo "This is my test email." > ./test.txt
+$ ssmtp 이메일주소  < ./test.txt
+
 $ mpack -s "제목" ./happy.jpg 이메일주소
+
+
 
 [php언어로 이메일 발송하는 프로그램 코드 예제]
 $ vi gmail_send.php 
