@@ -387,19 +387,19 @@ Please make *.wma file by running recording software on winodws7.
 bash$mail->SMTPSecure = "ssl";
 $mail->Port = 465; // 465 or 587 set the SMTP port for the GMAIL server
 ```
-
 위 소스가 안된다면
-```bash$mail->SMTPSecure = "tls";
+```bash
+$mail->SMTPSecure = "tls";
 $mail->Port = 587; // 465 or 587 set the SMTP port for the GMAIL server
 ```
-
 위 소스를 사용하면 된다. 
-stream_socket_enable_crypto 에러가 발생한다면 , php.ini 에서extension=php_openssl.dll위 php_openssl 모듈을 활성화해야 한다.
+stream_socket_enable_crypto 에러가 발생한다면 , php.ini 에서 extension=php_openssl.dll위 php_openssl 모듈을 활성화해야 한다.
 
 실제로 실행을 하면 위의  if(!$mail->Send()) 부분에서 에러가 발생한다. 이문제를 해결하기 위해서 구글 시큐리티로 접속후에  "내 Windows 컴퓨터의 메일"을 생성한다. 그리고나서 만들어진 시큐리티 암호 16값을 제공받아서 위의 소스코드  $mail->Password 에 적용하면 정상적으로 이메일이 발송됨을 확인할수 있다.
 * 참고:
    * http://stackoverflow.com/questions/17227532/gmail-530-5-5-1-authentication-required-learn-more-at 
    * https://support.google.com/mail/answer/185833?hl=en&visit_id=1-636532191943049589-646099977&rd=1#
+   
 ```bash
 - Select app: smart_secrectary
 - Select device: default (don't select)
@@ -424,14 +424,14 @@ $ sudo cp ssmtp.conf ssmtp.conf.bak
 
 [/etc/ssmtp/ssmtp.conf 파일 설정 변경]
 ```bash
-root=your_id@gmail.com
-#mailhub=smtp.gmail.com:587
-mailhub=smtp.gmail.com:465  --> 465또는 587 중에 1개임. 포트 바꾸면서 시험하여 찾으면 됨   
+root=hjoon0510@gmail.com
+mailhub=smtp.gmail.com:587                                                                                                   
 rewriteDomain=
 hostname=localhost
+UseTLS=YES
 UseSTARTTLS=YES
-AuthUser=your_id@gmail.com
-AuthPass=your_password
+AuthUser=hjoon0510@gmail.com
+AuthPass=xxxxxxxxx
 FromLineOverride=YES
 ```
 
