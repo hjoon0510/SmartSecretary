@@ -382,94 +382,97 @@ Please make *.wma file by running recording software on winodws7.
 
 ```
 
-실제로 실행을 하면 위의  if(!$mail->Send()) 부분에서 에러가 발생한다. 이문제를 해결하기 위해서 구글 시큐리티로 접속후에  "내 Windows 컴퓨터의 메일"을 생성한다. 그리고나서 만들어진 시큐리티 암호 16값을 제공받아서 위의 소스코드  $mail->Password 에 적용하면 정상적으로 이메일이 발송됨을 확인할수 있다.
-* 참고: http://stackoverflow.com/questions/17227532/gmail-530-5-5-1-authentication-required-learn-more-at 
-
-https://support.google.com/mail/answer/185833?hl=en&visit_id=1-636532191943049589-646099977&rd=1#
-- Select app: smart_secrectary
-- Select device: default (don't select)
-
-"GENERATE" 버턴을 클릭하면 아래와 같은 app password가 생성된다. 
-- app password: rqnzataqgkdigxxx
-
-본인이 작성한 smtp 프로그램에 아래와 같은 정보를 적절히 추가/편집하면 된다. 
-$config['default_host'] = 'ssl://imap.gmail.com';
-$config['smtp_server'] = 'ssl://smtp.gmail.com';
-$config['smtp_port'] = 465;
-$config['smtp_user'] = 'hjoon0510';
-$config['smtp_pass'] = 'rqnzataqgkdigxxx';
-
-
-
+구글의 gmail stmp 서비스 설정에 설문제가 있다면 오류가 발생할수 있다. 
 ```bash
-$mail->SMTPSecure	= "ssl";
-$mail->Port	= 465; // 465 or 587 set the SMTP port for the GMAIL server
+bash$mail->SMTPSecure = "ssl";
+$mail->Port = 465; // 465 or 587 set the SMTP port for the GMAIL server
 ```
 
 위 소스가 안된다면
-```bash
-$mail->SMTPSecure	= "tls";
-$mail->Port	= 587; // 465 or 587 set the SMTP port for the GMAIL server
+```bash$mail->SMTPSecure = "tls";
+$mail->Port = 587; // 465 or 587 set the SMTP port for the GMAIL server
 ```
-위 소스를 사용하면 된다. 
 
+위 소스를 사용하면 된다. 
 stream_socket_enable_crypto 에러가 발생한다면 , php.ini 에서extension=php_openssl.dll위 php_openssl 모듈을 활성화해야 한다.
 
+실제로 실행을 하면 위의  if(!$mail->Send()) 부분에서 에러가 발생한다. 이문제를 해결하기 위해서 구글 시큐리티로 접속후에  "내 Windows 컴퓨터의 메일"을 생성한다. 그리고나서 만들어진 시큐리티 암호 16값을 제공받아서 위의 소스코드  $mail->Password 에 적용하면 정상적으로 이메일이 발송됨을 확인할수 있다.
+* 참고:
+   * http://stackoverflow.com/questions/17227532/gmail-530-5-5-1-authentication-required-learn-more-at 
+   * https://support.google.com/mail/answer/185833?hl=en&visit_id=1-636532191943049589-646099977&rd=1#
+```bash
+- Select app: smart_secrectary
+- Select device: default (don't select)
+```
+
+"GENERATE" 버턴을 클릭하면 아래와 같은 app password가 생성된다. 
+```bash
+- app password: rqnzataqgkdigxxx
+```
 
 
 ## ssmtp와 mpack 프로그램 이용하기
 
-```bash
 [ssmtp install]
+```bash
 $ sudo apt-get install ssmtp (smtp를 이용하여 이메일 메세지 발송 프로그램)
 $ sudo apt-get install mpack (이메일을 보낼때 파일을 첨부하여주는 프로그램)
 $ sudo chmod 755 /etc/ssmtp
 $ cd /etc/ssmtp
 $ sudo cp ssmtp.conf ssmtp.conf.bak
+```
 
 [/etc/ssmtp/ssmtp.conf 파일 설정 변경]
+```bash
 root=your_id@gmail.com
 #mailhub=smtp.gmail.com:587
 mailhub=smtp.gmail.com:465  --> 465또는 587 중에 1개임. 포트 바꾸면서 시험하여 찾으면 됨   
 rewriteDomain=
-hostname=your_id@gmail.com
+hostname=localhost
 UseSTARTTLS=YES
 AuthUser=your_id@gmail.com
 AuthPass=your_password
 FromLineOverride=YES
- 
-[디폴트 mta 변경하기: sendmail.ssmtp 설정]
+```
+
+[구글 계정에서 이메일 설정권한 변경]
+
+gmail smtp을 사용하여 정상적으로 이메일을 발송할수 있으려면, 
+보안 수준을 낮추어 주어야 ssmtp (Simple SMTP)접근 가능하고 이메일 전송이 가능하다.
+구글 계정 설정 -> 내 계정 -> 로그인 및 보안 -> 연결된 앱 및 사이트 - [v]보안 수준이 낮은 앱 허용 
+* https://myaccount.google.com/security?utm_source=OGB&pli=1
+
+
+[콘솔 테스트 예제]
+ssmtp 명령이 정상적으로로 동작하는지 알기 위해서 -v 옵션을 활용하는 것이 좋다. 
+```bash
+$ echo "Hi, This is test email." | ssmtp -v 이메일주소
+
+$ echo "This is my test email." > ./test.txt
+$ ssmtp 이메일주소  < ./test.txt
+
+$ mpack -s "제목" ./happy.jpg 이메일주소
+```
+
+[디폴트 mta 변경하기]
 출력되는 목록들중에서 "sendmail.ssmtp"을 선택해야 한다. 
 만약 선택가능한 MTA가 오직 1개이라면 " error: no alternative for mta" 메세지가 나올수 있으며, 
 이것은 오류가 없는 정상적인 결과라고 이해하면 된다. 
+```bash
 $ sudo update-alternatives --config mta
+```
 
 [PHP /etc/php/7.0/apache2/php.ini 파일 설정변경]
 수정 전 --> ;sendmail_path = /usr/sbin/sendmail -t -i
 수정 후 --> sendmail_path = /usr/sbin/ssmtp -t
 
-[아파치 웹서버 재시작하기]
+[Apache 웹서버 재시작하기]
+```bash
 sudo /etc/init.d/apache2 restart
-
-[구글 계정에서 이메일 설정권한 변경하기]
-gmail smtp을 사용하여 정상적으로 이메일을 발송할수 있으려면, 
-보안 수준을 낮추어 주어야 ssmtp (Simple SMTP)접근 가능하고 이메일 전송이 가능하다.
-
-구글 계정 설정 -> 내 계정 -> 로그인 및 보안 -> 연결된 앱 및 사이트 -  [v]보안 수준이 낮은 앱 허용 
-* https://myaccount.google.com/security?utm_source=OGB&pli=1
-
-
-[테스트 예제]
-$ echo "test" | ssmtp 이메일주소
-
-$ echo "This is my test email." > ./test.txt
-$ ssmtp 이메일주소  < ./test.txt
-
-$ mpack -s "제목" ./happy.jpg 이메일주소
-
-
+```
 
 [php언어로 이메일 발송하는 프로그램 코드 예제]
+```bash
 $ vi gmail_send.php 
 <?php
 $uname = "PyeongAn_Security";  //받는 사람에게 보여줄 이름을 적는다
@@ -482,7 +485,7 @@ $createday = date("Y-m-d"); 
 $to='Receiver@naver.com'; // 받을 사람 이메일 주소 
 $subject='Raspberrypi test mail'; // 제목 
 $subject = "=?UTF-8?B?".base64_encode($subject)."?=";  // 이메일 제목 깨지지 않도록 인코딩 작업 하기 
-$msg="ktman의 자유공간<br>\n"; // 서명   
+$msg="man의 자유공간<br>\n"; // 서명   
 mail($to,$subject,$msg,$headers);
 ?>
 ```
