@@ -407,11 +407,12 @@ stream_socket_enable_crypto 에러가 발생한다면 , php.ini 에서extension=
 [ssmtp install]
 $ sudo apt-get install ssmtp (smtp를 이용하여 이메일 메세지 발송 프로그램)
 $ sudo apt-get install mpack (이메일을 보낼때 파일을 첨부하여주는 프로그램)
+$ sudo chmod 755 /etc/ssmtp
 $ cd /etc/ssmtp
 $ sudo cp ssmtp.conf ssmtp.conf.bak
 
 [/etc/ssmtp/ssmtp.conf 파일 설정 변경]
-root=your_id@gmail.com;
+ root=your_id@gmail.com;
  #mailhub=smtp.gmail.com:587
  mailhub=smtp.gmail.com:465  --> 465또는 587 중에 1개임. 포트 바꾸면서 시험하여 찾으면 됨   
  rewriteDomain=
