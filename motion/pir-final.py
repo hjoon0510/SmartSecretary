@@ -4,7 +4,6 @@
 # Date: May-07-2018
 # Title: motion prober software
 # License: Apache
-#
 # Prequisites: sudo apt install mplayer, sudo pip install gpiozero
 #
 # Caution:
@@ -40,6 +39,8 @@ try:
     while True:
         pir.wait_for_motion()
         count += 1
+        t = time.localtime()
+        print "%d:%d:%d Motion Detected!" % (t.tm_hour, t.tm_min, t.tm_sec)
         print ("[DEBUG] Motion Detected! " + str(count))
         file = open("../webpage/current.txt")
         current = file.read()
@@ -54,8 +55,6 @@ try:
         else:
             cmd = "mplayer ../sound/wav/dingdong.wav"
             os.system(cmd)
-        # TODO: if current weather is "Snow".
-        #
         # wait for 5 seconds
         time.sleep(5)
 # let's exit if users press "Ctrl + C".
