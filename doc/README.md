@@ -428,7 +428,7 @@ $ cd /etc/ssmtp
 $ sudo cp ssmtp.conf ssmtp.conf.bak
 
 [/etc/ssmtp/ssmtp.conf 파일 설정 변경]
-root=your_id@gmail.com;
+root=your_id@gmail.com
 #mailhub=smtp.gmail.com:587
 mailhub=smtp.gmail.com:465  --> 465또는 587 중에 1개임. 포트 바꾸면서 시험하여 찾으면 됨   
 rewriteDomain=
