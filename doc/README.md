@@ -411,12 +411,11 @@ stream_socket_enable_crypto 에러가 발생한다면 , php.ini 에서 extension
 ```
 
 
-## ssmtp와 mpack 프로그램 이용하기
+## ssmtp 프로그램 이용하기
 
 [ssmtp install]
 ```bash
 $ sudo apt-get install ssmtp (smtp를 이용하여 이메일 메세지 발송 프로그램)
-$ sudo apt-get install mpack (이메일을 보낼때 파일을 첨부하여주는 프로그램)
 $ sudo chmod 755 /etc/ssmtp
 $ cd /etc/ssmtp
 $ sudo cp ssmtp.conf ssmtp.conf.bak
@@ -435,7 +434,7 @@ AuthPass=xxxxxxxxx
 FromLineOverride=YES
 ```
 
-[구글 계정에서 이메일 설정권한 변경]
+[구글 계정에서 이메일 SMTP 설정권한 변경]
 
 gmail smtp을 사용하여 정상적으로 이메일을 발송할수 있으려면, 
 보안 수준을 낮추어 주어야 ssmtp (Simple SMTP)접근 가능하고 이메일 전송이 가능하다.
@@ -456,14 +455,18 @@ Subject: alert
 The server is down!
 
 $ ssmtp 이메일주소  < ./msg.txt
+```
 
+[그림파일을 이메일로 첨부하여 보내는 방법: mpack, uuencode]
+```bash
+$ sudo apt-get install mpack (이메일을 보낼때 파일을 첨부하여주는 프로그램)
 $ mpack -s "제목" ./happy.jpg 이메일주소
 
 $ sudo apt install shareutils
 $ uuencode file.txt myfile.txt | sendmail user@example.com
 ```
 
-[디폴트 mta 변경하기]
+[디폴트 mta 변경방법]
 출력되는 목록들중에서 "sendmail.ssmtp"을 선택해야 한다. 
 만약 선택가능한 MTA가 오직 1개이라면 " error: no alternative for mta" 메세지가 나올수 있으며, 
 이것은 오류가 없는 정상적인 결과라고 이해하면 된다. 
@@ -472,8 +475,10 @@ $ sudo update-alternatives --config mta
 ```
 
 [PHP /etc/php/7.0/apache2/php.ini 파일 설정변경]
+```bash
 수정 전 --> ;sendmail_path = /usr/sbin/sendmail -t -i
 수정 후 --> sendmail_path = /usr/sbin/ssmtp -t
+```
 
 [Apache 웹서버 재시작하기]
 ```bash
