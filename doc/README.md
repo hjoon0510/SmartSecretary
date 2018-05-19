@@ -448,10 +448,19 @@ ssmtp 명령이 정상적으로로 동작하는지 알기 위해서 -v 옵션을
 ```bash
 $ echo "Hi, This is test email." | ssmtp -v 이메일주소
 
-$ echo "This is my test email." > ./test.txt
-$ ssmtp 이메일주소  < ./test.txt
+$ vim ./msg.txt
+To: myemailaddress@gmail.com
+From: myemailaddress@gmail.com
+Subject: alert
+
+The server is down!
+
+$ ssmtp 이메일주소  < ./msg.txt
 
 $ mpack -s "제목" ./happy.jpg 이메일주소
+
+$ sudo apt install shareutils
+$ uuencode file.txt myfile.txt | sendmail user@example.com
 ```
 
 [디폴트 mta 변경하기]
