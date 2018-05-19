@@ -139,16 +139,15 @@ if ($weather_text == "Haze")
     echo "<img width=150 height=100 src='./svg/wi-day-haze.svg'/>";
 else if($weather_text =="Rain" || $weather_text == "Light rain"){
     echo "<img width=150 height=100 src='./image/umbrella.gif'/>";
-    system("echo 'Rain' > ./current.txt");
-    system("/usr/sbin/ssmtp $receiver_email < ./msg.txt");
+    system("echo 'Rain' > ./data/current.txt");
+    system("/usr/sbin/ssmtp $receiver_email < ./data/msg.txt");
 }
 else if($weather_text == "Mist"){
     echo "<img width=150 height=100 src='./svg/wi-night-fog.svg'/>";
-    system("echo 'Mist' > ./current.txt");
+    system("echo 'Mist' > ./data/current.txt");
 }
 else if($weather_text == "Clear"){
     echo "<img width=150 height=100 src='./svg/wi-night-clear.svg'/>";
-    system("/usr/sbin/ssmtp $receiver_email < ./msg.txt");
 }
 else if($weather_text == "Wind")
     echo "<img width=150 height=100 src='./svg/wi-day-windy.svg'/>";
@@ -159,7 +158,7 @@ if($weather_text =="Rain" || $weather_text == "Light rain")
     echo "<center>Current: <b><font color=red>" . $weather_text . "</font></b></center><br>";
 else{
     echo "<center>Current: <b><font color=black>" . $weather_text . "</font></b></center><br>";
-    system("echo 'Unknown' > ./current.txt");
+    system("echo 'Unknown' > ./data/current.txt");
 }
 echo "</td>";
 

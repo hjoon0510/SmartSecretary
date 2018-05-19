@@ -43,7 +43,7 @@ try:
         print ("################# Motion Detected! (%d) %d:%d:%d ##############################" \
         % (count, t.tm_hour, t.tm_min, t.tm_sec))
         # print ("[DEBUG] Motion Detected! " + str(count))
-        file = open("../webpage/current.txt")
+        file = open("../webpage/data/current.txt")
         current = file.read()
         print ("[DEBUG] The weather data of curent.txt file is %s." % current)
         # if current weather is "Rain".
