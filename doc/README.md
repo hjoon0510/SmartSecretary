@@ -424,7 +424,7 @@ $ sudo cp ssmtp.conf ssmtp.conf.bak
 [/etc/ssmtp/ssmtp.conf 파일 설정 변경]
 ```bash
 root=hjoon0510@gmail.com
-mailhub=smtp.gmail.com:587                                                                                                   
+mailhub=smtp.gmail.com:587
 rewriteDomain=
 hostname=localhost
 UseTLS=YES
