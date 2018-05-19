@@ -29,7 +29,8 @@ import os
 #----------- Configuration area -------------------------------
 GPIO_PIN = 4
 count = 0
-condition = "Rain\n"
+condition_rain = "Rain\n"
+condition_snow = "Snow\n"
 
 #----------- Do not modify below statements -------------------
 try:
@@ -44,8 +45,11 @@ try:
         current = file.read()
         print ("[DEBUG] The weather data of curent.txt file is %s." % current)
         # if current weather is "Rain".
-        if (current == condition):
+        if (current == condition_rain):
             cmd = "mplayer ../sound/wma/sound-rain-english.wma"
+            os.system(cmd)
+        else if(current == condition_snow):
+            cmd = "mplayer ../sound/wma/sound-snow-english.wma"
             os.system(cmd)
         else:
             cmd = "mplayer ../sound/wav/dingdong.wav"
