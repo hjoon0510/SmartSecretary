@@ -70,7 +70,7 @@ ini_set('display_startup_errors', TRUE);
 // ---------- Configuration-----------------------------------------------------------
 $city_name="Seoul";
 $app_id_key="f53e9bb210db8d3957b2dba44dd7f55c";
-
+$receiver_email="hjoon0510@gmail.com";
 
 // ---------- Do not modify from now on ----------------------------------------------
 $url = "http://api.openweathermap.org/data/2.5/weather?q=$city_name&APPID=$app_id_key";
@@ -140,13 +140,16 @@ if ($weather_text == "Haze")
 else if($weather_text =="Rain" || $weather_text == "Light rain"){
     echo "<img width=150 height=100 src='./image/umbrella.gif'/>";
     system("echo 'Rain' > ./current.txt");
+    system("/usr/sbin/ssmtp $receiver_email < ./msg.txt");
 }
 else if($weather_text == "Mist"){
     echo "<img width=150 height=100 src='./svg/wi-night-fog.svg'/>";
     system("echo 'Mist' > ./current.txt");
 }
-else if($weather_text == "Clear")
+else if($weather_text == "Clear"){
     echo "<img width=150 height=100 src='./svg/wi-night-clear.svg'/>";
+    system("/usr/sbin/ssmtp $receiver_email < ./msg.txt");
+}
 else if($weather_text == "Wind")
     echo "<img width=150 height=100 src='./svg/wi-day-windy.svg'/>";
 else
