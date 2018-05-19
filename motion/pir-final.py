@@ -40,8 +40,9 @@ try:
         pir.wait_for_motion()
         count += 1
         t = time.localtime()
-        print "%d:%d:%d Motion Detected!" % (t.tm_hour, t.tm_min, t.tm_sec)
-        print ("[DEBUG] Motion Detected! " + str(count))
+        print ("################# Motion Detected! (%d) %d:%d:%d ##############################" \
+        % (count, t.tm_hour, t.tm_min, t.tm_sec))
+        # print ("[DEBUG] Motion Detected! " + str(count))
         file = open("../webpage/current.txt")
         current = file.read()
         print ("[DEBUG] The weather data of curent.txt file is %s." % current)
