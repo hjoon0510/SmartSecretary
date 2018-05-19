@@ -16,7 +16,7 @@
 - [How to record your voice from microphone of USB webcam using ALSA](#how-to-record-your-voice-from-microphone-of-usb-webcam-using-alsa)
 - [Play wma file with cvlc and mplayer command](#play-wma-file-with-cvlc-and-mplayer-command)
 - [이메일로 파일첨부하기위해 ssmtp와 mpack 설정하기](#이메일로-파일첨부하기위해-ssmtp와-mpack-설정하기)
-- [How to convert sound file from *.wma to *.wav](#how-to-convert-sound-file-from-*.wma-to-*.wav)
+- [How to convert sound file from wma to wav](#how-to-convert-sound-file-from-wma-to-wav)
 
 # 응용 예제 
 
@@ -412,7 +412,7 @@ mail($to,$subject,$msg,$headers);
 ?>
 ```
 
-# How to convert sound file from *.wma to *.wav
+# How to convert sound file from wma to wav
 ```
 $ ffmpeg -i test.wma test.wav
 ```
