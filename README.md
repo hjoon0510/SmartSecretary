@@ -57,7 +57,8 @@ here is my process diagram
 
 # Demonstration
 * IP address - http://192.168.219.104 
-* Website - http://smartsecretary.mooo.com (This web address is created via https://freedns.afraid.org/.)
+* Website - http://smartsecretary.mooo.com
+   * This web address is created free of charge via https://freedns.afraid.org/.
 <img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo6.jpg border=0 width=500 height=350> </img>
 
 
