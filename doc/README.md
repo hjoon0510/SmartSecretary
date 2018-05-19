@@ -412,38 +412,39 @@ $ cd /etc/ssmtp
 $ sudo cp ssmtp.conf ssmtp.conf.bak
 
 [/etc/ssmtp/ssmtp.conf 파일 설정 변경]
- root=your_id@gmail.com;
- #mailhub=smtp.gmail.com:587
- mailhub=smtp.gmail.com:465  --> 465또는 587 중에 1개임. 포트 바꾸면서 시험하여 찾으면 됨   
- rewriteDomain=
- hostname=your_id@gmail.com
- UseSTARTTLS=YES
- AuthUser=your_id@gmail.com
- AuthPass=your_password
- FromLineOverride=YES
+root=your_id@gmail.com;
+#mailhub=smtp.gmail.com:587
+mailhub=smtp.gmail.com:465  --> 465또는 587 중에 1개임. 포트 바꾸면서 시험하여 찾으면 됨   
+rewriteDomain=
+hostname=your_id@gmail.com
+UseSTARTTLS=YES
+AuthUser=your_id@gmail.com
+AuthPass=your_password
+FromLineOverride=YES
  
-[mta 변경: sendmail.ssmtp 설정]
-alternatives --config mta
+[디폴트 mta 변경하기: sendmail.ssmtp 설정]
+$ sudo update-alternatives --config mta
 
-[PHP /etc/php5/apache2/php.ini 파일 설정변경]
-수정 전 --> sendmail_path = /usr/sbin/sendmail -t -i
+[PHP /etc/php/7.0/apache2/php.ini 파일 설정변경]
+수정 전 --> ;sendmail_path = /usr/sbin/sendmail -t -i
 수정 후 --> sendmail_path = /usr/sbin/ssmtp -t
 
-[Httpd restart]
+[아파치 웹서버 재시작하기]
 sudo /etc/init.d/apache2 restart
 
 [구글 계정에서 이메일 설정권한 변경하기]
-보안 수준을 낮추어 주어야 ssmtp 접근 가능하고 이메일 전송이 가능하다.
-내 계정 - 로그인 및 보안 - 연결된 앱 및 사이트 -  [v]보안 수준이 낮은 앱 허용 
+gmail smtp을 사용하여 정상적으로 이메일을 발송할수 있으려면, 보안 수준을 낮추어 주어야 ssmtp (Simple SMTP)접근 가능하고 이메일 전송이 가능하다.
+구글 계정 설정 -> 내 계정 -> 로그인 및 보안 -> 연결된 앱 및 사이트 -  [v]보안 수준이 낮은 앱 허용 
+* https://myaccount.google.com/security?utm_source=OGB&pli=1
+
 
 [테스트 예제]
 $ echo "test" | ssmtp 이메일주소
-$ ssmtp 이메일주소
-test.txt
-$ mpack -s "제목"
-./파일명 이메일주소
+$ ssmtp 이메일주소  < test.txt
+$ mpack -s "제목" ./happy.jpg 이메일주소
 
 [php언어로 이메일 발송하는 프로그램 코드 예제]
+$ vi gmail_send.php 
 <?php
 $uname = "PyeongAn_Security";  //받는 사람에게 보여줄 이름을 적는다
 $uemail = "MyMail@gmail.com";  //gmail smtp 서버에 등록한 계정의 이메일주소
@@ -454,7 +455,7 @@ $headers.='From:  '.$from."\r\n";  
 $createday = date("Y-m-d"); 
 $to='Receiver@naver.com'; // 받을 사람 이메일 주소 
 $subject='Raspberrypi test mail'; // 제목 
-$subject = "=?UTF-8?B?".base64_encode($subject)."?=";  
+$subject = "=?UTF-8?B?".base64_encode($subject)."?=";  // 이메일 제목 깨지지 않도록 인코딩 작업 하기 
 $msg="ktman의 자유공간<br>\n"; // 서명   
 mail($to,$subject,$msg,$headers);
 ?>
