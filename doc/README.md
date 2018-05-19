@@ -291,7 +291,8 @@ chmod +x camera_test.sh
 ```
 라즈베리파이 보드에 연결된 터치스크린/모니터에 카메라의 촬영 창이 실행되는 것을 볼수 있다.
 
-안드로이드 모바일 폰은 구글스토어에서 "RaspberryPi Camera viewer"라는 애플리케이션을 검색/설치하면 된다. 그리고나서 해당 모바일 앱을 실행한후에 "+" 아이콘을 클릭하여 메뉴버턴을 생성한다. 생성된 메뉴버턴을 클릭한후 아래의 정보를 입력한다.
+안드로이드 모바일 폰은 구글스토어에서 "RaspberryPi Camera viewer"라는 애플리케이션을 검색/설치하면 된다.
+그리고나서 해당 모바일 앱을 실행한후에 "+" 아이콘을 클릭하여 메뉴버턴을 생성한다. 생성된 메뉴버턴을 클릭한후 아래의 정보를 입력한다.
 * Name: 192.168.219.104
 * IP Address: 192.168.219.104
 * Port: 5000
@@ -350,21 +351,65 @@ Please make *.wma file by running recording software on winodws7.
 # 이메일 발송하기
 
 ## PHPMailer 프로그램 이용하기
-* https://github.com/PHPMailer/PHPMailer
+* https://github.com/PHPMailer/PHPMailer 에서 PHPMailer이라는 오픈소스 라이브러리를 다운로드한다. 
+* 예제 프로그램은 ./PHPMailer-master/examples/ 폴더에 위치하여 있다. 
+* 이제 아래와 같이 php 소스코드를 작성하여 사용하기마만 하면 된다. 
+```bash
+ require_once("./PHPMailer/class.phpmailer.php");
+ $mail                  = new PHPMailer();
+ $mail->IsHTML(true);                         // HTML의 형식으로보냄
+ $mail->IsSMTP();
+ $mail->SMTPSecure      = "ssl";
+ $mail->Port            = 465;                    // 465 or 587 set the SMTPport for the GMAIL server
+ $mail->Host            = "smtp.gmail.com";
+ $mail->ContentType     = "text/html";
+ $mail->Charset         = "utf-8";
+ $mail->Encoding        = "base64";
+ $mail->SMTPAuth        = true;                   // turn on  SMTP authentication
+ $mail->Username        = 구글계정;    
+ $mail->Password        = 구글계정SMTP비밀번호;   // SMTP 비밀번호
+ $mail->setFrom($mail->Username, "보내는사람");
+ $mail->addAddress(받을이메일주소);               // 받을 이메일 주소
+ $mail->Subject         = '제목';
+ $mail->Body            = '내용';  
+ if(!$mail->Send()){
+    echo "메일 전송에 실패 하였습니다.\n\n" .
+    $mail->ErrorInfo;
+ }
+ else{ 
+    echo "메일 전송에 성공 하였습니다.";
+ }
+
+```
+
+실제로 실행을 하면 위의  if(!$mail->Send()) 부분에서 에러가 발생한다. 이문제를 해결하기 위해서 구글 시큐리티로 접속후에  "내 Windows 컴퓨터의 메일"을 생성한다. 그리고나서 만들어진 시큐리티 암호 16값을 제공받아서 위의 소스코드  $mail->Password 에 적용하면 정상적으로 이메일이 발송됨을 확인할수 있다.
+* 참고: http://stackoverflow.com/questions/17227532/gmail-530-5-5-1-authentication-required-learn-more-at 
+
+$mail->SMTPSecure	= "ssl";
+$mail->Port	= 465; // 465 or 587 set the SMTP port for the GMAIL server
+
+위 소스가 안된다면
+$mail->SMTPSecure	= "tls";
+$mail->Port	= 587; // 465 or 587 set the SMTP port for the GMAIL server
+위 소스를 사용하면 된다. 
+
+stream_socket_enable_crypto 에러가 발생한다면 , php.ini 에서extension=php_openssl.dll위 php_openssl 모듈을 활성화해야 한다.
+
+
 
 ## ssmtp와 mpack 프로그램 이용하기
 
 ```bash
 [ssmtp install]
-sudo apt-get install ssmtp
-$ sudo apt-get install mpack (첨부파일 발송)
+$ sudo apt-get install ssmtp (smtp를 이용하여 이메일 메세지 발송 프로그램)
+$ sudo apt-get install mpack (이메일을 보낼때 파일을 첨부하여주는 프로그램)
 $ cd /etc/ssmtp
 $ sudo cp ssmtp.conf ssmtp.conf.bak
 
 [/etc/ssmtp/ssmtp.conf 파일 설정 변경]
-root=your_id@gmail.com&lt;
+root=your_id@gmail.com;
  #mailhub=smtp.gmail.com:587
- mailhub=smtp.gmail.com:465  --> 465 or 587 중에 1개 됨. 포트 바꾸어 보면서 시험하여 찾으면 됨   
+ mailhub=smtp.gmail.com:465  --> 465또는 587 중에 1개임. 포트 바꾸면서 시험하여 찾으면 됨   
  rewriteDomain=
  hostname=your_id@gmail.com
  UseSTARTTLS=YES
@@ -374,43 +419,36 @@ root=your_id@gmail.com&lt;
  
 [mta 변경: sendmail.ssmtp 설정]
 alternatives --config mta
+
 [PHP /etc/php5/apache2/php.ini 파일 설정변경]
-
-수정 전
-;sendmail_path = /usr/sbin/sendmail -t -i
-
-수정 후
-sendmail_path = /usr/sbin/ssmtp -t
+수정 전 --> sendmail_path = /usr/sbin/sendmail -t -i
+수정 후 --> sendmail_path = /usr/sbin/ssmtp -t
 
 [Httpd restart]
 sudo /etc/init.d/apache2 restart
 
-[구글 계정에서 설정변경--> 보안 수준을 낮추어 주어야 ssmtp 접근 가능,메일 전송가능]
-내 계정 - 로그인 및 보안 - 연결된
-앱 및 사이트 -  [v]보안 수준이
-낮은 앱 허용 
+[구글 계정에서 이메일 설정권한 변경하기]
+보안 수준을 낮추어 주어야 ssmtp 접근 가능하고 이메일 전송이 가능하다.
+내 계정 - 로그인 및 보안 - 연결된 앱 및 사이트 -  [v]보안 수준이 낮은 앱 허용 
 
 [테스트 예제]
 $ echo "test" | ssmtp 이메일주소
 $ ssmtp 이메일주소
 test.txt
 $ mpack -s "제목"
-./파일명 이메일주소일
+./파일명 이메일주소
 
-[php언어로 이메일 발송 예제]
+[php언어로 이메일 발송하는 프로그램 코드 예제]
 <?php
 $uname = "PyeongAn_Security";  //받는 사람에게 보여줄 이름을 적는다
-$uemail = "MyMail@gmail.com";  
-//gmail smtp 서버에 등록한 계정의 이메일주소
+$uemail = "MyMail@gmail.com";  //gmail smtp 서버에 등록한 계정의 이메일주소
 $from ="=?UTF-8?B?".base64_encode($uname)."?=<$uemail>\r\n";
 $headers  = 'MIME-Version: 1.0' ."\r\n";
 $headers.='Content-type: text/html; charset=UTF-8' . "\r\n"; 
 $headers.='From:  '.$from."\r\n";  
 $createday = date("Y-m-d"); 
-$to='Receiver@naver.com'
-; // 받을 사람 이메일 주소 
-$subject='Raspberrypi test mail'; 
-// 제목 
+$to='Receiver@naver.com'; // 받을 사람 이메일 주소 
+$subject='Raspberrypi test mail'; // 제목 
 $subject = "=?UTF-8?B?".base64_encode($subject)."?=";  
 $msg="ktman의 자유공간<br>\n"; // 서명   
 mail($to,$subject,$msg,$headers);
