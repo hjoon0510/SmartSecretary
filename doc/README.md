@@ -423,6 +423,7 @@ AuthPass=your_password
 FromLineOverride=YES
  
 [디폴트 mta 변경하기: sendmail.ssmtp 설정]
+만약 선택가능한 MTA가 오직 1개이라면 " error: no alternative for mta" 메세지가 나올수 있으며, 정상적인 결과라고 보면 된다. 
 $ sudo update-alternatives --config mta
 
 [PHP /etc/php/7.0/apache2/php.ini 파일 설정변경]
