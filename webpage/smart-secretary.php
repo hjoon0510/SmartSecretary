@@ -150,26 +150,33 @@ $today = date("F-j-Y g:i A");
 echo "<td width=200>";
 //display more good icons instead of icons of openweathermap.org
 // https://github.com/erikflowers/weather-icons
-if ($weather_text == "Haze")
+if ($weather_text == "Haze"){
     echo "<img width=150 height=100 src='./svg/wi-day-haze.svg'/>";
+    $w_rain_prev=0;
+}
 else if($weather_text =="Rain" || $weather_text == "Light rain"){
     echo "<img width=150 height=100 src='./image/umbrella.gif'/>";
     if ($w_rain_prev == 0 && $w_rain_curr == 1){
         system("/usr/sbin/ssmtp $receiver_email < ./data/msg.txt");
-        $w_prev=1;
     }
+   $w_rain_prev=1;
 }
+
 else if($weather_text == "Mist"){
     echo "<img width=150 height=100 src='./svg/wi-night-fog.svg'/>";
+    $w_rain_prev=0;
 }
 else if($weather_text == "Clear"){
     echo "<img width=150 height=100 src='./svg/wi-night-clear.svg'/>";
+    $w_rain_prev=0;
 }
-else if($weather_text == "Wind")
+else if($weather_text == "Wind"){
     echo "<img width=150 height=100 src='./svg/wi-day-windy.svg'/>";
+    $w_rain_prev=0;
+}
 else{
     echo "<img width=150 height=100 src='http://openweathermap.org/img/w/" . $weather_icon ."'/ >";
-    $w_prev=0;
+    $w_rain_prev=0;
 }
 
 // Display current weather.
