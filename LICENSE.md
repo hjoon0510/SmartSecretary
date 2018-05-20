@@ -1,10 +1,12 @@
 Star license
 -------------------
 
-I decided my license on May-19-2018. Finally, Smart Secretary project is Star license.
-It is open source software. The Star license meanss that users have to (1) [Apache license](https://www.apache.org/licenses/) and (2) pressing Star button of Smart Secretary repository. So, you can download my software for free. Instead, you have to press **Star button** in https://github.com/hjoon0510/SmartSecretary/ when you try to use my software.
+I finally decided my license on May-19-2018. The Smart Secretary project is Star license.
+The Star license meanss that users have to keep two conditions as following:
+* As a first condition, fllow up [Apache license](https://www.apache.org/licenses/) clause.
+* As a second condition, press **Star button** in Smart Secretary repository. 
 
-
+It is perfectly opensource software. So, you can download and use my software for free. Instead, you have to press **Star button** in https://github.com/hjoon0510/SmartSecretary/ when you try to use my software.
 
 
 May-19-2018 <br>
