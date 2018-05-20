@@ -77,17 +77,18 @@ $url = "http://api.openweathermap.org/data/2.5/weather?q=$city_name&APPID=$app_i
 
 // Specify weather conditions to send email in case of below situation.
 // 1 = rain
-// 2 = dust
-// 3 = temperature cold (< 05)
-// 4 = temperature vhot  (> 28)
+// 2 = temperature cold (< 05)
+// 3 = temperature vhot  (> 28)
+// 4 = dust
+
 $w_rain_prev=0;
 $w_rain_curr=0;
-$w_dust_prev=0;
-$w_dust_curr=0;
 $w_cold_prev=0;
 $w_cold_curr=0;
 $w_vhot_prev=0;
 $w_vhot_curr=0;
+$w_dust_prev=0;
+$w_dust_curr=0;
 
 // Use json format to get the weather information
 $contents = file_get_contents($url);
