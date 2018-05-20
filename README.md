@@ -70,6 +70,7 @@ The following figure shows the operation sequence of the program. First of all, 
 * https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
 * http://gpiozero.readthedocs.io/en/stable/installing.html
 * https://github.com/PHPMailer/PHPMailer
+* https://github.com/ajwans/sSMTP
 * https://www.data.go.kr/dataset/15000581/openapi.do
 * https://tutorials-raspberrypi.com/raspberry-pi-sensors-overview-50-important-components/
 * http://www.eleparts.co.kr/goods/view?no=3824794 (RPI NOIR CAMERA BOARD V2, 29000won)
