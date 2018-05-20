@@ -75,6 +75,20 @@ $receiver_email="hjoon0510@gmail.com";
 // ---------- Do not modify from now on ----------------------------------------------
 $url = "http://api.openweathermap.org/data/2.5/weather?q=$city_name&APPID=$app_id_key";
 
+// Specify weather conditions to send email in case of below situation.
+// 1 = rain
+// 2 = dust
+// 3 = temperature cold (< 05)
+// 4 = temperature vhot  (> 28)
+$w_rain_prev=0;
+$w_rain_curr=0;
+$w_dust_prev=0;
+$w_dust_curr=0;
+$w_cold_prev=0;
+$w_cold_curr=0;
+$w_vhot_prev=0;
+$w_vhot_curr=0;
+
 // Use json format to get the weather information
 $contents = file_get_contents($url);
 $climate=json_decode($contents);
@@ -139,23 +153,30 @@ if ($weather_text == "Haze")
     echo "<img width=150 height=100 src='./svg/wi-day-haze.svg'/>";
 else if($weather_text =="Rain" || $weather_text == "Light rain"){
     echo "<img width=150 height=100 src='./image/umbrella.gif'/>";
-    system("echo 'Rain' > ./data/current.txt");
-    system("/usr/sbin/ssmtp $receiver_email < ./data/msg.txt");
+    if ($w_rain_prev == 0 && $w_rain_curr == 1){
+        system("/usr/sbin/ssmtp $receiver_email < ./data/msg.txt");
+        $w_prev=1;
+    }
 }
 else if($weather_text == "Mist"){
     echo "<img width=150 height=100 src='./svg/wi-night-fog.svg'/>";
-    system("echo 'Mist' > ./data/current.txt");
 }
 else if($weather_text == "Clear"){
     echo "<img width=150 height=100 src='./svg/wi-night-clear.svg'/>";
 }
 else if($weather_text == "Wind")
     echo "<img width=150 height=100 src='./svg/wi-day-windy.svg'/>";
-else
+else{
     echo "<img width=150 height=100 src='http://openweathermap.org/img/w/" . $weather_icon ."'/ >";
+    $w_prev=0;
+}
 
-if($weather_text =="Rain" || $weather_text == "Light rain")
+// Display current weather.
+// And save current weather into ./data/current.txt file for pir sensor
+if($weather_text =="Rain" || $weather_text == "Light rain"){
     echo "<center>Current: <b><font color=red>" . $weather_text . "</font></b></center><br>";
+    system("echo 'Rain' > ./data/current.txt");
+}
 else{
     echo "<center>Current: <b><font color=black>" . $weather_text . "</font></b></center><br>";
     system("echo 'Unknown' > ./data/current.txt");
