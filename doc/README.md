@@ -22,7 +22,6 @@
 
 # RPI3 응용 예제 
 
-* Digital weather 만들기
 * Raspberry Pi AP mode 설정(라즈베리파이를 무선 공유기 처럼 사용하기)
 * CCTV 개발하기
 * 디지털 앨범 개발하기
@@ -42,7 +41,7 @@
 * HD 감시 카메라 http://www.instructables.com/id/Raspberry-Pi-as-low-cost-HD-surveillance-camera/ 
 
 * 게임 스테이션 http://www.instructables.com/id/Coffee-Table-Pi/
-* Kodi Edition Raspberry Pi case https://kodi.tv/article/official-kodi-edition-raspberry-pi-case
+* Kodi Edition https://kodi.tv/article/official-kodi-edition-raspberry-pi-case
 * OpenCL implementation running on the VideoCore IV GPU of the Raspberry Pi models https://github.com/doe300/VC4CL
 * 음석 인식 (arecord/aplay, h/w: 3.5mm 오디오 잭 스피커와 USB 마이크) http://makeshare.org/bbs/board.php?bo_table=raspberrypi&wr_id=103 
 
