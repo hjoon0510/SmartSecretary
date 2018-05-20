@@ -7,8 +7,6 @@ It is open source software. The Star license meanss that users have to (1) [Apac
 
 
 
-May-19-2018
-
-Hyunjoon Lim
-
-https://hjoon0510.github.io
+May-19-2018 <br>
+Hyunjoon Lim  <br>
+https://hjoon0510.github.io  <br>
