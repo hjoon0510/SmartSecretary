@@ -173,6 +173,8 @@ if ($weather_text == "Haze"){
 else if($weather_text =="Rain" || $weather_text == "Light rain"){
     echo "<img width=150 height=100 src='./image/umbrella.gif'/>";
     if ($w_rain_prev == 0 && $w_rain_curr == 1){
+        // TODO: we have to improve execution speed of ssmtp command
+        // I uploaded hint file (jpeg) into my dropbox
         system("/usr/sbin/ssmtp $receiver_email < ./data/msg.txt");
     }
    $w_rain_prev = 1;
