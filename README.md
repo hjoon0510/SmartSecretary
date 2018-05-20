@@ -3,7 +3,7 @@ This program informs users of weather and schedules.
 
 # Motivation
 Modern people can not keep their umbrellas on a rainy day because of busy daily life, and often leave the house. So when the weather you know is often going out, it often changes. People are very busy in the morning.
-So I often do not remember things or schedules I need to pack. I need a personal assistant to solve these problems. I named this device __smart secretary__ (SS). Recommended pronunciation is **double s**.
+So I often do not remember things or schedules I need to pack. I need a personal assistant to solve these problems. I named this device __smart secretary__ (SS). The recommended pronunciation is **"double s"**.
 
 # Requirement
 You have to prepare hardware and software as follows.
