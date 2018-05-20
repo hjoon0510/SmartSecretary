@@ -1,7 +1,7 @@
  
  
 **Table Of Contents**
-- [응용 예제](#응용-예제)
+- [RPI3 응용 예제](#rpi3-응용-예제)
 - [운영체제 설치하기](#운영체제-설치하기)
 - [와이파이 설정하기](#와이파이-설정하기)
 - [SSH Server](#ssh-server)
@@ -17,8 +17,10 @@
 - [Play wma file with cvlc and mplayer command](#play-wma-file-with-cvlc-and-mplayer-command)
 - [이메일 발송하기](#이메일-발송하기)
 - [How to convert sound file from wma to wav](#how-to-convert-sound-file-from-wma-to-wav)
+- [터미널을 통한 WiFi 연결](#터미널을-통한-wifi-연결)
 
-# 응용 예제 
+
+# RPI3 응용 예제 
 
 * Digital weather 만들기
 * Raspberry Pi AP mode 설정(라즈베리파이를 무선 공유기 처럼 사용하기)
@@ -30,17 +32,17 @@
 * 말하는 알람 시계 http://www.instructables.com/id/Speaking-Alarm-Clock/
 * 얼굴/웃음 감지기(opencv/python) http://www.instructables.com/id/Smile-Detection-With-Raspberry-Pi-Using-Opencv-and/ 
 
-* 인터넷 라디오 * http://www.instructables.com/id/Raspberry-Pi-Internet-Radio/
-* 라즈베리 파이는 마인크래프트 서버 * http://www.instructables.com/id/Raspberry-Pi-Minecraft-Server/
-* 수면 주기 알람 시계 * http://www.instructables.com/id/WeggUp-A-sleeping-cycle-and-light-alarm-clocke/
-* 개인비서 생성 * http://www.instructables.com/id/Raspberri-Personal-Assistant/
-* 커스텀 열전사 프린터 * https://www.adafruit.com/product/1289
+* 인터넷 라디오 http://www.instructables.com/id/Raspberry-Pi-Internet-Radio/
+* 라즈베리 파이는 마인크래프트 서버 http://www.instructables.com/id/Raspberry-Pi-Minecraft-Server/
+* 수면 주기 알람 시계 http://www.instructables.com/id/WeggUp-A-sleeping-cycle-and-light-alarm-clocke/
+* Text-to-Voice http://www.instructables.com/id/Raspberri-Personal-Assistant/
+* 커스텀 열전사 프린터 https://www.adafruit.com/product/1289
 * 왓츠앱 http://www.instructables.com/id/WhatsApp-on-Raspberry-Pi/
-* 미니 아케이드 * http://www.instructables.com/id/Build-your-own-Mini-Arcade-Cabinet-with-Raspberry-/
-* HD 감시 카메라 -http://www.instructables.com/id/Raspberry-Pi-as-low-cost-HD-surveillance-camera/ 
+* 미니 아케이드 http://www.instructables.com/id/Build-your-own-Mini-Arcade-Cabinet-with-Raspberry-/
+* HD 감시 카메라 http://www.instructables.com/id/Raspberry-Pi-as-low-cost-HD-surveillance-camera/ 
 
 * 게임 스테이션 http://www.instructables.com/id/Coffee-Table-Pi/
-* Kodi Edition Raspberry Pi case * https://kodi.tv/article/official-kodi-edition-raspberry-pi-case
+* Kodi Edition Raspberry Pi case https://kodi.tv/article/official-kodi-edition-raspberry-pi-case
 * OpenCL implementation running on the VideoCore IV GPU of the Raspberry Pi models https://github.com/doe300/VC4CL
 * 음석 인식 (arecord/aplay, h/w: 3.5mm 오디오 잭 스피커와 USB 마이크) http://makeshare.org/bbs/board.php?bo_table=raspberrypi&wr_id=103 
 
@@ -509,3 +511,44 @@ mail($to,$subject,$msg,$headers);
 $ ffmpeg -i test.wma test.wav
 $ mpalyer test.wav
 ```
+
+
+# 터미널을 통한 WiFi 연결
+
+다음 명령을 실행하여 wpa_supplicant.conf 파일을 엽니다. 
+wpa_supplicant.conf는 와이파이의 이름과 비밀번호에 대한 정보를 갖고 있는 파일입니다.
+
+```bash
+    sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+```
+
+새 이미지의 SD카드일 경우 파일 안에 아무 내용이 없고, 사용하시던 것이라면 기존에 사용하시던 와이파이에 대한 정보가 있을 것입니다. 
+다음과 같이 연결할 와이파이에 대한 내용을 추가해 줍니다.
+
+```bash
+    network = {
+        ssid = "<와이파이 이름>"
+        psk = "<와이파이 비밀번호>"
+    }
+```
+
+ssid 는 와이파이 이름, psk 는 비밀번호에 해당하는 변수 같은 것이 되겠습니다. 비밀번호가 없다면,
+```bash
+    network = {
+        ssid = "<와이파이 이름>"
+        key_mgmt = NONE
+    }
+```
+
+숨겨진 네트워크(공유기 세팅에서 와이파이 이름이 다른 사람에게 뜨지 않게 한 경우)일 경우
+```bash
+   network = {
+        ssid = "<와이파이 이름>"
+        scan_ssid = 1
+        psk = "<와이파이 비밀번호>"
+    }
+```
+로 해줍니다.
+
+와이파이와 연결이 되었다면 ifconfig wlan0 명령을 통해 확인할 수 있습니다. 
+연결이 되지 않았다면 sudo reboot 명령을 통해 재부팅을 해봅니다.
