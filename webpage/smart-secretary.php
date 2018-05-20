@@ -6,7 +6,8 @@
 // Description: This webpage is to display weather and user schedule
 // The below statements do not make a PHP debug message to show parse errors.
 // In case of PHP7/Ubuntu 16.04, the only way to show those errors is to
-// modify "/etc/php/7.0/apache2/php.ini" file with "display_errors = On"
+
+// Modify "/etc/php/7.0/apache2/php.ini" file with "display_errors = On" for debugging.
 error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
@@ -81,6 +82,7 @@ $url = "http://api.openweathermap.org/data/2.5/weather?q=$city_name&APPID=$app_i
 // 3 = temperature vhot  (> 28)
 // 4 = dust
 
+// TODO: This line is bug. The values always 0.
 $w_rain_prev=0;
 $w_rain_curr=0;
 $w_cold_prev=0;
@@ -96,6 +98,7 @@ $climate=json_decode($contents);
 
 // Get Temperature, Weather, and city name
 $balance = 273.15;
+
 // Not that we have to subtrace 273.15
 // because temperature is kelvin by default.
 $temp_max=$climate->main->temp_max - $balance;
@@ -103,10 +106,23 @@ $temp_min=$climate->main->temp_min - $balance;
 $weather_text=$climate->weather[0]->main;
 $weather_icon=$climate->weather[0]->icon.".png";
 $cityname = $climate->name;
+
 // set the default timezone to use. Available since PHP 5.1
 // how get currentdate time
 date_default_timezone_set('Asia/Seoul');
 $today = date("F-j-Y g:i A");
+
+if ($weather_text == "Rain")
+    $w_rain_curr=1;
+else if ($temp_min < 5)
+    $w_cold_curr=2;
+else if ($temp_max > 28)
+    $w_vhot_curr=3;
+// TODO: We hav to get dust value from https://www.data.go.kr/dataset/15000581/openapi.do
+else if (9999)
+    $w_dust_curr=4;
+else
+    echo "[DEBUG] There are not any weather conditions.";
 ?>
 
 <b> <center> <font color=blue> Smart Secretary </font></center></b>
@@ -152,31 +168,31 @@ echo "<td width=200>";
 // https://github.com/erikflowers/weather-icons
 if ($weather_text == "Haze"){
     echo "<img width=150 height=100 src='./svg/wi-day-haze.svg'/>";
-    $w_rain_prev=0;
+    $w_rain_prev = 0;
 }
 else if($weather_text =="Rain" || $weather_text == "Light rain"){
     echo "<img width=150 height=100 src='./image/umbrella.gif'/>";
     if ($w_rain_prev == 0 && $w_rain_curr == 1){
         system("/usr/sbin/ssmtp $receiver_email < ./data/msg.txt");
     }
-   $w_rain_prev=1;
+   $w_rain_prev = 1;
 }
 
 else if($weather_text == "Mist"){
     echo "<img width=150 height=100 src='./svg/wi-night-fog.svg'/>";
-    $w_rain_prev=0;
+    $w_rain_prev = 0;
 }
 else if($weather_text == "Clear"){
     echo "<img width=150 height=100 src='./svg/wi-night-clear.svg'/>";
-    $w_rain_prev=0;
+    $w_rain_prev = 0;
 }
 else if($weather_text == "Wind"){
     echo "<img width=150 height=100 src='./svg/wi-day-windy.svg'/>";
-    $w_rain_prev=0;
+    $w_rain_prev = 0;
 }
 else{
     echo "<img width=150 height=100 src='http://openweathermap.org/img/w/" . $weather_icon ."'/ >";
-    $w_rain_prev=0;
+    $w_rain_prev = 0;
 }
 
 // Display current weather.
