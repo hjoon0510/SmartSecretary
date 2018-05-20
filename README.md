@@ -74,6 +74,9 @@ The following figure shows the operation sequence of the program. First of all, 
 * https://tutorials-raspberrypi.com/raspberry-pi-sensors-overview-50-important-components/
 * http://www.eleparts.co.kr/goods/view?no=3824794 (RPI NOIR CAMERA BOARD V2, 29000won)
 
+# License
+* [Star License](LICENSE.md)
+
 # Contact
 My name is Hyunjun Lim (임현준 in korean). I am a student in [Maetan mid-school](http://maetan.ms.kr/). My homepage is http://hjoon0510.github.io. If you have any questions, Please contact me hjoon0510@gmail.com.
 <br><br>
