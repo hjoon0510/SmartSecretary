@@ -11,21 +11,21 @@ You have to prepare hardware and software as follows.
 ### Hardware
 Smart Secretary (SS) provides an intelligent facility to help busy modern people. It is developed with popular
 embedded device Raspberry Pi3 board. I have used PIR motion sensor to probe movement of a hunman being.
-* Raspberry Pi3 board: https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
-* PIR Motion Sensor: http://m.eleparts.co.kr/goods/view?no=3227278
+* Raspberry Pi3 board: https://www.raspberrypi.org/products/raspberry-pi-3-model-b/ (40,000won)
+* PIR Sensor (Motion Sensor): http://m.eleparts.co.kr/goods/view?no=3227278 (1,800won)
 
 ### Software
 Thanks to Linux kernel, We can easily set-up free operating systems (OS) that is called Ubuntu OS, Raspbian OS
 to Raspberry Pi3 board.
-* Raspbian OS: https://www.raspberrypi.org/downloads/raspbian/
-* Ubuntu OS: https://ubuntu-mate.org/raspberry-pi/
-* Mobaxterm: https://mobaxterm.mobatek.net/download.html
+* Raspbian OS: https://www.raspberrypi.org/downloads/raspbian/ (free)
+* Ubuntu OS: https://ubuntu-mate.org/raspberry-pi/ (free)
+* Mobaxterm: https://mobaxterm.mobatek.net/download.html (free)
 
 ### Programming languages
 It is developed by Python, PHP, and HTML language.
-* Python - https://www.python.org/
-* PHP - http://php.net/
-* HTML - https://www.w3schools.com/html/
+* Python - https://www.python.org/ (free)
+* PHP - http://php.net/ (free)
+* HTML - https://www.w3schools.com/html/ (free)
 
 # How to use
 First of all, I recommend that you read documents that I uploaded in [doc](doc/README.md) folder in order to install software in Raspberry Pi3 device.
