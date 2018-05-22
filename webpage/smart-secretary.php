@@ -77,20 +77,22 @@ $receiver_email="hjoon0510@gmail.com";
 $url = "http://api.openweathermap.org/data/2.5/weather?q=$city_name&APPID=$app_id_key";
 
 // Specify weather conditions to send email in case of below situation.
+// -----[ Weather Condition Table] -------------------------
 // 1 = rain
 // 2 = temperature cold (< 05)
 // 3 = temperature vhot  (> 28)
 // 4 = dust
+// ---------------------------------------------------------
 
-// TODO: This line is bug. The values always 0.
-$w_rain_prev=0;
-$w_rain_curr=0;
-$w_cold_prev=0;
-$w_cold_curr=0;
-$w_vhot_prev=0;
-$w_vhot_curr=0;
-$w_dust_prev=0;
-$w_dust_curr=0;
+// TODO: This line is bug. The default value ia 0. we have create a file (e.g. rain_prev.txt)
+$w_rain_prev=999;
+$w_rain_curr=999;
+$w_cold_prev=999;
+$w_cold_curr=999;
+$w_vhot_prev=999;
+$w_vhot_curr=999;
+$w_dust_prev=999;
+$w_dust_curr=999;
 
 // Use json format to get the weather information
 $contents = file_get_contents($url);
@@ -112,17 +114,26 @@ $cityname = $climate->name;
 date_default_timezone_set('Asia/Seoul');
 $today = date("F-j-Y g:i A");
 
-if ($weather_text == "Rain")
+if ($weather_text == "Rain"){
     $w_rain_curr=1;
-else if ($temp_min < 5)
+}
+else if ($temp_min < 5){
     $w_cold_curr=2;
-else if ($temp_max > 28)
+    $W_vhot_curr=0;
+}
+else if ($temp_max > 28){
     $w_vhot_curr=3;
+    $w_cold_curr=0;
+}
 // TODO: We hav to get dust value from https://www.data.go.kr/dataset/15000581/openapi.do
-else if (9999)
+else if (9999){
     $w_dust_curr=4;
-else
+}
+else{
+    $w_vhot_curr=0;
+    $w_cold_curr=0;
     echo "[DEBUG] There are not any weather conditions.";
+}
 ?>
 
 <b> <center> <font color=blue> Smart Secretary </font></center></b>
@@ -175,7 +186,7 @@ else if($weather_text =="Rain" || $weather_text == "Light rain"){
     if ($w_rain_prev == 0 && $w_rain_curr == 1){
         // TODO: we have to improve execution speed of ssmtp command
         // I uploaded hint file (jpeg) into my dropbox
-        system("/usr/sbin/ssmtp $receiver_email < ./data/msg.txt");
+        system("/usr/sbin/ssmtp $receiver_email < ./data/msg_rain.txt");
     }
    $w_rain_prev = 1;
 }
@@ -215,6 +226,18 @@ echo "<td align = left>";
 echo "City: " . $cityname . "<br>";
 echo "Time: " .$today . "<br>";
 echo "Temp Max: " . $temp_max ."&deg;C<br>";
+if($w_cold_curr == 2){
+    if($w_cold_prev == 0|| $w_cold_curr == 2){
+       system("/usr/sbin/ssmtp $receiver_email < ./data/msg_cold.txt");
+    }
+$w_cold_prev=2;
+}
+else if($w_vhot_curr == 3){
+    if($w_vhot_prev == 0 || $w_vhot_curr == 3){
+    system("/usr/sbin/ssmtp $receiver_email < ./data/msg_vhot.txt");
+    }
+$w_vhot_prev=3;
+}
 echo "Temp Min: " . $temp_min ."&deg;C<br>";
 echo "</td>";
 echo "</tr>";
