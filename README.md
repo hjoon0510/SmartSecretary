@@ -50,9 +50,14 @@ hjoon0510       ALL=NOPASSWD: ALL <---- Please append your id here.!!!!
 $ sudo systemctl restart apache2
 $ cd /var/www/html/motion
 $ (exec ./pir-final.py &> /dev/null &)
-$ chromium-browser http://localhost
+$ chromium-browser http://localhost --start-fullscreen
 That is all. Enjoy my Smart Secrectary software!!! 
 ```
+
+If you want to start automatically chromium-browser in full screen mode at boot time, Please append new program to the list of startup program on "Startup Applications Preferences" windows as follows.
+* Name: Autostart chromium
+* Command: chromium-browser http://localhost --start-fullscreen
+* Comment: none
 
 # Demonstration
 * IP address - http://192.168.219.104 
