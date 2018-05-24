@@ -49,7 +49,7 @@ hjoon0510       ALL=NOPASSWD: ALL <---- Please append your id here.!!!!
 --------------- /etc/sudoers: ending ---------------
 $ sudo systemctl restart apache2
 $ cd /var/www/html/motion
-$ ./pir-final.py
+$ (exec ./pir-final.py &> /dev/null &)
 $ chromium-browser http://localhost
 That is all. Enjoy my Smart Secrectary software!!! 
 ```
