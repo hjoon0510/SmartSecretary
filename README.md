@@ -54,7 +54,7 @@ $ chromium-browser http://localhost --start-fullscreen
 That is all. Enjoy my Smart Secrectary software!!! 
 ```
 
-If you want to start automatically chromium-browser in full screen mode at boot time, Please append new program to the list of startup program on `Startup Applications Preferences` windows as follows.
+If you want to start automatically chromium-browser in full screen mode at boot time, Please append new program to the list of startup program on `Startup Applications` windows as follows.
 * Ubuntu - System - Preference - Personal - Startup Applications
 * Smart Secretary (web-app)
    * Name: Smart Secretary (webapp)
@@ -62,9 +62,9 @@ If you want to start automatically chromium-browser in full screen mode at boot 
    * Comment: none
 * Smart Secretary (pir-sensor)
    * Name: Smart Secretary (pir-sensor)
-   * Command: /var/www/html/motion/pir-final.py
+   * Command: sh /var/www/html/motion/pir-final.py
    * Comment: none
-If you do not start "ubuntu-mate-welcome" window at boot time, uncheck "Welcome" menu at Startup Applications.
+If you do not start "ubuntu-mate-welcome" window at boot time, uncheck "Welcome" menu at `Startup Applications`.
 
 
 
