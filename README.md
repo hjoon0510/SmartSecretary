@@ -58,7 +58,7 @@ If you want to start automatically chromium-browser in full screen mode at boot 
 * Ubuntu - System - Preference - Personal - Startup Applications
 * Smart Secretary (web-app)
    * Name: Smart Secretary (webapp)
-   * Command: chromium-browser http://localhost --start-fullscreen
+   * Command: chromium-browser http://smartsecretary.mooo.com --start-fullscreen
    * Comment: none
 * Smart Secretary (pir-sensor)
    * Name: Smart Secretary (pir-sensor)
