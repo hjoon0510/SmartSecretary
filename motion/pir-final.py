@@ -26,6 +26,7 @@ import time
 import os
 
 #----------- Configuration area -------------------------------
+folder = "/var/www/html/motion/"
 GPIO_PIN = 4
 count = 0
 condition_rain = "Rain\n"
@@ -34,15 +35,19 @@ condition_snow = "Snow\n"
 #----------- Do not modify below statements -------------------
 try:
     print "[DEBUG] Starting motion sensor..."
+
+    # move to the folder that saves this file to avoid programm error
+    os.chdir(folder)
     # MotionSensor function probes the movement of people.
     pir = MotionSensor(GPIO_PIN)
     while True:
+        print "[DEBUG] Sleeping..."
         pir.wait_for_motion()
         count += 1
         t = time.localtime()
         print ("################# Motion Detected! (%d) %d:%d:%d ##############################" \
         % (count, t.tm_hour, t.tm_min, t.tm_sec))
-        # print ("[DEBUG] Motion Detected! " + str(count))
+        # read current weather value from current.txt.
         file = open("../webpage/data/current.txt")
         current = file.read()
         print ("[DEBUG] The weather data of curent.txt file is %s." % current)
@@ -61,4 +66,3 @@ try:
 # let's exit if users press "Ctrl + C".
 except KeyboardInterrupt:
     print "Quit"
-    GPIO.cleanup()
