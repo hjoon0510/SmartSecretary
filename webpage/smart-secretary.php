@@ -208,15 +208,21 @@ else{
     $w_rain_prev = 0;
 }
 
-// Display current weather.
-// And save current weather into ./data/current.txt file for pir sensor
+// Check if ./data/current.txt file is writable.
+// is_writable — Tells whether the filename is writable
+$filename_current = './data/current.txt';
+if (!is_writable($filename_current)) {
+    echo "<font color=red>[DEBUG] Oooops. The ".$filename_current." is not writable.</font>";
+}
+
+// Display current weather. And save current weather to ./data/current.txt file for pir sensor
 if($weather_text =="Rain" || $weather_text == "Light rain"){
     echo "<center>Current: <b><font color=red>" . $weather_text . "</font></b></center><br>";
-    system("echo 'Rain' > ./data/current.txt");
+    system("echo 'Rain'    > ".$filename_current);
 }
 else{
     echo "<center>Current: <b><font color=black>" . $weather_text . "</font></b></center><br>";
-    system("echo 'Unknown' > ./data/current.txt");
+    system("echo 'Unknown' > ".$filename_current);
 }
 echo "</td>";
 
