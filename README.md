@@ -71,6 +71,7 @@ If you do not start "ubuntu-mate-welcome" window at boot time, uncheck "Welcome"
 
 # Demonstration
 * IP address - http://192.168.219.104 
+   * The IP address is not public addess. So you can only connect to IP adddress in specified WiFi Router range for security.
 * Website - http://smartsecretary.mooo.com
    * This web address is created free of charge via https://freedns.afraid.org/.
 <img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo6.jpg border=0 width=500 height=350> </img>
