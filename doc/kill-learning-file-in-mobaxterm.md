@@ -1,3 +1,3 @@
-ps -ef | grep pir
-kill <file number>   //kill learning file
-ps -ef | grep pir    //check
+ps -ef | grep pir <br>
+kill <file number>   //kill learning file <br>
+ps -ef | grep pir    //check  <br>
