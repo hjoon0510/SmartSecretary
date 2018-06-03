@@ -105,7 +105,8 @@ $balance = 273.15;
 // because temperature is kelvin by default.
 $temp_max=$climate->main->temp_max - $balance;
 $temp_min=$climate->main->temp_min - $balance;
-$weather_text=$climate->weather[0]->main;
+//$weather_text=$climate->weather[0]->main;
+$weather_text="Snow";
 $weather_icon=$climate->weather[0]->icon.".png";
 $cityname = $climate->name;
 
@@ -190,7 +191,10 @@ else if($weather_text =="Rain" || $weather_text == "Light rain"){
     }
    $w_rain_prev = 1;
 }
-
+else if($weather_text == "Snow"){
+    echo "<img width=150 height=100 src='./image/snow.png'/>";
+    $w_rain_prev = 0; 
+}
 else if($weather_text == "Mist"){
     echo "<img width=150 height=100 src='./svg/wi-night-fog.svg'/>";
     $w_rain_prev = 0;
