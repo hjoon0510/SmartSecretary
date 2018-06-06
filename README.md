@@ -92,7 +92,7 @@ If you do not start "ubuntu-mate-welcome" window at boot time, uncheck "Welcome"
 * http://www.eleparts.co.kr/goods/view?no=3824794 (RPI NOIR CAMERA BOARD V2, 29000won)
 
 # License
-Please read [Star License](LICENSE.md) clause.
+The official license of Smart Secretary is Star License. For more details, please read [Star License](LICENSE.md) clause.
 * [ScanCode](https://github.com/nexB/scancode-toolkit) scans code and detects licenses, copyrights, package manifests & dependencies 
 
 # Contact
