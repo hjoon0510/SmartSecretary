@@ -7,17 +7,24 @@ $fine_dust_key="SIWaWSrBVuPLMIiRMgaD7%2FZFYT4xEQwqDTG67Nkk1HiO3xxpvCYu2hXU%2FK7%
 $receiver_email="lsy0314@gmail.com";
 
 // ---------- Do not modify from now on ----------------------------------------------
+// Airkorea OpenAPI: Korean Air Quality API 
 // We can use Open API Service from airkorea.or.kr. 
 // For more detail, visit https://www.data.go.kr/dataset/15000581/openapi.do. Then, read Page 17.
 $url = "http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty?sidoName=${city_name}&pageNo=1&numOfRows=10&ServiceKey=${fine_dust_key}&ver=1.3";
 
 // Use json format to get the fine dust information
 $contents = file_get_contents($url);
-$dust=json_decode($contents);
+$dust=json_decode($contents,true);
+$obj_addr=$dust->body[0]->items[0];
+
+
+
 
 echo "content: ".$contents;
-echo "<br>";
-echo "dust: ".$dust;
+echo "<hr>";
+echo "<pre>";
+echo "dust: ".$dust[1]->response->header->resultMsg ;
+echo "</pre>";
 $idx = -1;
 $cityNameList = Array();
 $output=$dust->response->header->resultMsg;
