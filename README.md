@@ -96,6 +96,10 @@ Please read [Star License](LICENSE.md) clause.
 * [ScanCode](https://github.com/nexB/scancode-toolkit) scans code and detects licenses, copyrights, package manifests & dependencies 
 
 # Contact
-My name is Hyunjun Lim (임현준 in korean). I am a student in [Maetan mid-school](http://maetan.ms.kr/). My homepage is http://hjoon0510.github.io. If you have any questions, Please contact me hjoon0510@gmail.com.
+My name is Hyunjun Lim (임현준 in korean). I am a student in [Maetan middle-school](http://maetan.ms.kr/). My homepage is http://hjoon0510.github.io. If you have any questions, Please contact me hjoon0510@gmail.com.
 <br><br>
-I make an effort to write english statement by utilizing https://translate.google.com to talk about my project with foreigners all over the world. If you are not student that can not speak in english, you can use https://translate.google.co.kr/?hl=ko#en/ja/https%3A%2F%2Fgithub.com%2Fhjoon0510%2FSmartSecretary for your convenience.
+
+My name is Suyeon Lim (임수연 in korean). I ma a student in Maeheon middle-school. My homepage is https://lsy0314.github.io/. 
+If you have any questions, Please do not hesitate to contact me lsy0314@gmail.com
+
+We make an effort to write english statement by utilizing https://translate.google.com to talk about my project with foreigners all over the world. If you are not student that can not speak in english, you can use https://translate.google.co.kr/?hl=ko#en/ja/https%3A%2F%2Fgithub.com%2Fhjoon0510%2FSmartSecretary for your convenience.
