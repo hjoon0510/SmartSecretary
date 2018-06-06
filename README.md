@@ -93,6 +93,7 @@ If you do not start "ubuntu-mate-welcome" window at boot time, uncheck "Welcome"
 
 # License
 Please read [Star License](LICENSE.md) clause.
+* [ScanCode](https://github.com/nexB/scancode-toolkit) scans code and detects licenses, copyrights, package manifests & dependencies 
 
 # Contact
 My name is Hyunjun Lim (임현준 in korean). I am a student in [Maetan mid-school](http://maetan.ms.kr/). My homepage is http://hjoon0510.github.io. If you have any questions, Please contact me hjoon0510@gmail.com.
