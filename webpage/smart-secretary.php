@@ -85,7 +85,7 @@ $url = "http://api.openweathermap.org/data/2.5/weather?q=$city_name&APPID=$app_i
 // ---------------------------------------------------------
 
 // TODO: This line is bug. The default value ia 0. we have create a file (e.g. rain_prev.txt)
-$w_rain_prev=999;
+$w_rain_prev='cur.php';
 $w_rain_curr=999;
 $w_cold_prev=999;
 $w_cold_curr=999;
