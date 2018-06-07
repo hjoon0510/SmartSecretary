@@ -79,15 +79,14 @@ If you do not start "ubuntu-mate-welcome" window at boot time, uncheck "Welcome"
 
 # Reference
 * https://guides.github.com/features/mastering-markdown/
-* https://gist.github.com/ihoneymon/652be052a0727ad59601
 * https://openweathermap.org/
+* https://www.data.go.kr/dataset/15000581/openapi.do
 * https://github.com/erikflowers/weather-icons/tree/master/svg
 * http://www.iconarchive.com/
 * https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
 * http://gpiozero.readthedocs.io/en/stable/installing.html
 * https://github.com/PHPMailer/PHPMailer
 * https://github.com/ajwans/sSMTP
-* https://www.data.go.kr/dataset/15000581/openapi.do
 * https://tutorials-raspberrypi.com/raspberry-pi-sensors-overview-50-important-components/
 * http://www.eleparts.co.kr/goods/view?no=3824794 (RPI NOIR CAMERA BOARD V2, 29000won)
 
@@ -96,7 +95,7 @@ The official license of Smart Secretary is Star License. For more details, pleas
 * [ScanCode](https://github.com/nexB/scancode-toolkit) scans code and detects licenses, copyrights, package manifests & dependencies 
 
 # Contact
-My name is Hyunjun Lim (임현준 in korean). I am a student in [Maetan middle-school](http://maetan.ms.kr/). My homepage is http://hjoon0510.github.io. If you have any questions, Please contact me hjoon0510@gmail.com.
+My name is Hyunjun Lim (임현준 in korean). I am a student in [Maetan middle-school](http://maetan.ms.kr/). My homepage is http://hjoon0510.github.io. Also, I am project leader for Smart Secretary. If you have any questions, Please contact me hjoon0510@gmail.com.
 <br><br>
 
 My name is Suyeon Lim (임수연 in korean). I ma a student in Maeheon middle-school. My homepage is https://lsy0314.github.io/. 
