@@ -34,13 +34,13 @@ foreach($obj_addr->item as $value) {
     // let's display only my city among the cities.
     // pm10Grade1H : Particulate Matter, 미세먼지, 1시간 등급
     // pm2.5Grade1H: Particulate Matter, 초미세먼지, 1시간 등급
-    if ($value->stationName == ${my_city}){
+    if ($value->stationName != ${my_city}){
         echo "dataTime   :".$value->dataTime."<br>";
         echo "stationNmae:".$value->stationName."<br>"; 
         echo "mangName   :".$value->mangName."<br>" ; 
-        echo "pm10Grade1H:".$value->pm10Grade1H."<br>";
+        echo "pm10Grade1h:".$value->pm10Grade1h."<br>";
         echo "o3Grade    :".$value->o3Grade."<br>";
-        echo "-------------------<br>";
+        echo "----------------------------------------<br>";
         // let's create ./data/current_finedust.txt file for PIR sensor.
     }
 }
