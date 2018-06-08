@@ -35,7 +35,7 @@ The following figure shows the operation sequence of the program. First of all, 
 
 # How to use
 
-## Install Smart Secretary
+### Install Smart Secretary
 First of all, I recommend that you read documents that I uploaded in [doc](doc/README.md) folder in order to install software in Raspberry Pi3 device.
 ```bash
 Run ssh session with mobaxterm software on windows7 PC.
@@ -57,7 +57,7 @@ That is all. Enjoy Smart Secrectary software!!! 
 ```
 If you do not start "ubuntu-mate-welcome" window at boot time, uncheck "Welcome" menu at `Startup Applications`.
 
-## Start web-application and pir-sensor at boot time
+### Start web-application and pir-sensor at boot time
 If you want to start automatically chromium-browser in full screen mode at boot time, Please append new program to the list of startup program on `Startup Applications` windows as follows. The below icons are saved in the `~/.config/autostart/` folder. Alternatively, you can put your terminal commands in `/etc/init.d/rc.local`, and it will also execute upon boot.
 ```bash
 * Ubuntu - System - Preference - Personal - Startup Applications
