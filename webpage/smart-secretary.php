@@ -43,13 +43,49 @@ $url = "http://api.openweathermap.org/data/2.5/weather?q=$city_name&APPID=$app_i
 
 // TODO: This line is bug. The default value is 0.
 // we have create a text file such as w_rain_prev.txt.
-$w_rain_prev='./data/w_rain_prev.txt';
+
+function file_is_empty($newfile){
+    if (!file_exists($newfile)){
+        system("echo 999 > $newfile");
+    }
+    return true;
+}
+
+//$w_rain_prev=999;
+//$w_cold_prev=999;
+//$w_vhot_prev=999;
+//$w_dust_prev=999;
+
+// read previous variable from ./data/*** file.
+$filename_w_rain_prev = "./data/w_rain_prev.txt";
+file_is_empty($filename_w_rain_prev);
+$file = fopen($filename_w_rain_prev,'r') or die("Unable to open $filename_w_rain_prev !!!");
+$w_rain_prev = fgets($file);
+fclose($file);
+
+$filename_w_cold_prev = "./data/w_cold_prev.txt";
+file_is_empty($filename_w_cold_prev);
+$file = fopen($filename_w_cold_prev,'r') or die("Unable to open $filename_w_cold_prev !!!");
+$w_cold_prev = fgets($file);
+fclose($file);
+
+
+$filename_w_vhot_prev = "./data/w_vhot_prev.txt";
+file_is_empty($filename_w_vhot_prev);
+$file = fopen($filename_w_vhot_prev,'r') or die("Unable to open $filename_w_vhot_prev !!!");
+$w_vhot_prev = fgets($file);
+fclose($file);
+
+$filename_w_dust_prev = "./data/w_dust_prev.txt";
+file_is_empty($filename_w_dust_prev);
+$file = fopen($filename_w_dust_prev,'r') or die("Unable to open $filename_w_dust_prev !!!");
+$w_dust_prev = fgets($file);
+fclose($file);
+
+// initialize current variable
 $w_rain_curr=999;
-$w_cold_prev=999;
 $w_cold_curr=999;
-$w_vhot_prev=999;
 $w_vhot_curr=999;
-$w_dust_prev=999;
 $w_dust_curr=999;
 
 // Use json format to get the weather information
@@ -141,36 +177,43 @@ echo "<td width=200>";
 // https://github.com/erikflowers/weather-icons
 if ($weather_text == "Haze"){
     echo "<img width=150 height=100 src='./svg/wi-day-haze.svg'/>";
-    $w_rain_prev = 0;
+    // $w_rain_prev = 0;
+    system("echo 0 > $filename_w_rain_prev"); 
 }
 else if($weather_text =="Rain" || $weather_text == "Light rain"){
     echo "<img width=150 height=100 src='./image/umbrella.gif'/>";
     if ($w_rain_prev == 0 && $w_rain_curr == 1){
-        // TODO: we have to improve execution speed of ssmtp command
+        // TODO: we have to improve execution speed (6secs) of ssmtp command
         // I uploaded hint file (jpeg) into my dropbox
         system("/usr/sbin/ssmtp $receiver_email < ./data/msg_rain.txt");
     }
-   $w_rain_prev = 1;
+    // $w_rain_prev = 1;
+   system("echo 1 > $filename_w_rain_prev"); 
 }
 else if($weather_text == "Snow"){
     echo "<img width=150 height=100 src='./image/snow.png'/>";
-    $w_rain_prev = 0; 
+    // $w_rain_prev = 0; 
+    system("echo 0 > $filename_w_rain_prev"); 
 }
 else if($weather_text == "Mist"){
     echo "<img width=150 height=100 src='./svg/wi-night-fog.svg'/>";
-    $w_rain_prev = 0;
+    // $w_rain_prev = 0;
+    system("echo 0 > $filename_w_rain_prev"); 
 }
 else if($weather_text == "Clear"){
     echo "<img width=150 height=100 src='./svg/wi-night-clear.svg'/>";
-    $w_rain_prev = 0;
+    // $w_rain_prev = 0;
+    system("echo 0 > $filename_w_rain_prev"); 
 }
 else if($weather_text == "Wind"){
     echo "<img width=150 height=100 src='./svg/wi-day-windy.svg'/>";
-    $w_rain_prev = 0;
+    system("echo 0 > $filename_w_rain_prev");
+    //$w_rain_prev = 0;
 }
 else{
     echo "<img width=150 height=100 src='http://openweathermap.org/img/w/" . $weather_icon ."'/ >";
-    $w_rain_prev = 0;
+    system("echo 0 > $filename_w_rain_prev");
+    //$w_rain_prev = 0;
 }
 
 // Check if ./data/current_weather.txt file is writable.

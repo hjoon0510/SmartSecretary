@@ -43,6 +43,7 @@ $ cd /var/www/
 $ mv html htmld.old
 $ git clone https://github.com/hjoon0510/SmartSecretary.git
 $ ln -s ./SmartSecretary ./html
+$ sudo chown -R www-data:www-data /var/www/html/html/webpage/data/
 $ sudo visudo
 --------------- /etc/sudoers: start ----------------
 # User privilege specification
