@@ -1,7 +1,6 @@
  
  
 **Table Of Contents**
-- [RPI3 응용 예제](#rpi3-응용-예제)
 - [운영체제 설치하기](#운영체제-설치하기)
 - [와이파이 설정하기](#와이파이-설정하기)
 - [SSH Server](#ssh-server)
@@ -18,32 +17,6 @@
 - [이메일 발송하기](#이메일-발송하기)
 - [How to convert sound file from wma to wav](#how-to-convert-sound-file-from-wma-to-wav)
 - [터미널을 통한 WiFi 연결](#터미널을-통한-wifi-연결)
-
-
-# RPI3 응용 예제 
-
-* Raspberry Pi AP mode 설정(라즈베리파이를 무선 공유기 처럼 사용하기)
-* CCTV 개발하기
-* 디지털 앨범 개발하기
-* 웹서버 만들기
-* 동영상 스트리밍 서비스 개발하기
-* 라디오 제작하기
-* 말하는 알람 시계 http://www.instructables.com/id/Speaking-Alarm-Clock/
-* 얼굴/웃음 감지기(opencv/python) http://www.instructables.com/id/Smile-Detection-With-Raspberry-Pi-Using-Opencv-and/ 
-
-* 인터넷 라디오 http://www.instructables.com/id/Raspberry-Pi-Internet-Radio/
-* 라즈베리 파이는 마인크래프트 서버 http://www.instructables.com/id/Raspberry-Pi-Minecraft-Server/
-* 수면 주기 알람 시계 http://www.instructables.com/id/WeggUp-A-sleeping-cycle-and-light-alarm-clocke/
-* Text-to-Voice http://www.instructables.com/id/Raspberri-Personal-Assistant/
-* 커스텀 열전사 프린터 https://www.adafruit.com/product/1289
-* 왓츠앱 http://www.instructables.com/id/WhatsApp-on-Raspberry-Pi/
-* 미니 아케이드 http://www.instructables.com/id/Build-your-own-Mini-Arcade-Cabinet-with-Raspberry-/
-* HD 감시 카메라 http://www.instructables.com/id/Raspberry-Pi-as-low-cost-HD-surveillance-camera/ 
-
-* 게임 스테이션 http://www.instructables.com/id/Coffee-Table-Pi/
-* Kodi Edition https://kodi.tv/article/official-kodi-edition-raspberry-pi-case
-* OpenCL implementation running on the VideoCore IV GPU of the Raspberry Pi models https://github.com/doe300/VC4CL
-* 음석 인식 (arecord/aplay, h/w: 3.5mm 오디오 잭 스피커와 USB 마이크) http://makeshare.org/bbs/board.php?bo_table=raspberrypi&wr_id=103 
 
 
 
