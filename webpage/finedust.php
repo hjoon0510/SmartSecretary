@@ -7,7 +7,7 @@
 // @date  : Jun-07-2018
 // ---------- Configuration-----------------------------------------------------------
 $city_name="경기";
-$my_city="";
+$my_city="인계동";
 $fine_dust_key="SIWaWSrBVuPLMIiRMgaD7%2FZFYT4xEQwqDTG67Nkk1HiO3xxpvCYu2hXU%2FK7%2Fuk3jiKS2LxIGSgz4%2FmVHCs1Y%2FA%3D%3D";
 $fine_dust_ver="1.3";
 
@@ -34,7 +34,7 @@ foreach($obj_addr->item as $value) {
     // let's display only my city among the cities.
     // pm10Grade1H : Particulate Matter, 미세먼지, 1시간 등급
     // pm2.5Grade1H: Particulate Matter, 초미세먼지, 1시간 등급
-    if ($value->stationName != ${my_city}){
+	if ($value->stationName == $my_city){
         echo "dataTime   :".$value->dataTime."<br>";
         echo "stationNmae:".$value->stationName."<br>"; 
         echo "mangName   :".$value->mangName."<br>" ; 
@@ -42,6 +42,7 @@ foreach($obj_addr->item as $value) {
         echo "o3Grade    :".$value->o3Grade."<br>";
         echo "----------------------------------------<br>";
         // let's create ./data/current_finedust.txt file for PIR sensor.
+       break;
     }
 }
 
