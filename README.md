@@ -34,6 +34,8 @@ The following figure shows the operation sequence of the program. First of all, 
 
 
 # How to use
+
+## Install Smart Secretary
 First of all, I recommend that you read documents that I uploaded in [doc](doc/README.md) folder in order to install software in Raspberry Pi3 device.
 ```bash
 Run ssh session with mobaxterm software on windows7 PC.
@@ -49,29 +51,31 @@ hjoon0510       ALL=NOPASSWD: ALL <---- Please append your id here.!!!!
 --------------- /etc/sudoers: ending ---------------
 $ sudo systemctl restart apache2
 $ cd /var/www/html/motion
-$ (exec ./pir-final.py &> /dev/null &)
+$ (exec ./pir-sensor.py &> /dev/null &)
 $ chromium-browser http://localhost --start-fullscreen
-That is all. Enjoy my Smart Secrectary software!!! 
+That is all. Enjoy Smart Secrectary software!!! 
 ```
+If you do not start "ubuntu-mate-welcome" window at boot time, uncheck "Welcome" menu at `Startup Applications`.
 
+## Start web-application and pir-sensor at boot time
 If you want to start automatically chromium-browser in full screen mode at boot time, Please append new program to the list of startup program on `Startup Applications` windows as follows. The below icons are saved in the `~/.config/autostart/` folder. Alternatively, you can put your terminal commands in `/etc/init.d/rc.local`, and it will also execute upon boot.
+```bash
 * Ubuntu - System - Preference - Personal - Startup Applications
+
 * Smart Secretary (web-app)
    * Name: Smart Secretary (webapp)
    * Command: chromium-browser http://smartsecretary.mooo.com --start-fullscreen
    * Comment: none
+
 * Smart Secretary (pir-sensor)
    * Name: Smart Secretary (pir-sensor)
-   * Command: /var/www/html/motion/pir-final.py
+   * Command: /var/www/html/motion/pir-sensor.py
    * Comment: none
-If you do not start "ubuntu-mate-welcome" window at boot time, uncheck "Welcome" menu at `Startup Applications`.
-
-
-
+```
 
 # Demonstration
 * IP address - http://192.168.219.104 
-   * The IP address is not public addess. So you can only connect to IP adddress in specified WiFi Router range for security.
+   * The IP address is not public IP address. It is a private IP address. So you can only connect to IP adddress in specified WiFi Router range for security.
 * Website - http://smartsecretary.mooo.com
    * This web address is created free of charge via https://freedns.afraid.org/.
 <img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo6.jpg border=0 width=500 height=350> </img>
@@ -91,14 +95,13 @@ If you do not start "ubuntu-mate-welcome" window at boot time, uncheck "Welcome"
 * http://www.eleparts.co.kr/goods/view?no=3824794 (RPI NOIR CAMERA BOARD V2, 29000won)
 
 # License
-The official license of Smart Secretary is Star License. For more details, please read [Star License](LICENSE.md) clause.
+The official license of Smart Secretary is `Star` License. For more details, please read [Star License](LICENSE.md) clause.
 * [ScanCode](https://github.com/nexB/scancode-toolkit) scans code and detects licenses, copyrights, package manifests & dependencies 
 
 # Contact
 My name is Hyunjun Lim (임현준 in korean). I am a student in [Maetan middle-school](http://maetan.ms.kr/). My homepage is http://hjoon0510.github.io. Also, I am project leader for Smart Secretary. If you have any questions, Please contact me hjoon0510@gmail.com.
 <br><br>
 
-My name is Suyeon Lim (임수연 in korean). I ma a student in Maeheon middle-school. My homepage is https://lsy0314.github.io/. 
-If you have any questions, Please do not hesitate to contact me lsy0314@gmail.com
+My name is Suyeon Lim (임수연 in korean). I ma a student in [Maeheon middle-school](http://maehyeon.ms.kr). My homepage is https://lsy0314.github.io/.  If you have any questions, Please do not hesitate to contact me lsy0314@gmail.com.
 
-We make an effort to write english statement by utilizing https://translate.google.com to talk about my project with foreigners all over the world. If you are not student that can not speak in english, you can use https://translate.google.co.kr/?hl=ko#en/ja/https%3A%2F%2Fgithub.com%2Fhjoon0510%2FSmartSecretary for your convenience.
+We make an effort to write english statement by utilizing https://translate.google.com to talk about Smart Secretary project with foreign students all over the world. If you are not student that can not speak in english, you can use https://translate.google.co.kr/?hl=ko#en/ja/https%3A%2F%2Fgithub.com%2Fhjoon0510%2FSmartSecretary for your convenience.

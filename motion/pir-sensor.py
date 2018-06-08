@@ -4,10 +4,12 @@
 # Date: May-07-2018
 # Title: motion prober software
 # License: Apache
-# Prequisites: sudo apt install mplayer, sudo pip install gpiozero
+# Prequisites:
+# $ sudo apt install mplayer
+# $ sudo pip install gpiozero
 #
 # Caution:
-# 1. Check location of  +DC voltage and GND line
+# 1. Check location of +DC voltage and GND line at Raspberry Pi3 board
 # 2. Change sensor and pulse button (orange color) appropriately
 #
 # How to run program:
@@ -15,7 +17,7 @@
 #  # User privilege specification
 #    root            ALL=(ALL:ALL) ALL
 #    hjoon0510       ALL=NOPASSWD: ALL
-# $ ./pir-final.py
+# $ ./pir-sensor.py
 #
 # Reference:
 # 1. http://gpiozero.readthedocs.io/en/stable/recipes.html
@@ -36,7 +38,7 @@ condition_snow = "Snow\n"
 try:
     print "[DEBUG] Starting motion sensor..."
 
-    # move to the folder that saves this file to avoid programm error
+    # go to the default absolute path in order to read data file correctly
     os.chdir(folder)
     # MotionSensor function probes the movement of people.
     pir = MotionSensor(GPIO_PIN)
@@ -47,15 +49,16 @@ try:
         t = time.localtime()
         print ("################# Motion Detected! (%d) %d:%d:%d ##############################" \
         % (count, t.tm_hour, t.tm_min, t.tm_sec))
-        # read current weather value from current.txt.
-        file = open("../webpage/data/current.txt")
-        current = file.read()
-        print ("[DEBUG] The weather data of curent.txt file is %s." % current)
+        # read current weather value from current_weather.txt.
+        file = open("../webpage/data/current_weather.txt")
+        current_weather = file.read()
+        print ("[DEBUG] The weather data of curent.txt file is %s." % current_weather)
         # if current weather is "Rain".
-        if (current == condition_rain):
+        if (current_weather == condition_rain):
             cmd = "mplayer ../sound/wma/sound-rain-english.wma"
             os.system(cmd)
-        elif(current == condition_snow):
+        # if current weather is "Snow".
+        elif(current_weather == condition_snow):
             cmd = "mplayer ../sound/wma/sound-snow-english.wma"
             os.system(cmd)
         else:

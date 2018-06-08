@@ -1,9 +1,8 @@
 <?php
-
-// Author: Hyunjoon Lim
+// Author: Suyeon Lim
 // Title: initial schedule screen
-// Date: May-06-2018
-// Description: This webpage is to display initial screen of user schedule
+// Date: May-13-2018
+// Description: A web module to display initial screen of user schedule
 
 echo ("<br>");
 echo ("<br>");

@@ -1,7 +1,8 @@
 <?php
-// Author: Hyunjoon Lim
+// Author: Hyunjoon Lim, Suyeon Lim
 // Title: Weather Crawler from openweathermap.org
 // Date: May-06-2018
+// License: Star License
 //
 // Description: This webpage is to display weather and user schedule
 // The below statements do not make a PHP debug message to show parse errors.
@@ -17,51 +18,7 @@ ini_set('display_startup_errors', TRUE);
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="refresh" content="60">
-
-<style>
-/* Container holding the image and the text */
-.container {
-    position: relative;
-    text-align: center;
-    color: blue;
-}
-
-/* Bottom left text */
-.bottom-left {
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
-}
-
-/* Top left text */
-.top-left {
-    position: absolute;
-    top: 8px;
-    left: 16px;
-}
-
-/* Top right text */
-.top-right {
-    position: absolute;
-    top: 8px;
-    right: 16px;
-}
-
-/* Bottom right text */
-.bottom-right {
-    position: absolute;
-    bottom: 8px;
-    right: 16px;
-}
-
-/* Centered text */
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-</style>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body bgcolor=white>
@@ -84,8 +41,9 @@ $url = "http://api.openweathermap.org/data/2.5/weather?q=$city_name&APPID=$app_i
 // 4 = dust
 // ---------------------------------------------------------
 
-// TODO: This line is bug. The default value ia 0. we have create a file (e.g. rain_prev.txt)
-$w_rain_prev='cur.php';
+// TODO: This line is bug. The default value is 0.
+// we have create a text file such as w_rain_prev.txt.
+$w_rain_prev='./data/w_rain_prev.txt';
 $w_rain_curr=999;
 $w_cold_prev=999;
 $w_cold_curr=999;
@@ -99,14 +57,17 @@ $contents = file_get_contents($url);
 $climate=json_decode($contents);
 
 // Get Temperature, Weather, and city name
-$balance = 273.15;
+// https://en.wikipedia.org/wiki/Absolute_zero
+$absolute_zero = 273.15;
 
-// Not that we have to subtrace 273.15
+// Not that we have to subtract 273.15 from temparature value
 // because temperature is kelvin by default.
-$temp_max=$climate->main->temp_max - $balance;
-$temp_min=$climate->main->temp_min - $balance;
-//$weather_text=$climate->weather[0]->main;
-$weather_text="Snow";
+$temp_max=$climate->main->temp_max - $absolute_zero;
+$temp_min=$climate->main->temp_min - $absolute_zero;
+$weather_text=$climate->weather[0]->main;
+// DEBUG
+// $weather_text="Snow";
+
 $weather_icon=$climate->weather[0]->icon.".png";
 $cityname = $climate->name;
 
@@ -126,7 +87,7 @@ else if ($temp_max > 28){
     $w_vhot_curr=3;
     $w_cold_curr=0;
 }
-// TODO: We hav to get dust value from https://www.data.go.kr/dataset/15000581/openapi.do
+// TODO: We hav to get fine dust data from https://www.data.go.kr/dataset/15000581/openapi.do
 else if (9999){
     $w_dust_curr=4;
 }
@@ -212,21 +173,21 @@ else{
     $w_rain_prev = 0;
 }
 
-// Check if ./data/current.txt file is writable.
+// Check if ./data/current_weather.txt file is writable.
 // is_writable — Tells whether the filename is writable
-$filename_current = './data/current.txt';
-if (!is_writable($filename_current)) {
-    echo "<font color=red>[DEBUG] Oooops. The ".$filename_current." is not writable.</font>";
+$file_current_weather = './data/current_weather.txt';
+if (!is_writable($file_current_weather)) {
+    echo "<font color=red>[DEBUG] Oooops. The ".$file_current_weather." is not writable.</font>";
 }
 
-// Display current weather. And save current weather to ./data/current.txt file for pir sensor
+// Display current weather. And save current weather to ./data/current_weather.txt file for pir sensor
 if($weather_text =="Rain" || $weather_text == "Light rain"){
     echo "<center>Current: <b><font color=red>" . $weather_text . "</font></b></center><br>";
-    system("echo 'Rain'    > ".$filename_current);
+    system("echo 'Rain'    > ".$file_current_weather);
 }
 else{
     echo "<center>Current: <b><font color=black>" . $weather_text . "</font></b></center><br>";
-    system("echo 'Unknown' > ".$filename_current);
+    system("echo 'Unknown' > ".$file_current_weather);
 }
 echo "</td>";
 
@@ -255,7 +216,7 @@ echo "</table>";
 echo "</td>";
 ?>
 
-<iframe name="myframe" src="./schedule.php"  style="width:95%; height: 60% ; background: #FFFFFF;"></iframe>
+<iframe name="myframe" src="./schedule.php"  style="width:95%; height:60% ; background:#FFFFFF;"></iframe>
 
 </body>
 </html>
