@@ -24,6 +24,58 @@ ini_set('display_startup_errors', TRUE);
 <body bgcolor=white>
 
 <?php
+// Airkorea OpenAPI: Korean Air Quality API:
+// 0. https://www.data.go.kr/dataset/15000581/openapi.do
+// 1. http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty?sidoName=서울&pageNo=1&numOfRows=10&ServiceKey=<your_auth_key>&ver=1.3
+// 2. https://api.waqi.info/feed/geo:37.517530;126.719561/?token=41da8ebfbc9cc68442af347291689e8cbeb5a9b1
+// @author: Suyeon Lim
+// @date  : Jun-07-2018
+// ---------- Configuration-----------------------------------------------------------
+$city_name="서울";
+$my_city="강남구";
+$fine_dust_key="SIWaWSrBVuPLMIiRMgaD7%2FZFYT4xEQwqDTG67Nkk1HiO3xxpvCYu2hXU%2FK7%2Fuk3jiKS2LxIGSgz4%2FmVHCs1Y%2FA%3D%3D";
+$fine_dust_ver="1.3";
+
+// ---------- Do not modify from now on ----------------------------------------------
+// Airkorea OpenAPI: Korean Air Quality API
+// We can use Open API Service from airkorea.or.kr.
+// For more detail, visit https://www.data.go.kr/dataset/15000581/openapi.do. Then, read Page 17 of the manual.
+$url_base = "http://openapi.airkorea.or.kr/openapi/services/rest/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty";
+$url_full = "$url_base?sidoName=${city_name}&pageNo=1&numOfRows=30&ServiceKey=${fine_dust_key}&ver=${fine_dust_ver}";
+
+// Use XML format to get the fine dust information
+// If we have to get data with json format, we have to append "&_returnType=json" parameter behind $url_full.
+// http://php.net/manual/kr/function.file-get-contents.php
+// http://php.net/manual/kr/function.simplexml-load-string.php
+$contents = file_get_contents($url_full);
+$xml=simplexml_load_string($contents);
+$obj_addr=$xml->body[0]->items[0];  // item[0]
+//echo "<b>Real-time inquiry of air pollution information</b><br>";
+//echo "<font color=red>Grade: 1(very good), 2(good), 3(bad), 4(worse)</font><br><br>";
+
+
+// http://php.net/manual/en/control-structures.foreach.php
+foreach($obj_addr->item as $value) {
+    // let's display only my city among the cities.
+    // pm10Grade1H : Particulate Matter, 미세먼지, 1시간 등급
+    // pm2.5Grade1H: Particulate Matter, 초미세먼지, 1시간 등급
+        if ($value->stationName == $my_city){
+        // echo "dataTime   :".$value->dataTime."<br>";
+        // echo "stationNmae:".$value->stationName."<br>";
+        // echo "mangName   :".$value->mangName."<br>" ;
+        // echo "pm10Grade1h:".$value->pm10Grade1h."<br>";
+        //echo "o3Grade    :".$value->o3Grade."<br>";
+        // echo "----------------------------------------<br>";
+        // let's create ./data/current_finedust.txt file for PIR sensor.
+        system ("echo  $value->pm10Grade1h > ./data/current_finedust.txt");
+      break;
+    }
+}
+
+?>
+
+
+<?php
 
 // ---------- Configuration-----------------------------------------------------------
 $city_name="Seoul";
@@ -76,7 +128,7 @@ $file = fopen($filename_w_vhot_prev,'r') or die("Unable to open $filename_w_vhot
 $w_vhot_prev = fgets($file);
 fclose($file);
 
-$filename_w_dust_prev = "./data/w_dust_prev.txt";
+$filename_w_dust_prev = "./data/current_finedust.txt";
 file_is_empty($filename_w_dust_prev);
 $file = fopen($filename_w_dust_prev,'r') or die("Unable to open $filename_w_dust_prev !!!");
 $w_dust_prev = fgets($file);
@@ -239,24 +291,29 @@ echo "</td>";
 echo "<td align = left>";
 echo "City: " . $cityname . "<br>";
 echo "Time: " .$today . "<br>";
-echo "Temp Max: " . $temp_max ."&deg;C<br>";
+echo "Temperature: ".(($temp_min+$temp_max)/2)."&deg;C (",$temp_min."~".$temp_max."&deg;C )<br>";
+echo "FineDust: ?????? <br>";
+echo "</td>";
+echo "</tr>";
+echo "</table>";
+echo "</td>";
+
+// TODO: when send email, we have to wait for a long time. 
+// Let's send email if now is very cold day.
 if($w_cold_curr == 2){
     if($w_cold_prev == 0|| $w_cold_curr == 2){
        system("/usr/sbin/ssmtp $receiver_email < ./data/msg_cold.txt");
     }
 $w_cold_prev=2;
 }
+// Let's send email if now is very hot day.
 else if($w_vhot_curr == 3){
     if($w_vhot_prev == 0 || $w_vhot_curr == 3){
     system("/usr/sbin/ssmtp $receiver_email < ./data/msg_vhot.txt");
     }
 $w_vhot_prev=3;
 }
-echo "Temp Min: " . $temp_min ."&deg;C<br>";
-echo "</td>";
-echo "</tr>";
-echo "</table>";
-echo "</td>";
+
 ?>
 
 <iframe name="myframe" src="./schedule.php"  style="width:95%; height:60% ; background:#FFFFFF;"></iframe>
