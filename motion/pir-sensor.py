@@ -49,9 +49,12 @@ try:
         t = time.localtime()
         print ("################# Motion Detected! (%d) %d:%d:%d ##############################" \
         % (count, t.tm_hour, t.tm_min, t.tm_sec))
-        # read current weather value from current_weather.txt.
+        # read current weather and current finedust value from current_weather.txt. and current_finedust.txt
         file = open("../webpage/data/current_weather.txt")
-        current_weather = file.read()
+	file = open("../webpage/dats/current_finedust.txt")
+        
+	current_weather = file.read()
+        curent_finedust = file.read()
         print ("[DEBUG] The weather data of curent.txt file is %s." % current_weather)
         # if current weather is "Rain".
         if (current_weather == condition_rain):
@@ -61,7 +64,10 @@ try:
         elif(current_weather == condition_snow):
             cmd = "mplayer ../sound/wma/sound-snow-english.wma"
             os.system(cmd)
-        else:
+        elif(current_finedust == 3 || current_finedust == 4):
+            cmd = "mplayer ../sound/wma/sound-dust-english.wma"
+	    os.system(cmd)
+	else:
             cmd = "mplayer ../sound/wav/dingdong.wav"
             os.system(cmd)
         # wait for 5 seconds
