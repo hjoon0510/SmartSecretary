@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # Author: Hyunjun Lim
 # Date: May-07-2018
@@ -35,6 +35,7 @@ condition_rain = "Rain\n"
 condition_snow = "Snow\n"
 
 #----------- Do not modify below statements -------------------
+
 try:
     print "[DEBUG] Starting motion sensor..."
 
@@ -51,11 +52,13 @@ try:
         % (count, t.tm_hour, t.tm_min, t.tm_sec))
         # read current weather and current finedust value from current_weather.txt. and current_finedust.txt
         file = open("../webpage/data/current_weather.txt")
-	file = open("../webpage/dats/current_finedust.txt")
-        
 	current_weather = file.read()
-        curent_finedust = file.read()
-        print ("[DEBUG] The weather data of curent.txt file is %s." % current_weather)
+	
+        file = open("../webpage/data/current_finedust.txt")
+        current_finedust = file.read()
+        
+	print ("[DEBUG] Data for finedust: %s" % (current_finedust))
+	print ("[DEBUG] Data for weather : %s" % (current_weather))
         # if current weather is "Rain".
         if (current_weather == condition_rain):
             cmd = "mplayer ../sound/wma/sound-rain-english.wma"
@@ -64,8 +67,9 @@ try:
         elif(current_weather == condition_snow):
             cmd = "mplayer ../sound/wma/sound-snow-english.wma"
             os.system(cmd)
-        elif(current_finedust == 3 || current_finedust == 4):
-            cmd = "mplayer ../sound/wma/sound-dust-english.wma"
+        # if finddust is  1(very good), 2(good), 3(bad), 4(worse)
+        elif(current_finedust == "1\n"  or current_finedust == "2\n"):
+            cmd = "mplayer ../sound/wma/sound-dust-korean.wma"
 	    os.system(cmd)
 	else:
             cmd = "mplayer ../sound/wav/dingdong.wav"
