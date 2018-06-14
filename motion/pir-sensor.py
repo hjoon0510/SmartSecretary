@@ -68,7 +68,7 @@ try:
             cmd = "mplayer ../sound/wma/sound-snow-english.wma"
             os.system(cmd)
         # if finddust is  1(very good), 2(good), 3(bad), 4(worse)
-        elif(current_finedust == "1\n"  or current_finedust == "2\n"):
+        elif(current_finedust == "3\n"  or current_finedust == "4\n"):
             cmd = "mplayer ../sound/wma/sound-dust-korean.wma"
 	    os.system(cmd)
 	else:

@@ -235,9 +235,12 @@ if ($weather_text == "Haze"){
 else if($weather_text =="Rain" || $weather_text == "Light rain"){
     echo "<img width=150 height=100 src='./image/umbrella.gif'/>";
     if ($w_rain_prev == 0 && $w_rain_curr == 1){
-        // TODO: we have to improve execution speed (6secs) of ssmtp command
-        // I uploaded hint file (jpeg) into my dropbox
-        system("/usr/sbin/ssmtp $receiver_email < ./data/msg_rain.txt");
+        // We improve execution speed (6secs) of ssmtp command by running  ssmtp command asynchronously
+        // Run a script asynchronously to avoid service timeout that is generated due to long build time.
+        // https://stackoverflow.com/questions/222414/asynchronous-shell-exec-in-php
+        // https://stackoverflow.com/questions/2368137/asynchronous-shell-commands
+        // system("/usr/sbin/ssmtp $receiver_email < ./data/msg_rain.txt");
+        system("/usr/sbin/ssmtp $receiver_email < ./data/msg_rain.txt > /dev/null 2>/dev/null &");
     }
     // $w_rain_prev = 1;
    system("echo 1 > $filename_w_rain_prev"); 
@@ -298,7 +301,7 @@ echo "</tr>";
 echo "</table>";
 echo "</td>";
 
-// TODO: when send email, we have to wait for a long time. 
+// TODO: when send email, we have to wait for a long time (e.g., 6 seconds).
 // Let's send email if now is very cold day.
 if($w_cold_curr == 2){
     if($w_cold_prev == 0|| $w_cold_curr == 2){
