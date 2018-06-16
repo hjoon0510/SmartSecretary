@@ -90,7 +90,6 @@ If you want to start automatically chromium-browser in full screen mode at boot 
 * http://www.iconarchive.com/
 * https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
 * http://gpiozero.readthedocs.io/en/stable/installing.html
-* https://github.com/PHPMailer/PHPMailer
 * https://github.com/ajwans/sSMTP
 * https://tutorials-raspberrypi.com/raspberry-pi-sensors-overview-50-important-components/
 * http://www.eleparts.co.kr/goods/view?no=3824794 (RPI NOIR CAMERA BOARD V2, 29000won)
