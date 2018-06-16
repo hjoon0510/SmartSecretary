@@ -105,4 +105,5 @@ My name is Hyunjun Lim (임현준 in korean). I am a student in [Maetan middle-s
 
 My name is Suyeon Lim (임수연 in korean). I ma a student in [Maeheon middle-school](http://maehyeon.ms.kr). My homepage is https://lsy0314.github.io/.  If you have any questions, Please do not hesitate to contact me lsy0314@gmail.com.
 
+# Translation for cowork
 We make an effort to write english statement by utilizing https://translate.google.com to talk about Smart Secretary project with foreign students all over the world. If you are not student that can not speak in english, you can use https://translate.google.co.kr/?hl=ko#en/ja/https%3A%2F%2Fgithub.com%2Fhjoon0510%2FSmartSecretary for your convenience.
