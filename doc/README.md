@@ -324,65 +324,6 @@ Please make *.wma file by running recording software on winodws7.
 
 # 이메일 발송하기
 
-## PHPMailer 프로그램 이용하기
-* https://github.com/PHPMailer/PHPMailer 에서 PHPMailer이라는 오픈소스 라이브러리를 다운로드한다. 
-* 예제 프로그램은 ./PHPMailer-master/examples/ 폴더에 위치하여 있다. 
-* 이제 아래와 같이 php 소스코드를 작성하여 사용하기마만 하면 된다. 
-```bash
- require_once("./PHPMailer/class.phpmailer.php");
- $mail                  = new PHPMailer();
- $mail->IsHTML(true);                         // HTML의 형식으로보냄
- $mail->IsSMTP();
- $mail->SMTPSecure      = "ssl";
- $mail->Port            = 465;                    // 465 or 587 set the SMTPport for the GMAIL server
- $mail->Host            = "smtp.gmail.com";
- $mail->ContentType     = "text/html";
- $mail->Charset         = "utf-8";
- $mail->Encoding        = "base64";
- $mail->SMTPAuth        = true;                   // turn on  SMTP authentication
- $mail->Username        = 구글계정;    
- $mail->Password        = 구글계정SMTP비밀번호;   // SMTP 비밀번호
- $mail->setFrom($mail->Username, "보내는사람");
- $mail->addAddress(받을이메일주소);               // 받을 이메일 주소
- $mail->Subject         = '제목';
- $mail->Body            = '내용';  
- if(!$mail->Send()){
-    echo "메일 전송에 실패 하였습니다.\n\n" .
-    $mail->ErrorInfo;
- }
- else{ 
-    echo "메일 전송에 성공 하였습니다.";
- }
-
-```
-
-구글의 gmail stmp 서비스 설정에 설문제가 있다면 오류가 발생할수 있다. 
-```bash
-bash$mail->SMTPSecure = "ssl";
-$mail->Port = 465; // 465 or 587 set the SMTP port for the GMAIL server
-```
-위 소스가 안된다면
-```bash
-$mail->SMTPSecure = "tls";
-$mail->Port = 587; // 465 or 587 set the SMTP port for the GMAIL server
-```
-위 소스를 사용하면 된다. 
-stream_socket_enable_crypto 에러가 발생한다면 , php.ini 에서 extension=php_openssl.dll위 php_openssl 모듈을 활성화해야 한다.
-
-실제로 실행을 하면 위의  if(!$mail->Send()) 부분에서 에러가 발생한다. 이문제를 해결하기 위해서 구글 시큐리티로 접속후에  "내 Windows 컴퓨터의 메일"을 생성한다. 그리고나서 만들어진 시큐리티 암호 16값을 제공받아서 위의 소스코드  $mail->Password 에 적용하면 정상적으로 이메일이 발송됨을 확인할수 있다.
-* 참고:
-   * http://stackoverflow.com/questions/17227532/gmail-530-5-5-1-authentication-required-learn-more-at 
-   * https://support.google.com/mail/answer/185833?hl=en&visit_id=1-636532191943049589-646099977&rd=1#
-   
-```bash
-- Select app: smart_secrectary
-- Select device: default (don't select)
-```
-
-"GENERATE" 버턴을 클릭하면 아래와 같은 app password가 생성된다. 
-```bash
-- app password: rqnzataqgkdigxxx
-```
 
 
 ## ssmtp 프로그램 이용하기
@@ -477,6 +418,67 @@ $msg="man의 자유공간<br>\n"; // 서명   
 mail($to,$subject,$msg,$headers);
 ?>
 ```
+
+## PHPMailer 프로그램 이용하기
+* https://github.com/PHPMailer/PHPMailer 에서 PHPMailer이라는 오픈소스 라이브러리를 다운로드한다. 
+* 예제 프로그램은 ./PHPMailer-master/examples/ 폴더에 위치하여 있다. 
+* 이제 아래와 같이 php 소스코드를 작성하여 사용하기마만 하면 된다. 
+```bash
+ require_once("./PHPMailer/class.phpmailer.php");
+ $mail                  = new PHPMailer();
+ $mail->IsHTML(true);                         // HTML의 형식으로보냄
+ $mail->IsSMTP();
+ $mail->SMTPSecure      = "ssl";
+ $mail->Port            = 465;                    // 465 or 587 set the SMTPport for the GMAIL server
+ $mail->Host            = "smtp.gmail.com";
+ $mail->ContentType     = "text/html";
+ $mail->Charset         = "utf-8";
+ $mail->Encoding        = "base64";
+ $mail->SMTPAuth        = true;                   // turn on  SMTP authentication
+ $mail->Username        = 구글계정;    
+ $mail->Password        = 구글계정SMTP비밀번호;   // SMTP 비밀번호
+ $mail->setFrom($mail->Username, "보내는사람");
+ $mail->addAddress(받을이메일주소);               // 받을 이메일 주소
+ $mail->Subject         = '제목';
+ $mail->Body            = '내용';  
+ if(!$mail->Send()){
+    echo "메일 전송에 실패 하였습니다.\n\n" .
+    $mail->ErrorInfo;
+ }
+ else{ 
+    echo "메일 전송에 성공 하였습니다.";
+ }
+
+```
+
+구글의 gmail stmp 서비스 설정에 설문제가 있다면 오류가 발생할수 있다. 
+```bash
+bash$mail->SMTPSecure = "ssl";
+$mail->Port = 465; // 465 or 587 set the SMTP port for the GMAIL server
+```
+위 소스가 안된다면
+```bash
+$mail->SMTPSecure = "tls";
+$mail->Port = 587; // 465 or 587 set the SMTP port for the GMAIL server
+```
+위 소스를 사용하면 된다. 
+stream_socket_enable_crypto 에러가 발생한다면 , php.ini 에서 extension=php_openssl.dll위 php_openssl 모듈을 활성화해야 한다.
+
+실제로 실행을 하면 위의  if(!$mail->Send()) 부분에서 에러가 발생한다. 이문제를 해결하기 위해서 구글 시큐리티로 접속후에  "내 Windows 컴퓨터의 메일"을 생성한다. 그리고나서 만들어진 시큐리티 암호 16값을 제공받아서 위의 소스코드  $mail->Password 에 적용하면 정상적으로 이메일이 발송됨을 확인할수 있다.
+* 참고:
+   * http://stackoverflow.com/questions/17227532/gmail-530-5-5-1-authentication-required-learn-more-at 
+   * https://support.google.com/mail/answer/185833?hl=en&visit_id=1-636532191943049589-646099977&rd=1#
+   
+```bash
+- Select app: smart_secrectary
+- Select device: default (don't select)
+```
+
+"GENERATE" 버턴을 클릭하면 아래와 같은 app password가 생성된다. 
+```bash
+- app password: rqnzataqgkdigxxx
+```
+
 
 # How to convert sound file from wma to wav
 ```
