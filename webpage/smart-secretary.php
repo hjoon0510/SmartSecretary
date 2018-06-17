@@ -50,8 +50,6 @@ $url_full = "$url_base?sidoName=${city_name}&pageNo=1&numOfRows=30&ServiceKey=${
 $contents = file_get_contents($url_full);
 $xml=simplexml_load_string($contents);
 $obj_addr=$xml->body[0]->items[0];  // item[0]
-//echo "<b>Real-time inquiry of air pollution information</b><br>";
-//echo "<font color=red>Grade: 1(very good), 2(good), 3(bad), 4(worse)</font><br><br>";
 
 
 // http://php.net/manual/en/control-structures.foreach.php
@@ -59,6 +57,8 @@ foreach($obj_addr->item as $value) {
     // let's display only my city among the cities.
     // pm10Grade1H : Particulate Matter, 미세먼지, 1시간 등급
     // pm2.5Grade1H: Particulate Matter, 초미세먼지, 1시간 등급
+    //echo "<b>Real-time inquiry of air pollution information</b><br>";
+    //echo "<font color=red>Grade: 1(very good), 2(good), 3(bad), 4(worse)</font><br><br>";
         if ($value->stationName == $my_city){
         // echo "dataTime   :".$value->dataTime."<br>";
         // echo "stationNmae:".$value->stationName."<br>";
@@ -90,7 +90,7 @@ $url = "http://api.openweathermap.org/data/2.5/weather?q=$city_name&APPID=$app_i
 // 1 = rain
 // 2 = temperature cold (< 05)
 // 3 = temperature vhot  (> 28)
-// 4 = dust
+// 4 = dust (dangerouse condition)
 // ---------------------------------------------------------
 
 
@@ -106,7 +106,7 @@ function file_is_empty($newfile){
 //$w_vhot_prev=999;
 //$w_dust_prev=999;
 
-// read previous variable from ./data/*** file.
+// We have to read previous values from ./data/*** file without varaible.
 $filename_w_rain_prev = "./data/w_rain_prev.txt";
 file_is_empty($filename_w_rain_prev);
 $file = fopen($filename_w_rain_prev,'r') or die("Unable to open $filename_w_rain_prev !!!");
@@ -133,10 +133,10 @@ $w_dust_prev = fgets($file);
 fclose($file);
 
 // initialize current variable
-$w_rain_curr=999;
-$w_cold_curr=999;
-$w_vhot_curr=999;
-$w_dust_curr=999;
+$w_rain_curr_condition=999;
+$w_cold_curr_condition=999;
+$w_vhot_curr_condition=999;
+$w_dust_curr_condition=999;
 
 // Use json format to get the weather information
 $contents = file_get_contents($url);
@@ -157,30 +157,30 @@ $weather_text=$climate->weather[0]->main;
 $weather_icon=$climate->weather[0]->icon.".png";
 $cityname = $climate->name;
 
-// set the default timezone to use. Available since PHP 5.1
-// how get currentdate time
+// Set the default timezone to use. Available since PHP 5.1
+// Let's specify how to get currentdate time
 date_default_timezone_set('Asia/Seoul');
 $today = date("F-j-Y g:i A");
 
 if ($weather_text == "Rain"){
-    $w_rain_curr=1;
+    $w_rain_curr_condition=1;
 }
 else if ($temp_min < 5){
-    $w_cold_curr=2;
-    $W_vhot_curr=0;
+    $w_cold_curr_condition=2;
+    $W_vhot_curr_condition=0;
 }
 else if ($temp_max > 28){
-    $w_vhot_curr=3;
-    $w_cold_curr=0;
+    $w_vhot_curr_condition=3;
+    $w_cold_curr_condition=0;
 }
-// TODO: we hav to get fine dust data from https://www.data.go.kr/dataset/15000581/openapi.do
-else if (9999){
-    $w_dust_curr=4;
+// We hav to compare a fine dust data from variable $value->pm10Grade1h .
+else if ($value->pm10Grade1h >= 3){
+    $w_dust_curr_condition=4;
 }
 else{
-    $w_vhot_curr=0;
-    $w_cold_curr=0;
-    echo "[DEBUG] There are not any weather conditions.";
+    echo "[DEBUG] There are not any bad conditions. So current weather and fine dust are good.";
+    $w_vhot_curr_condition=0;
+    $w_cold_curr_condition=0;
 }
 ?>
 
@@ -231,7 +231,7 @@ if ($weather_text == "Haze"){
 }
 else if($weather_text =="Rain" || $weather_text == "Light rain"){
     echo "<img width=150 height=100 src='./image/umbrella.gif'/>";
-    if ($w_rain_prev == 0 && $w_rain_curr == 1){
+    if ($w_rain_prev == 0 && $w_rain_curr_condition == 1){
         // We improve execution speed (6secs) of ssmtp command by running  ssmtp command asynchronously
         // Run a script asynchronously to avoid service timeout that is generated due to long build time.
         // https://stackoverflow.com/questions/222414/asynchronous-shell-exec-in-php
@@ -265,19 +265,19 @@ else{
 
 // Check if ./data/current_weather.txt file is writable.
 // is_writable — Tells whether the filename is writable
-$file_current_weather = './data/current_weather.txt';
-if (!is_writable($file_current_weather)) {
-    echo "<font color=red>[DEBUG] Oooops. The ".$file_current_weather." is not writable.</font>";
+$file_curr_conditionent_weather = './data/current_weather.txt';
+if (!is_writable($file_curr_conditionent_weather)) {
+    echo "<font color=red>[DEBUG] Oooops. The ".$file_curr_conditionent_weather." is not writable.</font>";
 }
 
 // Display current weather. And save current weather to ./data/current_weather.txt file for pir sensor
 if($weather_text =="Rain" || $weather_text == "Light rain"){
     echo "<center>Current: <b><font color=red>" . $weather_text . "</font></b></center><br>";
-    system("echo 'Rain'    > ".$file_current_weather);
+    system("echo 'Rain'    > ".$file_curr_conditionent_weather);
 }
 else{
     echo "<center>Current: <b><font color=black>" . $weather_text . "</font></b></center><br>";
-    system("echo 'Unknown' > ".$file_current_weather);
+    system("echo 'Unknown' > ".$file_curr_conditionent_weather);
 }
 echo "</td>";
 
@@ -287,7 +287,11 @@ echo "<td align = left>";
 echo "City: " . $cityname . "<br>";
 echo "Time: " .$today . "<br>";
 echo "Temperature: ".(($temp_min+$temp_max)/2)."&deg;C (",$temp_min."~".$temp_max."&deg;C )<br>";
-echo "FineDust: ?????? <br>";
+echo "FineDust: ?????? ";
+// The finedust variable is $value->pm10Grade1h
+if ($w_dust_curr_condition == 4)
+    echo "<font color=red>(Dangerous)</font>";
+echo "<br>";
 echo "</td>";
 echo "</tr>";
 echo "</table>";
@@ -295,8 +299,8 @@ echo "</td>";
 
 // TODO: when send email, we have to wait for a long time (e.g., 6 seconds).
 // Let's send email if now is very cold day.
-if($w_cold_curr == 2){
-    if($w_cold_prev == 0|| $w_cold_curr == 2){
+if($w_cold_curr_condition == 2){
+    if($w_cold_prev == 0|| $w_cold_curr_condition == 2){
         // We improve execution speed (6secs) of ssmtp command by running  ssmtp command asynchronously
         // Run a script asynchronously to avoid service timeout that is generated due to long build time.
         // https://stackoverflow.com/questions/222414/asynchronous-shell-exec-in-php
@@ -307,8 +311,8 @@ if($w_cold_curr == 2){
 $w_cold_prev=2;
 }
 // Let's send email if now is very hot day.
-else if($w_vhot_curr == 3){
-    if($w_vhot_prev == 0 || $w_vhot_curr == 3){
+else if($w_vhot_curr_condition == 3){
+    if($w_vhot_prev == 0 || $w_vhot_curr_condition == 3){
         // We improve execution speed (6secs) of ssmtp command by running  ssmtp command asynchronously
         // Run a script asynchronously to avoid service timeout that is generated due to long build time.
         // https://stackoverflow.com/questions/222414/asynchronous-shell-exec-in-php
