@@ -281,14 +281,26 @@ else{
 }
 echo "</td>";
 
-//3rd column table
+// 3rd column table
 
 echo "<td align = left>";
 echo "City: " . $cityname . "<br>";
 echo "Time: " .$today . "<br>";
 echo "Temperature: ".(($temp_min+$temp_max)/2)."&deg;C (",$temp_min."~".$temp_max."&deg;C )<br>";
-echo "FineDust: ?????? ";
 // The finedust variable is $value->pm10Grade1h
+// Fine dust Grade: 1(very good), 2(good), 3(bad), 4(worse)
+echo "FineDust: ";
+if($value->pm10Grade1h == 1)
+    echo "<font color=green>Very Good</font>";
+else if($value->pm10Grade1h == 2)
+    echo "<font color=green>Good</font>";
+else if($value->pm10Grade1h == 3)
+    echo "<font color=green>Bad</font>";
+else if($value->pm10Grade1h == 4)
+    echo "<font color=green>Worse</font>";
+else
+    echo "<font color=green>Error</font>";
+// if fine dust is bad or wores, let's display "Dangerouse" message.
 if ($w_dust_curr_condition == 4)
     echo "<font color=red>(Dangerous)</font>";
 echo "<br>";
