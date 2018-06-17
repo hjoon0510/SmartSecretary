@@ -28,7 +28,7 @@ It is developed by Python, PHP, and HTML language.
 * HTML - https://www.w3schools.com/html/ (free)
 
 # Design
-The following figure shows the operation sequence of the program. First of all, this program gets the necessary information from the weather server. The program then uses the motion sensor to detect human motion. When a person comes around the hardware, it not only prints important information on the screen, but also speaks by voice. Users can also check the schedule(you can showschedule from google calendar)information before leaving home. In the event of rain, users can check the weather information in real time using e-mail.
+The following figure shows the operation sequence of the program. First of all, this program gets the necessary information from the weather server. The program then uses the motion sensor to detect human motion. When a person comes around the hardware, it not only prints important information on the screen, but also speaks by voice. Users can also check the schedule(you can show schedule from google calendar)information before leaving home. In the event of rain, users can check the weather information in real time using e-mail.
 
 <img src=./pic/ss-diagram2.jpg border=0 width=800 height=350> </img>
 
@@ -104,5 +104,5 @@ My name is Hyunjun Lim (임현준 in korean). I am a student in [Maetan middle-s
 
 My name is Suyeon Lim (임수연 in korean). I ma a student in [Maeheon middle-school](http://maehyeon.ms.kr). My homepage is https://lsy0314.github.io/.  If you have any questions, Please do not hesitate to contact me lsy0314@gmail.com.
 
-# Translation for cowork
+# Translation
 We make an effort to write english statement by utilizing https://translate.google.com to talk about Smart Secretary project with foreign students all over the world. If you are not student that can not speak in english, you can use https://translate.google.co.kr/?hl=ko#en/ja/https%3A%2F%2Fgithub.com%2Fhjoon0510%2FSmartSecretary for your convenience.
