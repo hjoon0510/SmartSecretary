@@ -93,8 +93,6 @@ $url = "http://api.openweathermap.org/data/2.5/weather?q=$city_name&APPID=$app_i
 // 4 = dust
 // ---------------------------------------------------------
 
-// TODO: This line is bug. The default value is 0.
-// we have create a text file such as w_rain_prev.txt.
 
 function file_is_empty($newfile){
     if (!file_exists($newfile)){
@@ -175,7 +173,7 @@ else if ($temp_max > 28){
     $w_vhot_curr=3;
     $w_cold_curr=0;
 }
-// TODO: We hav to get fine dust data from https://www.data.go.kr/dataset/15000581/openapi.do
+// TODO: we hav to get fine dust data from https://www.data.go.kr/dataset/15000581/openapi.do
 else if (9999){
     $w_dust_curr=4;
 }
@@ -229,7 +227,6 @@ echo "<td width=200>";
 // https://github.com/erikflowers/weather-icons
 if ($weather_text == "Haze"){
     echo "<img width=150 height=100 src='./svg/wi-day-haze.svg'/>";
-    // $w_rain_prev = 0;
     system("echo 0 > $filename_w_rain_prev"); 
 }
 else if($weather_text =="Rain" || $weather_text == "Light rain"){
@@ -242,33 +239,28 @@ else if($weather_text =="Rain" || $weather_text == "Light rain"){
         // system("/usr/sbin/ssmtp $receiver_email < ./data/msg_rain.txt");
         system("/usr/sbin/ssmtp $receiver_email < ./data/msg_rain.txt > /dev/null 2>/dev/null &");
     }
-    // $w_rain_prev = 1;
    system("echo 1 > $filename_w_rain_prev"); 
 }
 else if($weather_text == "Snow"){
     echo "<img width=150 height=100 src='./image/snow.png'/>";
-    // $w_rain_prev = 0; 
     system("echo 0 > $filename_w_rain_prev"); 
 }
 else if($weather_text == "Mist"){
     echo "<img width=150 height=100 src='./svg/wi-night-fog.svg'/>";
-    // $w_rain_prev = 0;
     system("echo 0 > $filename_w_rain_prev"); 
 }
 else if($weather_text == "Clear"){
-    echo "<img width=150 height=100 src='./svg/wi-night-clear.svg'/>";
-    // $w_rain_prev = 0;
-    system("echo 0 > $filename_w_rain_prev"); 
+   echo "<img width=150 height=100 src='./svg/wi-night-clear.svg'/>";
+   $w_rain_prev = 0;
+   system("echo 0 > $filename_w_rain_prev");
 }
 else if($weather_text == "Wind"){
     echo "<img width=150 height=100 src='./svg/wi-day-windy.svg'/>";
     system("echo 0 > $filename_w_rain_prev");
-    //$w_rain_prev = 0;
 }
 else{
     echo "<img width=150 height=100 src='http://openweathermap.org/img/w/" . $weather_icon ."'/ >";
     system("echo 0 > $filename_w_rain_prev");
-    //$w_rain_prev = 0;
 }
 
 // Check if ./data/current_weather.txt file is writable.
@@ -305,14 +297,24 @@ echo "</td>";
 // Let's send email if now is very cold day.
 if($w_cold_curr == 2){
     if($w_cold_prev == 0|| $w_cold_curr == 2){
-       system("/usr/sbin/ssmtp $receiver_email < ./data/msg_cold.txt");
+        // We improve execution speed (6secs) of ssmtp command by running  ssmtp command asynchronously
+        // Run a script asynchronously to avoid service timeout that is generated due to long build time.
+        // https://stackoverflow.com/questions/222414/asynchronous-shell-exec-in-php
+        // https://stackoverflow.com/questions/2368137/asynchronous-shell-commands
+        // system("/usr/sbin/ssmtp $receiver_email < ./data/msg_cold.txt");
+        system("/usr/sbin/ssmtp $receiver_email < ./data/msg_cold.txt > /dev/null 2>/dev/null &");
     }
 $w_cold_prev=2;
 }
 // Let's send email if now is very hot day.
 else if($w_vhot_curr == 3){
     if($w_vhot_prev == 0 || $w_vhot_curr == 3){
-    system("/usr/sbin/ssmtp $receiver_email < ./data/msg_vhot.txt");
+        // We improve execution speed (6secs) of ssmtp command by running  ssmtp command asynchronously
+        // Run a script asynchronously to avoid service timeout that is generated due to long build time.
+        // https://stackoverflow.com/questions/222414/asynchronous-shell-exec-in-php
+        // https://stackoverflow.com/questions/2368137/asynchronous-shell-commands
+        // system("/usr/sbin/ssmtp $receiver_email < ./data/msg_vhot.txt");
+        system("/usr/sbin/ssmtp $receiver_email < ./data/msg_vhot.txt > /dev/null 2>/dev/null &");
     }
 $w_vhot_prev=3;
 }
