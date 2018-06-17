@@ -33,10 +33,16 @@ The following figure shows the operation sequence of the program. First of all, 
 <img src=./pic/ss-diagram2.jpg border=0 width=800 height=350> </img>
 
 
-# How to use
+# How to install
+
+### Install Ubuntu OS in Raspberry Pi3
+First of all, read documents that we uploaded in [doc](doc/README.md) folder.
+Then, please try to install Ubuntu OS in Raspberry Pi3 device.
+
 
 ### Install Smart Secretary
-First of all, I recommend that you read documents that I uploaded in [doc](doc/README.md) folder in order to install software in Raspberry Pi3 device.
+Smart Secretary was developed by Python (motion sensor) and PHP (Web application). 
+Please install two applications as following:
 ```bash
 Run ssh session with mobaxterm software on windows7 PC.
 $ cd /var/www/
@@ -54,11 +60,11 @@ $ sudo systemctl restart apache2
 $ cd /var/www/html/motion
 $ (exec ./pir-sensor.py &> /dev/null &)
 $ chromium-browser http://localhost --start-fullscreen
-That is all. Enjoy Smart Secrectary software!!! 
 ```
+That's all. Enjoy Smart Secrectary!!! 
 If you do not start "ubuntu-mate-welcome" window at boot time, uncheck "Welcome" menu at `Startup Applications`.
 
-### Start web-application and pir-sensor at boot time
+### How to start web-application and pir-sensor automatically at boot time
 If you want to start automatically chromium-browser in full screen mode at boot time, Please append new program to the list of startup program on `Startup Applications` windows as follows. The below icons are saved in the `~/.config/autostart/` folder. Alternatively, you can put your terminal commands in `/etc/init.d/rc.local`, and it will also execute upon boot.
 ```bash
 * Ubuntu - System - Preference - Personal - Startup Applications
@@ -98,11 +104,21 @@ If you want to start automatically chromium-browser in full screen mode at boot 
 The official license of Smart Secretary is `Star` License. For more details, please read [Star License](LICENSE.md) clause.
 * [ScanCode](https://github.com/nexB/scancode-toolkit) scans code and detects licenses, copyrights, package manifests & dependencies 
 
+# Translation
+We make an effort to write english statement by utilizing https://translate.google.com to talk about Smart Secretary project with foreign students all over the world. If you are not student that can not speak in english, you can use https://translate.google.co.kr/?hl=ko#en/ja/https%3A%2F%2Fgithub.com%2Fhjoon0510%2FSmartSecretary for your convenience.
+
+
 # Contact
 My name is Hyunjun Lim (임현준 in korean). I am a student in [Maetan middle-school](http://maetan.ms.kr/). My homepage is http://hjoon0510.github.io. Also, I am project leader for Smart Secretary. If you have any questions, Please contact me hjoon0510@gmail.com.
 <br><br>
 
 My name is Suyeon Lim (임수연 in korean). I ma a student in [Maeheon middle-school](http://maehyeon.ms.kr). My homepage is https://lsy0314.github.io/.  If you have any questions, Please do not hesitate to contact me lsy0314@gmail.com.
 
-# Translation
-We make an effort to write english statement by utilizing https://translate.google.com to talk about Smart Secretary project with foreign students all over the world. If you are not student that can not speak in english, you can use https://translate.google.co.kr/?hl=ko#en/ja/https%3A%2F%2Fgithub.com%2Fhjoon0510%2FSmartSecretary for your convenience.
+
+# Terminology
+* HTML: Hypertext Markup Language
+* OS: Operating System
+* PIR: Passive-InfraRed
+* RPi: Raspberry Pi
+* SS: Smart Secretary
+* WWW: World-Wide Web
