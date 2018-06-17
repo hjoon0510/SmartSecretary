@@ -90,14 +90,14 @@ If you want to start automatically chromium-browser in full screen mode at boot 
 
 # Reference
 * https://guides.github.com/features/mastering-markdown/
-* https://openweathermap.org/
-* https://www.data.go.kr/dataset/15000581/openapi.do
+* https://openweathermap.org/ (Open API for weather)
+* https://www.data.go.kr/dataset/15000581/openapi.do (Open API for fine dust)
 * https://github.com/erikflowers/weather-icons/tree/master/svg
 * http://www.iconarchive.com/
 * https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
-* http://gpiozero.readthedocs.io/en/stable/installing.html
+* http://gpiozero.readthedocs.io/en/stable/installing.html (How to use GPIO pin)
 * https://github.com/ajwans/sSMTP
-* https://tutorials-raspberrypi.com/raspberry-pi-sensors-overview-50-important-components/
+* https://tutorials-raspberrypi.com/raspberry-pi-sensors-overview-50-important-components/ (50 sensors)
 * http://www.eleparts.co.kr/goods/view?no=3824794 (RPI NOIR CAMERA BOARD V2, 29000won)
 
 # License
