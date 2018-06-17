@@ -116,6 +116,7 @@ My name is Suyeon Lim (임수연 in korean). I ma a student in [Maeheon middle-s
 
 
 # Terminology
+* API: Application Programming Interface
 * HTML: Hypertext Markup Language
 * OS: Operating System
 * PIR: Passive-InfraRed
