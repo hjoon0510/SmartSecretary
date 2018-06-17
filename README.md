@@ -98,7 +98,7 @@ If you want to start automatically chromium-browser in full screen mode at boot 
 * http://gpiozero.readthedocs.io/en/stable/installing.html (How to use GPIO pin)
 * https://github.com/ajwans/sSMTP
 * https://tutorials-raspberrypi.com/raspberry-pi-sensors-overview-50-important-components/ (50 sensors)
-* http://www.eleparts.co.kr/goods/view?no=3824794 (RPI NOIR CAMERA BOARD V2, 29000won)
+* http://www.eleparts.co.kr/goods/view?no=3824794 (Shopping Mall: RPI NOIR CAMERA BOARD V2, 29,000 won)
 
 # License
 The official license of Smart Secretary is `Star` License. For more details, please read [Star License](LICENSE.md) clause.
@@ -117,9 +117,12 @@ My name is Suyeon Lim (임수연 in korean). I ma a student in [Maeheon middle-s
 
 # Terminology
 * API: Application Programming Interface
-* HTML: Hypertext Markup Language
+* GPIO: General-Purpose Input/Output
+* HTML: HyperText Markup Language
+* MD: MarkDown
 * OS: Operating System
 * PIR: Passive-InfraRed
 * RPi: Raspberry Pi
 * SS: Smart Secretary
+* SMTP: Simple Mail Transfer Protocol
 * WWW: World-Wide Web
