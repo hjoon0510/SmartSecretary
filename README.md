@@ -56,16 +56,20 @@ $ sudo visudo
 root    ALL=(ALL:ALL) ALL
 hjoon0510       ALL=NOPASSWD: ALL <---- Please append your id here.!!!!
 --------------- /etc/sudoers: ending ---------------
+```
+
+### Run Smart Secretary
+Let's run PIR motion sensor and Webapplication. 
+```bash
+$ exec /var/www/html/motion/pir-sensor.py &> /dev/null &
 $ sudo systemctl restart apache2
-$ cd /var/www/html/motion
-$ (exec ./pir-sensor.py &> /dev/null &)
 $ chromium-browser http://localhost --start-fullscreen
 ```
 That's all. Enjoy Smart Secrectary!!! 
-If you do not start "ubuntu-mate-welcome" window at boot time, uncheck "Welcome" menu at `Startup Applications`.
+If you do not start `ubuntu-mate-welcome` window at boot time, uncheck **Welcome** menu at `Startup Applications`.
 
 ### How to start web-application and pir-sensor automatically at boot time
-If you want to start automatically chromium-browser in full screen mode at boot time, Please append new program to the list of startup program on `Startup Applications` windows as follows. The below icons are saved in the `~/.config/autostart/` folder. Alternatively, you can put your terminal commands in `/etc/init.d/rc.local`, and it will also execute upon boot.
+If you want to start automatically chromium-browser in full screen mode at boot time, Please append new program to the list of startup program on `Startup Applications` windows as follows. 
 ```bash
 * Ubuntu - System - Preference - Personal - Startup Applications
 
@@ -79,6 +83,7 @@ If you want to start automatically chromium-browser in full screen mode at boot 
    * Command: /var/www/html/motion/pir-sensor.py
    * Comment: none
 ```
+The above icons are saved in the `~/.config/autostart/` folder. Alternatively, you can append your terminal commands in `/etc/init.d/rc.local`, and it will also automatically execute upon boot.
 
 # Demonstration
 * IP address - http://192.168.219.104 
