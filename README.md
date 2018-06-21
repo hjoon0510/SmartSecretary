@@ -102,6 +102,7 @@ The above icons are saved in the `~/.config/autostart/` folder. Alternatively, y
 * https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
 * http://gpiozero.readthedocs.io/en/stable/installing.html (How to use GPIO pin)
 * https://github.com/ajwans/sSMTP
+* https://developers.google.com/calendar/v3/reference/events/list (Google Calendar API)
 * https://tutorials-raspberrypi.com/raspberry-pi-sensors-overview-50-important-components/ (50 sensors)
 * http://www.eleparts.co.kr/goods/view?no=3824794 (Shopping Mall: RPI NOIR CAMERA BOARD V2, 29,000 won)
 
