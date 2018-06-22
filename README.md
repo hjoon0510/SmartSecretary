@@ -92,6 +92,7 @@ The above icons are saved in the `~/.config/autostart/` folder. Alternatively, y
    * This web address is created free of charge via https://freedns.afraid.org/.
 <img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo6.jpg border=0 width=500 height=350> </img>
 <img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo7.jpg border=0 width=500 height=350> </img>
+<img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo8.jpg border=0 width=500 height=350> </img>
 
 # Reference
 * https://guides.github.com/features/mastering-markdown/
