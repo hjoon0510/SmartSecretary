@@ -46,7 +46,7 @@ Please install two applications as following:
 ```bash
 Run ssh session with mobaxterm software on windows7 PC.
 $ cd /var/www/
-$ mv html htmld.old
+$ mv html html.old
 $ git clone https://github.com/hjoon0510/SmartSecretary.git
 $ ln -s ./SmartSecretary ./html
 $ sudo chown -R www-data:www-data /var/www/html/html/webpage/data/
