@@ -1,6 +1,6 @@
 <?php
 // Author: Hyunjoon Lim, Suyeon Lim
-// Title: Weather Crawler from openweathermap.org
+// Title: Open API Crawler from openweathermap.org and www.data.go.kr
 // Date: May-06-2018
 // License: Star License
 //
