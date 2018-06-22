@@ -309,7 +309,8 @@ echo "</tr>";
 echo "</table>";
 echo "</td>";
 
-// TODO: when send email, we have to wait for a long time (e.g., 6 seconds).
+// When send email, we have to wait for a long time (e.g., 6 seconds) in general.
+// So we have to run ssmtp command with asynchrononous method. 
 // Let's send email if now is very cold day.
 if($w_cold_curr_condition == 2){
     if($w_cold_prev == 0|| $w_cold_curr_condition == 2){
