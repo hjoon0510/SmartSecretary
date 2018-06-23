@@ -17,7 +17,7 @@ ini_set('display_startup_errors', TRUE);
 <title>Smart Secretary</title>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="60">
+<meta http-equiv="refresh" content="600">
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -30,6 +30,7 @@ ini_set('display_startup_errors', TRUE);
 // 2. https://api.waqi.info/feed/geo:37.517530;126.719561/?token=41da8ebfbc9cc68442af347291689e8cbeb5a9b1
 // @author: Suyeon Lim
 // @date  : Jun-07-2018
+// @memo  : WARNING!!!. Fine dust API server responses until 200 request. So we refresh per 10 minutes.
 // ---------- Configuration-----------------------------------------------------------
 $city_name="서울";
 $my_city="강남구";
