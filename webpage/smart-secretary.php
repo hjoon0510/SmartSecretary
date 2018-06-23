@@ -94,12 +94,12 @@ $receiver_email="hjoon0510@gmail.com";
 $url = "http://api.openweathermap.org/data/2.5/weather?q=$city_name&APPID=$app_id_key";
 
 // Specify weather conditions to send email in case of below situation.
-// -----[ Weather Condition Table] -------------------------
+// -----[ Value Management Table for weather] -------------------------
 // 1 = rain
 // 2 = temperature cold (< 05)
 // 3 = temperature vhot  (> 28)
 // 4 = dust (dangerouse condition)
-// ---------------------------------------------------------
+// --------------------------------------------------------------------
 
 
 function file_is_empty($newfile){
@@ -329,8 +329,7 @@ if($w_cold_curr_condition == 2){
         // system("/usr/sbin/ssmtp $receiver_email < ./data/msg_cold.txt");
         system("/usr/sbin/ssmtp $receiver_email < ./data/msg_cold.txt > /dev/null 2>/dev/null &");
     }
-$w_cold_prev=2;
-$w_vhot_curr_condition=0;
+    system("echo 2 > $filename_w_vhot_prev"); 
 }
 // Let's send email if now is very hot day.
 else if($w_vhot_curr_condition == 3){
@@ -342,8 +341,7 @@ else if($w_vhot_curr_condition == 3){
         // system("/usr/sbin/ssmtp $receiver_email < ./data/msg_vhot.txt");
         system("/usr/sbin/ssmtp $receiver_email < ./data/msg_vhot.txt > /dev/null 2>/dev/null &");
     }
-$w_vhot_prev=3;
-$w_cold_curr_condition=0;
+    system("echo 3 > $filename_w_vhot_prev"); 
 }
 
 ?>
