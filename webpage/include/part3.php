@@ -54,7 +54,7 @@ if($w_cold_curr_condition == 2){
 }
 // Let's send email if now is very hot day.
 else if($w_vhot_curr_condition == 3){
-    if($w_vhot_prev == 0 || $w_vhot_curr_condition == 3){
+    if($w_vhot_prev == 0 && $w_vhot_curr_condition == 3){
         // We improve execution speed (6secs) of ssmtp command by running  ssmtp command asynchronously
         // Run a script asynchronously to avoid service timeout that is generated due to long build time.
         // https://stackoverflow.com/questions/222414/asynchronous-shell-exec-in-php
