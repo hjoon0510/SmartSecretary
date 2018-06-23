@@ -42,7 +42,7 @@ echo "</td>";
 // So we have to run ssmtp command with asynchrononous method. 
 // Let's send email if now is very cold day.
 if($w_cold_curr_condition == 2){
-    if($w_cold_prev == 0|| $w_cold_curr_condition == 2){
+    if($w_cold_prev == 0 && $w_cold_curr_condition == 2){
         // We improve execution speed (6secs) of ssmtp command by running  ssmtp command asynchronously
         // Run a script asynchronously to avoid service timeout that is generated due to long build time.
         // https://stackoverflow.com/questions/222414/asynchronous-shell-exec-in-php
