@@ -47,11 +47,19 @@ $url_full = "$url_base?sidoName=${city_name}&pageNo=1&numOfRows=30&ServiceKey=${
 // If we have to get data with json format, we have to append "&_returnType=json" parameter behind $url_full.
 // http://php.net/manual/kr/function.file-get-contents.php
 // http://php.net/manual/kr/function.simplexml-load-string.php
-$contents = file_get_contents($url_full);
-$xml=simplexml_load_string($contents);
+$contents = file_get_contents($url_full); // get contents from api server
+$xml=simplexml_load_string($contents); // get data with xml format
 $obj_addr=$xml->body[0]->items[0];  // item[0]
 
+// If openapi.airkorea.or.kr does not work, let's display debug message.
+if ($obj_addr == "") {
+    echo "<br><br>";
+    echo "[DEBUG] Response of API Server (http://openapi.airkorea.or.kr):<br>";
+    echo "[DEBUG] <font color=red>".$xml->header->resultMsg."</font><br>";
+    return 0;
+}
 
+// find a fine dust value of my city.
 // http://php.net/manual/en/control-structures.foreach.php
 foreach($obj_addr->item as $value) {
     // let's display only my city among the cities.
@@ -322,6 +330,7 @@ if($w_cold_curr_condition == 2){
         system("/usr/sbin/ssmtp $receiver_email < ./data/msg_cold.txt > /dev/null 2>/dev/null &");
     }
 $w_cold_prev=2;
+$w_vhot_curr_condition=0;
 }
 // Let's send email if now is very hot day.
 else if($w_vhot_curr_condition == 3){
@@ -334,6 +343,7 @@ else if($w_vhot_curr_condition == 3){
         system("/usr/sbin/ssmtp $receiver_email < ./data/msg_vhot.txt > /dev/null 2>/dev/null &");
     }
 $w_vhot_prev=3;
+$w_cold_curr_condition=0;
 }
 
 ?>
