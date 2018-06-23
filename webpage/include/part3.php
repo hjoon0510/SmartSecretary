@@ -1,6 +1,6 @@
 <?php
 // Author: Hyunjoon Lim, Suyeon Lim
-// Title: Part 3
+// Title: Part 3 /  date, time, temperature, fine dust, send email (cold, hot)
 // Date: May-06-2018
 // License: Star License
 //

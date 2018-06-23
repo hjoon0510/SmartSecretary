@@ -1,6 +1,6 @@
 <?php
 // Author: Hyunjoon Lim, Suyeon Lim
-// Title: Par2
+// Title: Par2 /  display weather icon , send email (rain)
 // Date: May-06-2018
 // License: Star License
 //

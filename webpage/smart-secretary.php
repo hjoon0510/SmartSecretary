@@ -34,28 +34,28 @@ include "./include/api-weather.php";
 ?>
 
 <b> <center> <font color=blue> Smart Secretary </font></center></b>
-<table border=0>
 
+<table border=0>
 <tr width=100%>
 
 <?php
-// load part1 file
+// load part1 file: display user schedule
 include "./include/part1.php";
 ?>
 
 <?php
-// load part2 file
+// load part2 file: display weather icon , send email (rain)
 include "./include/part2.php";
-
 ?>
 
 <?php
-// load part3 file
+// load part3 file: date, time, temperature, fine dust, send email (cold, hot)
 include "./include/part3.php";
-
 ?>
 
-<iframe name="myframe" src="./schedule.php"  style="width:95%; height:60% ; background:#FFFFFF;"></iframe>
+</tr>
+</table>
 
+<iframe name="myframe" src="./schedule.php"  style="width:95%; height:60% ; background:#FFFFFF;"></iframe>
 </body>
 </html>
