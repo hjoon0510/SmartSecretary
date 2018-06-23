@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 
-# Author: Hyunjun Lim
-# Date: May-07-2018
-# Title: motion prober software
-# License: Apache
-# Prequisites:
+# @Author: Hyunjun Lim
+# @Date: May-07-2018
+# @Title: motion prober software
+# @License: Star
+# @Prequisites:
 # $ sudo apt install mplayer
 # $ sudo pip install gpiozero
 #
-# Caution:
+# @Caution:
 # 1. Check location of +DC voltage and GND line at Raspberry Pi3 board
 # 2. Change sensor and pulse button (orange color) appropriately
 #
@@ -41,7 +41,7 @@ try:
 
     # go to the default absolute path in order to read data file correctly
     os.chdir(folder)
-    # MotionSensor function probes the movement of people.
+    # motion sensor function probes the movement of people.
     pir = MotionSensor(GPIO_PIN)
     while True:
         print "[DEBUG] Sleeping..."
