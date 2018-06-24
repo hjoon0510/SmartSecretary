@@ -49,7 +49,7 @@ Run ssh session with mobaxterm software on windows7 PC.
 $ cd /var/www/html
 $ git clone https://github.com/hjoon0510/SmartSecretary.git
 $ cd ./SmartSecretary 
-$ sudo chown -R www-data:www-data /var/www/html/html/SmartSecretary/webpage/data/
+$ sudo chown -R www-data:www-data /var/www/html/SmartSecretary/webpage/data/
 $ sudo visudo
 --------------- /etc/sudoers: start ----------------
 # User privilege specification
