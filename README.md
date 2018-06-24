@@ -26,6 +26,7 @@ It is developed by Python, PHP, and HTML language.
 * Python - https://www.python.org/ (free)
 * PHP - http://php.net/ (free)
 * HTML - https://www.w3schools.com/html/ (free)
+* C - https://gcc.gnu.org/ (free)
 
 # Design
 The following figure shows the operation sequence of the program. First of all, this program gets the necessary information from the weather server. The program then uses the motion sensor to detect human motion. When a person comes around the hardware, it not only prints important information on the screen, but also speaks by voice. Users can also check the schedule(you can show schedule from google calendar)information before leaving home. In the event of rain, users can check the weather information in real time using e-mail.
@@ -59,7 +60,7 @@ hjoon0510       ALL=NOPASSWD: ALL <---- Please append your id here.!!!!
 ```
 
 ### Run Smart Secretary
-Let's run PIR motion sensor and Webapplication. 
+Just execute `run` file. Or run PIR motion sensor and Web application firsthand as follows. 
 ```bash
 $ exec /var/www/html/motion/pir-sensor.py &> /dev/null &
 $ sudo systemctl restart apache2
