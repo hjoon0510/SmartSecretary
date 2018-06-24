@@ -38,15 +38,26 @@ $url_full = "$url_base?sidoName=${city_name}&pageNo=1&numOfRows=30&ServiceKey=${
 // http://php.net/manual/kr/function.file-get-contents.php
 // http://php.net/manual/kr/function.simplexml-load-string.php
 $contents = file_get_contents($url_full); // get contents from api server
+
+// if openapi.airkorea.or.kr is broken, let'd display debug message.
+if ($contents == "") {
+    echo "<br><br>";
+    echo "[DEBUG] It seems that API Server (http://openapi.airkorea.or.kr) is broken.<br>";
+    echo "[DEBUG] <font color=red>Please wait while API server processes your request. Try it agin.</font><br>";
+    echo "[DEBUG] <font color=red>If the issue does not solved, please contact 1566-0025 (www.data.go.kr)</font><br>";
+    exit(0);
+}
+
 $xml=simplexml_load_string($contents); // get data with xml format
 $obj_addr=$xml->body[0]->items[0];  // item[0]
 
-// If openapi.airkorea.or.kr does not work, let's display debug message.
+// If openapi.airkorea.or.kr does not work due to excess of 200 requests, let's display debug message.
 if ($obj_addr == "") {
     echo "<br><br>";
     echo "[DEBUG] Response of API Server (http://openapi.airkorea.or.kr):<br>";
     echo "[DEBUG] <font color=red>".$xml->header->resultMsg."</font><br>";
-    return 0;
+    echo "[DEBUG] Note that API server can process user request until 200 times everyday.<br>";
+    exit(0);
 }
 
 // find a fine dust value of my city.
