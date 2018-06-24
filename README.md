@@ -75,7 +75,7 @@ If you want to start automatically chromium-browser in full screen mode at boot 
 
 * Smart Secretary (web-app)
    * Name: Smart Secretary (webapp)
-   * Command: chromium-browser http://smartsecretary.mooo.com --start-fullscreen
+   * Command: chromium-browser http://localhost/SmartSecretary/ --start-fullscreen
    * Comment: none
 
 * Smart Secretary (pir-sensor)
