@@ -1,6 +1,0 @@
-﻿
-
-chromium-browser 
-chrome://flags/#autoplay-policy
-Press "No user gesture is required" option.
-
