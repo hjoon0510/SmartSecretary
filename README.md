@@ -46,11 +46,10 @@ Smart Secretary was developed by Python (motion sensor) and PHP (Web application
 Please install two applications as following:
 ```bash
 Run ssh session with mobaxterm software on windows7 PC.
-$ cd /var/www/
-$ mv html html.old
+$ cd /var/www/html
 $ git clone https://github.com/hjoon0510/SmartSecretary.git
-$ ln -s ./SmartSecretary ./html
-$ sudo chown -R www-data:www-data /var/www/html/html/webpage/data/
+$ cd ./SmartSecretary 
+$ sudo chown -R www-data:www-data /var/www/html/SmartSecretary/webpage/data/
 $ sudo visudo
 --------------- /etc/sudoers: start ----------------
 # User privilege specification
@@ -62,9 +61,9 @@ hjoon0510       ALL=NOPASSWD: ALL <---- Please append your id here.!!!!
 ### Run Smart Secretary
 Just execute `run` file. Or run PIR motion sensor and Web application firsthand as follows. 
 ```bash
-$ exec /var/www/html/motion/pir-sensor.py &> /dev/null &
+$ exec /var/www/html/SmartSecretary/motion/pir-sensor.py &> /dev/null &
 $ sudo systemctl restart apache2
-$ chromium-browser http://localhost --start-fullscreen
+$ chromium-browser http://localhost/SmartSecretary/ --start-fullscreen
 ```
 That's all. Enjoy Smart Secrectary!!! 
 If you do not start `ubuntu-mate-welcome` window at boot time, uncheck **Welcome** menu at `Startup Applications`.
@@ -76,12 +75,12 @@ If you want to start automatically chromium-browser in full screen mode at boot 
 
 * Smart Secretary (web-app)
    * Name: Smart Secretary (webapp)
-   * Command: chromium-browser http://smartsecretary.mooo.com --start-fullscreen
+   * Command: chromium-browser http://localhost/SmartSecretary/ --start-fullscreen
    * Comment: none
 
 * Smart Secretary (pir-sensor)
    * Name: Smart Secretary (pir-sensor)
-   * Command: /var/www/html/motion/pir-sensor.py
+   * Command: /var/www/html/SmartSecretary/motion/pir-sensor.py
    * Comment: none
 ```
 The above icons are saved in the `~/.config/autostart/` folder. Alternatively, you can append your terminal commands in `/etc/init.d/rc.local`, and it will also automatically execute upon boot.
