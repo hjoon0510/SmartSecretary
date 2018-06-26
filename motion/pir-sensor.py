@@ -28,7 +28,7 @@ import time
 import os
 
 #----------- Configuration area -------------------------------
-folder = "/var/www/html/motion/"
+folder = "/var/www/html/SmartSecretary/motion/"
 GPIO_PIN = 4
 count = 0
 condition_rain = "Rain\n"
