@@ -2,17 +2,17 @@
 
 # @Author: Hyunjun Lim
 # @Date: May-07-2018
-# @Title: motion prober software
+# @Title: Motion prober software with PIR sensor
 # @License: Star
 # @Prequisites:
 # $ sudo apt install mplayer
 # $ sudo pip install gpiozero
 #
 # @Caution:
-# 1. Check location of +DC voltage and GND line at Raspberry Pi3 board
-# 2. Change sensor and pulse button (orange color) appropriately
+# 1. Check (a)location of +DC voltage and (b)GND line on Raspberry Pi3 board
+# 2. Change (a)sensor and (b)pulse button [orange color] appropriately
 #
-# How to run program:
+# How to run program with root privilege:
 # $ sudo visudo 
 #  # User privilege specification
 #    root            ALL=(ALL:ALL) ALL
@@ -22,8 +22,10 @@
 # Reference:
 # 1. http://gpiozero.readthedocs.io/en/stable/recipes.html
 # 2. http://raspi.tv/2015/gpio-zero-test-drive-making-light-of-security
-#
+
+# import motion sensor function
 from gpiozero import MotionSensor
+# import time and os function
 import time
 import os
 
