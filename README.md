@@ -61,7 +61,8 @@ hjoon0510       ALL=NOPASSWD: ALL <---- Please append your id here.!!!!
 ### Run Smart Secretary
 Just execute `run` file. Or run PIR motion sensor and Web application firsthand as follows. 
 ```bash
-$ exec /var/www/html/SmartSecretary/motion/pir-sensor.py &> /dev/null &
+$ /var/www/html/SmartSecretary/motion/pir-sensor.py 
+( or $ exec /var/www/html/SmartSecretary/motion/pir-sensor.py &> /dev/null & )
 $ sudo systemctl restart apache2
 $ chromium-browser http://localhost/SmartSecretary/ --start-fullscreen
 ```
