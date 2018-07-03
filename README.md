@@ -58,7 +58,10 @@ hjoon0510       ALL=NOPASSWD: ALL <---- Please append your id here.!!!!
 --------------- /etc/sudoers: ending ---------------
 ```
 
-### Run Smart Secretary
+# How to run
+This section describes how to start web-application and pir-sensor program.
+
+### Run software manually
 Just execute `run` file. Or run PIR motion sensor and Web application firsthand as follows. 
 ```bash
 $ /var/www/html/SmartSecretary/motion/pir-sensor.py 
@@ -69,7 +72,7 @@ $ chromium-browser http://localhost/SmartSecretary/ --start-fullscreen
 That's all. Enjoy Smart Secrectary!!! 
 If you do not start `ubuntu-mate-welcome` window at boot time, uncheck **Welcome** menu at `Startup Applications`.
 
-### How to start web-application and pir-sensor automatically at boot time
+### Run software at boot-time automatically
 If you want to start automatically chromium-browser in full screen mode at boot time, Please append new program to the list of startup program on `Startup Applications` windows as follows. 
 ```bash
 * Ubuntu - System - Preference - Personal - Startup Applications
