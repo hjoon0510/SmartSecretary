@@ -62,7 +62,16 @@ hjoon0510       ALL=NOPASSWD: ALL <---- Please append your id here.!!!!
 This section describes how to start web-application and pir-sensor program.
 
 ### Run software manually
-Just execute `run` file. Or run PIR motion sensor and Web application firsthand as follows. 
+* How to run with run.c
+At first, compile run.c with gcc command. Then, Just execute `run` file. 
+```bash
+$ cd SmartSecretary
+$ gcc -o run run.c
+$ ./run
+```
+
+* How to run with console command
+Run PIR motion sensor and Web application firsthand as follows. 
 ```bash
 $ /var/www/html/SmartSecretary/motion/pir-sensor.py 
 ( or $ exec /var/www/html/SmartSecretary/motion/pir-sensor.py &> /dev/null & )
