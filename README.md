@@ -19,7 +19,7 @@ Thanks to Linux kernel, We can easily set-up free operating systems (OS) that is
 to Raspberry Pi3 board.
 * Raspbian OS: https://www.raspberrypi.org/downloads/raspbian/ (free)
 * Ubuntu OS: https://ubuntu-mate.org/raspberry-pi/ (free)
-* Mobaxterm: https://mobaxterm.mobatek.net/download.html (free)
+* MobaXterm: https://mobaxterm.mobatek.net/download.html (free)
 
 ### Programming languages
 It is developed by Python, PHP, and HTML language.
@@ -134,6 +134,11 @@ The above icons are saved in the `~/.config/autostart/` folder. Alternatively, y
 
 # Translation
 We make an effort to write english statement by utilizing https://translate.google.com to talk about Smart Secretary project with foreign students all over the world. If you are not student that can not speak in english, you can use https://translate.google.co.kr/?hl=ko#en/ja/https%3A%2F%2Fgithub.com%2Fhjoon0510%2FSmartSecretary for your convenience.
+
+* [Korean](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=ko&ie=UTF8&prev=_t&rurl=translate.google.co.kr&sl=en&sp=nmt4&tl=ko&u=https://github.com/hjoon0510/SmartSecretary&xid=17259,15700021,15700124,15700149,15700168,15700186,15700190,15700201,15700208&usg=ALkJrhh-pPbQEVR-AjDeXt25RURdyjlS_w)
+* [Japanese](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=ko&ie=UTF8&prev=_t&rurl=translate.google.co.kr&sl=en&sp=nmt4&tl=ja&u=https://github.com/hjoon0510/SmartSecretary&xid=17259,15700021,15700124,15700149,15700168,15700186,15700190,15700201,15700208&usg=ALkJrhj0--Y6Mqw9XJHI_b4fCYAthZpLxw)
+* [Chinese](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=ko&ie=UTF8&prev=_t&rurl=translate.google.co.kr&sl=en&sp=nmt4&tl=zh-CN&u=https://github.com/hjoon0510/SmartSecretary&xid=17259,15700021,15700124,15700149,15700168,15700186,15700190,15700201,15700208&usg=ALkJrhhUqfZCJg1ImbQahsXoILq56vbrSA)
+
 
 # Contact
 My name is Hyunjun Lim (임현준 in korean). I am a student in [Maetan middle-school](http://maetan.ms.kr/). My homepage is http://hjoon0510.github.io. Also, I am project leader for Smart Secretary. If you have any questions, Please contact me hjoon0510@gmail.com.
