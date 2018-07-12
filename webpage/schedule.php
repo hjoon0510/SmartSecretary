@@ -10,7 +10,8 @@ echo ("<br>");
 echo ("<br>");
 echo ("<center>");
 echo ("<img src=./image/schedule.gif width=200 height=50 border=0></img>");
-echo ("<img src=./image/postit.jpg width=200 height=180 border=0></img>");
+echo ("<br>");
+echo ("<img src=./image/postit.jpg width=250 height=210 border=0></img>");
 echo ("</center>");
 ?>
 
