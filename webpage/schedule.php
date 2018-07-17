@@ -6,8 +6,6 @@
 
 echo ("<br>");
 echo ("<br>");
-echo ("<br>");
-echo ("<br>");
 echo ("<center>");
 echo ("<img src=./image/postit.jpg width=250 height=210 border=0></img>");
 echo ("</center>");
