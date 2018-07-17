@@ -24,12 +24,12 @@ ini_set('display_startup_errors', TRUE);
 <body bgcolor=white>
 
 <?php
-// load find dust api file
+// module: load find dust api file
 include "./include/api-fine-dust.php";
 ?>
 
 <?php
-// load weather api file
+// module: load weather api file
 include "./include/api-weather.php";
 ?>
 
@@ -39,23 +39,29 @@ include "./include/api-weather.php";
 <tr width=100%>
 
 <?php
-// load part1 file: display user schedule
+// load part1 file (1st column): display user schedule
+// load part2 file : display schedule icons of family IDs
 include "./include/part1.php";
 ?>
 
 <?php
+// load part2 file (2nd column): display weather icon
 // load part2 file: display weather icon , send email (rain)
 include "./include/part2.php";
 ?>
 
 <?php
+// load part3 file (3rd column): display others
 // load part3 file: date, time, temperature, fine dust, send email (cold, hot)
 include "./include/part3.php";
 ?>
 
 </tr>
 </table>
-
+  
+<?php
+// display schedule content of each IDs
+?>
 <iframe name="myframe" src="./schedule.php"  style="width:95%; height:60% ; background:#FFFFFF;"></iframe>
 </body>
 </html>
