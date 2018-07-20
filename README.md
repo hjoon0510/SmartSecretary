@@ -101,7 +101,7 @@ The above icons are saved in the `~/.config/autostart/` folder. Alternatively, y
 # Demonstration
 * IP address - http://192.168.219.104 
    * The IP address is not public IP address. It is a private IP address. So you can only connect to IP adddress in specified WiFi Router range for security.
-* Website - http://smartsecretary.mooo.com
+* Website - http://doubles.mooo.com
    * This web address is created free of charge via https://freedns.afraid.org/.
 <img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo6.jpg border=0 width=500 height=350> </img>
 <img src=https://github.com/hjoon0510/SmartSecretary/blob/master/pic/demo7.jpg border=0 width=500 height=350> </img>
