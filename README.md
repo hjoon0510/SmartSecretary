@@ -1,5 +1,5 @@
 # What is Smart Secretary?
-This program informs users of weather and schedules as a personal secretary in the morning everyday in front of a door.
+This program informs users of current weather and urgent schedules as a personal secretary in the morning everyday in front of a door.
 
 # Motivation
 Unfortunayely, modern people can not keep their umbrellas on a rainy day because of busy daily life, and often leave the house. So when the weather you know is often going out, it often changes. People are very busy in the morning.
