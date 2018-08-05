@@ -1,15 +1,15 @@
 # What is Smart Secretary?
-This program informs users of weather and schedules.
+This program informs users of weather and schedules as a personal secretary in the morning everyday in front of a door.
 
 # Motivation
-Modern people can not keep their umbrellas on a rainy day because of busy daily life, and often leave the house. So when the weather you know is often going out, it often changes. People are very busy in the morning.
+Unfortunayely, modern people can not keep their umbrellas on a rainy day because of busy daily life, and often leave the house. So when the weather you know is often going out, it often changes. People are very busy in the morning.
 So I often do not remember things or schedules I need to pack. I need a personal assistant to solve these problems. I named this device __Smart Secretary__ (SS). The recommended pronunciation is **"double s"**.
 
 # Requirement
 You have to prepare hardware and software as follows.
 
 ### Hardware
-Smart Secretary (SS) provides an intelligent facility to help busy modern people. It is developed with popular
+Smart Secretary (SS) provides an intelligent facility to help a busy modern people. It is developed with popular
 embedded device Raspberry Pi3 board. I have used PIR motion sensor to probe movement of a hunman being.
 * Raspberry Pi3 board: https://www.raspberrypi.org/products/raspberry-pi-3-model-b/ (40,000won)
 * PIR Sensor (Motion Sensor): http://m.eleparts.co.kr/goods/view?no=3227278 (1,800won)
