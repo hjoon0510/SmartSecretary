@@ -1,22 +1,22 @@
 # What is Smart Secretary?
-This program informs users of current weather and urgent schedules as a personal secretary in the morning everyday in front of a door.
+This program informs users of current weather and important schedules as a personal secretary in the morning everyday in front of a door.
 
 # Motivation
-Unfortunayely, modern people can not keep their umbrellas on a rainy day because of busy daily life, and often leave the house. So when the weather you know is often going out, it often changes. People are very busy in the morning.
-So I often do not remember things or schedules I need to pack. I need a personal assistant to solve these problems. I named this device __Smart Secretary__ (SS). The recommended pronunciation is **"double s"**.
+Unfortunayely, modern people can not keep their umbrellas on a rainy day because of busy daily life, and often leave the house. So when the weather you know is often going out, it often changes. People are very busy in the morning. As a result of that, they do not finally bring their important schedules in front of door.
+From our experiecne, we often do not remember things or schedules we need to pack in the morning. Therefore, we need to get a personal assistant to solve these problems. We named __Smart Secretary__ (SS). The recommended pronunciation is **"double s"** to minimize your inconvenience because of long project name.
 
 # Requirement
-You have to prepare hardware and software as follows.
+First of all, you have to prepare hardware and software as follows.
 
 ### Hardware
-Smart Secretary (SS) provides an intelligent facility to help a busy modern people. It is developed with popular
-embedded device Raspberry Pi3 board. I have used PIR motion sensor to probe movement of a hunman being.
-* Raspberry Pi3 board: https://www.raspberrypi.org/products/raspberry-pi-3-model-b/ (40,000won)
-* PIR Sensor (Motion Sensor): http://m.eleparts.co.kr/goods/view?no=3227278 (1,800won)
+Smart Secretary (SS) provides an intelligent facility to assist a busy modern people. It is developed with popular
+embedded device Raspberry Pi3 board. We also bought a PIR motion sensor to probe a movement of a hunman being.
+* Raspberry Pi3 board: https://www.raspberrypi.org/products/raspberry-pi-3-model-b/ (40,000 won)
+* PIR Sensor (Motion Sensor): http://m.eleparts.co.kr/goods/view?no=3227278 (1,800 won)
 
 ### Software
-Thanks to Linux kernel, We can easily set-up free operating systems (OS) that is called Ubuntu OS, Raspbian OS
-to Raspberry Pi3 board.
+Thanks to Linux kernel, We could easily set-up a free operating systems (OS) that is called Ubuntu OS, Raspbian OS
+on our Raspberry Pi3 board.
 * Raspbian OS: https://www.raspberrypi.org/downloads/raspbian/ (free)
 * Ubuntu OS: https://ubuntu-mate.org/raspberry-pi/ (free)
 * MobaXterm: https://mobaxterm.mobatek.net/download.html (free)
@@ -29,7 +29,7 @@ Our program is developed by Python, PHP, and HTML language.
 * C - https://gcc.gnu.org/ (free)
 
 # Design
-The following figure shows the operation sequence of the program. First of all, this program gets the necessary information from the weather server. The program then uses the motion sensor to detect human motion. When a person comes around the hardware, it not only prints important information on the screen, but also speaks by voice. Users can also check the schedule(you can show schedule from google calendar)information before leaving home. In the event of rain, users can check the weather information in real time using e-mail.
+The figure below shows an entire operation sequence of our solution. First of all, this program gets a necessary information from web API servers such as weather and fine dust. The program then uses the PIR motion sensor to detect human motion exactly. When a person comes around the Raspberry Pi3 board, Smart Secretary only prints important information on the screen, but also speaks by voice for busy modern people. Users can also check the important schedule(you can show schedule thanks to google calendar API service) before leaving home. In the event of rain, users can check the weather information in real time using e-mail.
 
 <img src=./pic/ss-diagram2.jpg border=0 width=800 height=400> </img>
 
@@ -42,7 +42,7 @@ Then, please try to install Ubuntu OS in Raspberry Pi3 device.
 
 
 ### Install Smart Secretary
-Smart Secretary was developed by Python (motion sensor) and PHP (Web application). 
+Smart Secretary was mainly developed by Python (motion sensor) and PHP (Web application). 
 Please install two applications as following:
 ```bash
 Run ssh session with mobaxterm software on windows7 PC.
@@ -78,7 +78,7 @@ $ /var/www/html/SmartSecretary/motion/pir-sensor.py
 $ sudo systemctl restart apache2
 $ chromium-browser http://localhost/SmartSecretary/ --start-fullscreen
 ```
-That's all. Enjoy Smart Secrectary!!! 
+That is all. Enjoy Smart Secrectary!!! 
 If you do not want to see the `ubuntu-mate-welcome` pop-up window at boot time, uncheck the **Welcome** menu at `Startup Applications` menu.
 
 ### Run software at boot-time automatically
