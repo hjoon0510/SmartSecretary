@@ -79,7 +79,7 @@ $ sudo systemctl restart apache2
 $ chromium-browser http://localhost/SmartSecretary/ --start-fullscreen
 ```
 That's all. Enjoy Smart Secrectary!!! 
-If you do not start `ubuntu-mate-welcome` window at boot time, uncheck **Welcome** menu at `Startup Applications`.
+If you do not want to see the `ubuntu-mate-welcome` pop-up window at boot time, uncheck the **Welcome** menu at `Startup Applications` menu.
 
 ### Run software at boot-time automatically
 If you want to start automatically chromium-browser in full screen mode at boot time, Please append new program to the list of startup program on `Startup Applications` windows as follows. 
