@@ -22,7 +22,7 @@ to Raspberry Pi3 board.
 * MobaXterm: https://mobaxterm.mobatek.net/download.html (free)
 
 ### Programming languages
-It is developed by Python, PHP, and HTML language.
+Our program is developed by Python, PHP, and HTML language.
 * Python - https://www.python.org/ (free)
 * PHP - http://php.net/ (free)
 * HTML - https://www.w3schools.com/html/ (free)
@@ -133,7 +133,7 @@ The above icons are saved in the `~/.config/autostart/` folder. Alternatively, y
 * WWW: World-Wide Web
 
 # Translation
-We make an effort to write english statement by utilizing https://translate.google.com to talk about Smart Secretary project with foreign students all over the world. If you are not student that can not speak in english, you can use https://translate.google.co.kr/?hl=ko#en/ja/https%3A%2F%2Fgithub.com%2Fhjoon0510%2FSmartSecretary for your convenience.
+We make an effort to write english statement by utilizing https://translate.google.com to talk about the Smart Secretary project with foreign students all over the world. If you are not student that can not speak in english such as us, we recomend that you try to use https://translate.google.co.kr/?hl=ko#en/ja/https%3A%2F%2Fgithub.com%2Fhjoon0510%2FSmartSecretary for your convenience.
 
 * [Korean](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=ko&ie=UTF8&prev=_t&rurl=translate.google.co.kr&sl=en&sp=nmt4&tl=ko&u=https://github.com/hjoon0510/SmartSecretary&xid=17259,15700021,15700124,15700149,15700168,15700186,15700190,15700201,15700208&usg=ALkJrhh-pPbQEVR-AjDeXt25RURdyjlS_w)
 * [Japanese](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=ko&ie=UTF8&prev=_t&rurl=translate.google.co.kr&sl=en&sp=nmt4&tl=ja&u=https://github.com/hjoon0510/SmartSecretary&xid=17259,15700021,15700124,15700149,15700168,15700186,15700190,15700201,15700208&usg=ALkJrhj0--Y6Mqw9XJHI_b4fCYAthZpLxw)
