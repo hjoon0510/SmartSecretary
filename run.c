@@ -5,8 +5,8 @@
  * @License: Star
  * @Prequisites: PHP web-application, Python PIR motion sensor application
  * @Description:
- * - How to compile: $ gcc -o run run.c
- * - How to run:     $ run
+ * - How to compile: ubuntu$ gcc -o run run.c
+ * - How to run:     ubuntu$ run
  */ 
 
 #include <stdio.h>  // printf()
