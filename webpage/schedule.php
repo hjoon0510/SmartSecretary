@@ -1,7 +1,7 @@
 <?php
 // Author: Suyeon Lim
-// Title: initial display of lcd monitor
-// Date: May-13-2018
+// Title: a initial display for the LCD monitor
+// Date: May-18-2018
 // Description: A web module to display initial screen of user schedule
 
 echo ("<br>");
