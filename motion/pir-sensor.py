@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
 # @Author: Hyunjun Lim
-# @Date: May-07-2018
+# @Date: May-16-2018
 # @Title: Motion prober software with PIR sensor
 # @License: Star
 # @Prequisites:
-# $ sudo apt install mplayer
+# $ sudo apt install vlc
 # $ sudo pip install gpiozero
 #
 # @Caution:
