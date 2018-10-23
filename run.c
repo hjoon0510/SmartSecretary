@@ -3,7 +3,7 @@
  * @Date: Jun-17-2018
  * @Title: Launcher to start apache web-server and pir sensor
  * @License: Star
- * @Prequisites: PHP web-application, Python PIR motion sensor application
+ * @Prequisites: a PHP web-application, a Python PIR motion sensor application
  * @Description:
  * - How to compile: ubuntu$ gcc -o run run.c
  * - How to run:     ubuntu$ run
